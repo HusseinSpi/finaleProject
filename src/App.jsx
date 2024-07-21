@@ -14,6 +14,10 @@ const router = createBrowserRouter([
     element: <Songs/>
   },
   {
+    path: "/test",
+    element: <StoriesComponent />,
+  },
+  {
     path: "*",
     element: <NotFound />,
   },
