@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getMusicByType } from "../thunk/musicsThunk";
+import { getAllMusic } from "../thunk/musicsThunk";
 
 const initialState = {
   data: [],
@@ -13,14 +13,14 @@ const musicsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getMusicByType.pending, (state) => {
+      .addCase(getAllMusic.pending, (state) => {
         state.status = "loading";
       })
-      .addCase(getMusicByType.fulfilled, (state, action) => {
+      .addCase(getAllMusic.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.data = action.payload;
       })
-      .addCase(getMusicByType.rejected, (state, action) => {
+      .addCase(getAllMusic.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message || "Unknown error";
       });
