@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NotFound from "./Pages/NotFound/NotFound";
 import Home from "./Pages/Home/Home";
 import Songs from "./Pages/Songs/Songs";
-import StoriesComponent from "./Pages/StoriesComponent";
+import Stories from "./Pages/Stories/Stoeies";
 
 const router = createBrowserRouter([
   {
@@ -11,11 +11,11 @@ const router = createBrowserRouter([
   },
   {
     path: "songs",
-    element: <Songs/>
+    element: <Songs />,
   },
   {
-    path: "/test",
-    element: <StoriesComponent />,
+    path: "stories",
+    element: <Stories />,
   },
   {
     path: "*",

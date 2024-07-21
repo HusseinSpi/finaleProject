@@ -1,23 +1,35 @@
 import Song from "../../Components/SongYT";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getAllMusic } from "../../redux/thunk/musicsThunk";
 
 const Songs = () => {
   const dispatch = useDispatch();
   const musics = useSelector((state) => state.musics.data);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(getAllMusic());
-  }, [dispatch]);
+    const fetchData = async () => {
+      setIsLoading(true);
+      await dispatch(getAllMusic());
+      setIsLoading(false);
+    };
 
-   useEffect(() => {
-     console.log("Musics State:", musics); 
-   }, [musics]);
+    if (!musics || musics.length === 0) {
+      fetchData();
+    } else {
+      setIsLoading(false);
+    }
+  }, [dispatch, musics]);
 
- const numbersSongs = musics?.filter((song) => song.type === "numbers") || [];
- const alphabetSongs = musics?.filter((song) => song.type === "alphabet") || [];
- const generalSongs = musics?.filter((song) => song.type === "general") || [];
+  const numbersSongs = musics?.filter((song) => song.type === "numbers") || [];
+  const alphabetSongs =
+    musics?.filter((song) => song.type === "alphabet") || [];
+  const generalSongs = musics?.filter((song) => song.type === "general") || [];
+
+  if (isLoading) {
+    return <div className="text-center">Loading...</div>;
+  }
 
   return (
     <div className="p-4">
@@ -61,4 +73,5 @@ const Songs = () => {
     </div>
   );
 };
+
 export default Songs;
