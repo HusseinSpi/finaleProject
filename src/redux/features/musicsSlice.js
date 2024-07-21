@@ -17,6 +17,7 @@ const musicsSlice = createSlice({
         state.status = "loading";
       })
       .addCase(getAllMusic.fulfilled, (state, action) => {
+        //  console.log("Redux State Fulfilled:", action.payload);
         state.status = "succeeded";
         state.data = action.payload;
       })
