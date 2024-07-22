@@ -6,6 +6,7 @@ export const getAllAnimalsGame = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(`animalsGame`);
+      console.log(response);
       return response.data.data;
     } catch (err) {
       console.error(`Error fetching animalsGame:`, err);
