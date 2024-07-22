@@ -36,9 +36,9 @@ const FormingWordGame = () => {
     if (currentAnimal) {
       setCorrectWord(true);
       setShowPopup(true);
-      const sound = new Howl({
-        src: [currentAnimal.audioUrl],
-      });
+      const sound = new Audio(
+        `https://finaleprojectbe.onrender.com/sounds/${currentAnimal.audioUrl}`
+      );
       sound.play();
       setTimeout(() => {
         setCorrectWord(false);
