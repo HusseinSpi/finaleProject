@@ -7,27 +7,34 @@ import Stories from "./Pages/Stories/Stoeies";
 import FormingWordGame from "./Components/FormingWordGame/FormingWordGame";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import Chat from "./Components/Chat/Chat";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-  },
-  {
-    path: "songs",
-    element: <Songs />,
-  },
-  {
-    path: "stories",
-    element: <Stories />,
-  },
-  {
-    path: "forming-word-game",
-    element: (
-      <DndProvider backend={HTML5Backend}>
-        <FormingWordGame />
-      </DndProvider>
-    ),
+    element: <Chat />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "songs",
+        element: <Songs />,
+      },
+      {
+        path: "stories",
+        element: <Stories />,
+      },
+      {
+        path: "forming-word-game",
+        element: (
+          <DndProvider backend={HTML5Backend}>
+            <FormingWordGame />
+          </DndProvider>
+        ),
+      },
+    ],
   },
   {
     path: "*",
