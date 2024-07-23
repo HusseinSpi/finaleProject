@@ -24,6 +24,10 @@ const router = createBrowserRouter([
         element: <Songs />,
       },
       {
+        path: "song/:videoId",
+        element: <SingleSong />,
+      },
+      {
         path: "stories",
         element: <Stories />,
       },
