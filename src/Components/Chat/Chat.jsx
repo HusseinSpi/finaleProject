@@ -56,7 +56,7 @@ const Chat = () => {
 
   return (
     <>
-      <div className="fixed bottom-4 right-4 p-4 w-chat">
+      <div className="fixed bottom-4 right-4 p-4 w-chat z-10">
         {!isOpen && (
           <div
             className="fixed bottom-4 right-4 bg-green-500 text-white p-3 cursor-pointer rounded-full text-center hover:bg-green-600 transition duration-300"
@@ -131,7 +131,7 @@ const Chat = () => {
       </div>
       {isOpen && (
         <div
-          className="fixed bottom-4 right-4 bg-green-500 text-white p-3 cursor-pointer rounded-full text-center hover:bg-green-600 transition duration-300"
+          className="fixed bottom-4 right-4 bg-green-500 text-white p-3 cursor-pointer rounded-full text-center hover:bg-green-600 transition duration-300 z-10"
           onClick={toggleChat}
         >
           <IoChatboxEllipses className="text-3xl" />
