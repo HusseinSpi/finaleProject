@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { FaArrowUp, FaRobot } from "react-icons/fa";
 import { IoChatboxEllipses, IoPersonSharp } from "react-icons/io5";
+import { IoMdClose } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { getReplyFromAiChat } from "../../redux/thunk/chatWithAiThunk";
 
@@ -134,7 +135,7 @@ const Chat = () => {
           className="fixed bottom-4 right-4 bg-green-500 text-white p-3 cursor-pointer rounded-full text-center hover:bg-green-600 transition duration-300 z-10"
           onClick={toggleChat}
         >
-          <IoChatboxEllipses className="text-3xl" />
+          <IoMdClose className="text-3xl" />
         </div>
       )}
       <div className="p-4">
