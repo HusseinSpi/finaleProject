@@ -7,6 +7,7 @@ import Stories from "./Pages/Stories/Stoeies";
 import FormingWordGame from "./Components/FormingWordGame/FormingWordGame";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import SingleSong from "./Pages/SingleSong/SingleSong";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "songs",
     element: <Songs />,
+  },
+  {
+    path: "song/:videoId",
+    element: <SingleSong />,
   },
   {
     path: "stories",

@@ -10,8 +10,8 @@ const SongYT = ({ videoId }) => {
            playerRef.current.destroy(); 
          }
          playerRef.current = new window.YT.Player(`youtube-player-${videoId}`, {
-           height: "250",
-           width: "350",
+           height: "480",
+           width: "854",
            videoId: videoId,
            playerVars: {
              autoplay: 0,
