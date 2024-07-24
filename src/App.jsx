@@ -94,7 +94,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "Tetris",
+        path: "tetris",
         element: <Tetris />,
       },
     ],
