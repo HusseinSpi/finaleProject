@@ -22,6 +22,7 @@ import AdminPage from "./Pages/admin/AdminPage";
 import Sidebar from "./Components/sidebar/Sidebar";
 import Messages from "./Pages/messages/Messages";
 import Reviews from "./Pages/reviews/Reviews";
+import Tetris from "./Components/Tetris/Tetris";
 
 const router = createBrowserRouter([
   {
@@ -91,6 +92,10 @@ const router = createBrowserRouter([
             <Reviews />
           </Sidebar>
         ),
+      },
+      {
+        path: "Tetris",
+        element: <Tetris />,
       },
     ],
   },
