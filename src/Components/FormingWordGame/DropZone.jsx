@@ -90,12 +90,14 @@ const DropZone = ({ targetWord, onCorrectWord }) => {
       >
         {droppedLetters.join('')}
       </div>
-      <button onClick={handleEraseLastLetter}>Erase Last Letter</button>
+      <button className="erase" onClick={handleEraseLastLetter}>
+        &#x2408;
+      </button>
       {/* {showTryAgain && <div className="popup popup-two">Try again!</div>} */}
       {showWelcome && (
-        <div className="popup">
-          You are welcome to drag letters to create a word that matches the name
-          of the animal in the picture
+        <div className=" popup">
+          Kindly drag letters to create a word that matches the name of the
+          animal in the picture
         </div>
       )}
     </div>
