@@ -18,6 +18,7 @@ import SignUpPage from "./Pages/signup/Signup";
 import SignInPage from "./Pages/signin/SignInPage";
 import ForgotPasswordPage from "./Pages/ForgotPasword/ForgotPassword";
 import ResetPassword from "./Pages/ForgotPasword/ResetPassword";
+import Tetris from "./Components/Tetris/Tetris";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
             <FormingWordGame />
           </DndProvider>
         ),
+      },
+      {
+        path: "Tetris",
+        element: <Tetris />,
       },
     ],
   },
