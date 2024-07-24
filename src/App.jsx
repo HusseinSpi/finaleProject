@@ -18,6 +18,10 @@ import SignUpPage from "./Pages/signup/Signup";
 import SignInPage from "./Pages/signin/SignInPage";
 import ForgotPasswordPage from "./Pages/ForgotPasword/ForgotPassword";
 import ResetPassword from "./Pages/ForgotPasword/ResetPassword";
+import AdminPage from "./Pages/admin/AdminPage";
+import Sidebar from "./Components/sidebar/Sidebar";
+import Messages from "./Pages/messages/Messages";
+import Reviews from "./Pages/reviews/Reviews";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +66,30 @@ const router = createBrowserRouter([
           <DndProvider backend={HTML5Backend}>
             <FormingWordGame />
           </DndProvider>
+        ),
+      },
+      {
+        path: "admin",
+        element: (
+          <Sidebar>
+            <AdminPage />
+          </Sidebar>
+        ),
+      },
+      {
+        path: "messages",
+        element: (
+          <Sidebar>
+            <Messages />
+          </Sidebar>
+        ),
+      },
+      {
+        path: "reviews",
+        element: (
+          <Sidebar>
+            <Reviews />
+          </Sidebar>
         ),
       },
     ],

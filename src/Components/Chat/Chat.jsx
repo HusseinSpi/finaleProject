@@ -138,7 +138,7 @@ const Chat = () => {
           <IoMdClose className="text-3xl" />
         </div>
       )}
-      <div className="p-4">
+      <div>
         <Outlet />
       </div>
     </>
