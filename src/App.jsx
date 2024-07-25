@@ -23,6 +23,7 @@ import Sidebar from "./Components/sidebar/Sidebar";
 import Messages from "./Pages/messages/Messages";
 import Reviews from "./Pages/reviews/Reviews";
 import Tetris from "./Components/Tetris/Tetris";
+import ChatRoom from "./Pages/messages/ChatRoom";
 
 const router = createBrowserRouter([
   {
@@ -84,6 +85,10 @@ const router = createBrowserRouter([
             <Messages />
           </Sidebar>
         ),
+      },
+      {
+        path: "chat/:roomNumber",
+        element: <ChatRoom />,
       },
       {
         path: "reviews",

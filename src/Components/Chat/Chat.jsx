@@ -1,80 +1,45 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import { FaArrowUp, FaRobot } from "react-icons/fa";
 import { IoChatboxEllipses, IoPersonSharp } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
+import { FaRobot } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { getReplyFromAiChat } from "../../redux/thunk/chatWithAiThunk";
 import { getCurrentUser } from "../../redux/thunk/currentUserThunks";
-import { io } from "socket.io-client";
+import ChatAi from "./ChatAi";
+import ChatSpecialist from "./ChatSpecialist";
 
 const Chat = () => {
   const dispatch = useDispatch();
-  const chatWithAi = useSelector((state) => state.chatWithAi.data);
   const currentUser = useSelector(
     (state) => state.currentUser.data?.data?.user
   );
   const [isOpen, setIsOpen] = useState(false);
   const [messageType, setMessageType] = useState("Ai");
   const [messages, setMessages] = useState([]);
-  const [inputValue, setInputValue] = useState("");
-  const inputRef = useRef(null);
-  let socket;
+  const [roomNumber, setRoomNumber] = useState(null);
 
   useEffect(() => {
     dispatch(getCurrentUser());
   }, [dispatch]);
 
   useEffect(() => {
-    if (messageType === "Specialist" && currentUser) {
-      socket = io("http://localhost:3000", {
-        withCredentials: true,
-        extraHeaders: {
-          "my-custom-header": "abcd",
-        },
-      });
-
-      socket.on("connect", () => {
-        console.log("Connected to server");
-        socket.emit("joinRoom", currentUser._id);
-      });
-
-      socket.on("loadMessages", (loadedMessages) => {
-        setMessages(
-          loadedMessages.map((msg) => ({ ...msg, type: "Specialist" }))
+    const fetchRoomNumber = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:3000/api/v1/getRoomNumber"
         );
-      });
-
-      socket.on("receiveMessage", (message) => {
-        setMessages((prevMessages) => [
-          ...prevMessages,
-          { ...message, type: "Specialist" },
-        ]);
-      });
-
-      return () => {
-        socket.disconnect();
-      };
-    }
-  }, [messageType, currentUser]);
-
-  useEffect(() => {
-    if (chatWithAi && messageType === "Ai") {
-      if (
-        messages.length !== 0 &&
-        messages[messages.length - 1].sender === "user"
-      ) {
-        setMessages((prevMessages) => [
-          ...prevMessages,
-          { text: chatWithAi, type: "Ai", sender: "bot" },
-        ]);
+        const data = await response.json();
+        console.log(`data: ${JSON.stringify(data)}`);
+        setRoomNumber(data.roomNumber);
+      } catch (error) {
+        console.error("Failed to fetch room number", error);
       }
-    }
-  }, [chatWithAi]);
+    };
 
-  const sendToAi = async (message) => {
-    await dispatch(getReplyFromAiChat(message));
-  };
+    if (isOpen && !roomNumber) {
+      fetchRoomNumber();
+    }
+  }, [isOpen, roomNumber]);
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
@@ -82,38 +47,6 @@ const Chat = () => {
 
   const handleMessageTypeChange = (type) => {
     setMessageType(type);
-  };
-
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
-
-  const handleSendMessage = () => {
-    if (inputValue.trim() !== "") {
-      const newMessage = {
-        text: inputValue,
-        type: messageType,
-        sender: "user",
-        socketMessage: {
-          senderId: currentUser._id,
-          // recipientId,
-          message: inputValue,
-        },
-      };
-      setMessages((prevMessages) => [...prevMessages, newMessage]);
-      if (messageType === "Ai") {
-        sendToAi(inputValue);
-      } else if (socket) {
-        socket.emit("sendMessage", newMessage.socketMessage);
-      }
-      setInputValue("");
-    }
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      handleSendMessage();
-    }
   };
 
   return (
@@ -134,42 +67,17 @@ const Chat = () => {
                 <span className="font-bold text-lg">Kids Land Support</span>
               </div>
             </div>
-            <div className="bg-gray-100 p-2 rounded mb-4 h-chat flex-col content-end overflow-y-auto">
-              {messages
-                .filter((msg) => msg.type === messageType)
-                .map((msg, index) => (
-                  <div
-                    key={index}
-                    className={`mb-2 p-2 rounded ${
-                      msg.sender === "user"
-                        ? "bg-green-200 text-right self-end"
-                        : "bg-stone-300 text-left self-start"
-                    }`}
-                  >
-                    {msg.text}
-                  </div>
-                ))}
-              <div className="flex items-center border-2 border-green-500 rounded-full p-1">
-                <input
-                  type="text"
-                  placeholder="Message..."
-                  value={inputValue}
-                  onChange={handleInputChange}
-                  onKeyPress={handleKeyPress}
-                  ref={inputRef}
-                  className="flex-1 border-none outline-none px-4 py-2 rounded-full mr-3"
-                />
-                <div className="flex items-center space-x-2">
-                  <button
-                    className="bg-green-500 text-white p-2 rounded-full hover:bg-green-600 transition duration-300"
-                    onClick={handleSendMessage}
-                  >
-                    <FaArrowUp />
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="flex justify-around">
+            {messageType === "Ai" ? (
+              <ChatAi messages={messages} setMessages={setMessages} />
+            ) : (
+              <ChatSpecialist
+                currentUser={currentUser}
+                roomNumber={roomNumber}
+                messages={messages}
+                setMessages={setMessages}
+              />
+            )}
+            <div className="flex justify-around mt-4">
               <button
                 className={`text-black ${
                   messageType === "Ai" ? "text-green-500" : ""
