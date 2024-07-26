@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCurrentUser } from "../../redux/thunk/currentUserThunks";
 import io from "socket.io-client";
 
-const socket = io("http://localhost:3000");
+const socket = io("https://finaleprojectbe.onrender.com");
 
 const ChatRoom = () => {
   const dispatch = useDispatch();

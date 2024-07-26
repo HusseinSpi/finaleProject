@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import io from "socket.io-client";
 
-const socket = io("http://localhost:3000");
+const socket = io("https://finaleprojectbe.onrender.com");
 
 const Messages = () => {
   const [rooms, setRooms] = useState([]);
@@ -12,7 +12,10 @@ const Messages = () => {
     socket.emit("getRooms");
     socket.on("loadRooms", (rooms) => {
       console.log("Received rooms", rooms);
-      setRooms(rooms);
+      const sortedRooms = rooms.sort(
+        (a, b) => new Date(a.firstMessageDate) - new Date(b.firstMessageDate)
+      );
+      setRooms(sortedRooms);
     });
 
     return () => {
