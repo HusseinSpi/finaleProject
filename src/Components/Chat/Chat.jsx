@@ -3,10 +3,12 @@ import { Outlet } from "react-router-dom";
 import { IoChatboxEllipses, IoPersonSharp } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { FaRobot } from "react-icons/fa";
+import { MdHistoryToggleOff } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentUser } from "../../redux/thunk/currentUserThunks";
 import ChatAi from "./ChatAi";
 import ChatSpecialist from "./ChatSpecialist";
+import RoomList from "./RoomList";
 
 const Chat = () => {
   const dispatch = useDispatch();
@@ -69,13 +71,15 @@ const Chat = () => {
             </div>
             {messageType === "Ai" ? (
               <ChatAi messages={messages} setMessages={setMessages} />
-            ) : (
+            ) : messageType === "Specialist" ? (
               <ChatSpecialist
                 currentUser={currentUser}
                 roomNumber={roomNumber}
                 messages={messages}
                 setMessages={setMessages}
               />
+            ) : (
+              <RoomList currentUser={currentUser} />
             )}
             <div className="flex justify-around mt-4">
               <button
@@ -95,6 +99,15 @@ const Chat = () => {
               >
                 <IoPersonSharp className="m-auto text-2xl" />
                 Virtual Specialist
+              </button>
+              <button
+                className={`text-black ${
+                  messageType === "RoomList" ? "text-green-500" : ""
+                }`}
+                onClick={() => handleMessageTypeChange("RoomList")}
+              >
+                <MdHistoryToggleOff className="m-auto text-2xl" />
+                History Chat
               </button>
             </div>
           </div>

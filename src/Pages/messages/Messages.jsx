@@ -11,6 +11,7 @@ const Messages = () => {
   useEffect(() => {
     socket.emit("getRooms");
     socket.on("loadRooms", (rooms) => {
+      console.log("Received rooms", rooms);
       setRooms(rooms);
     });
 
