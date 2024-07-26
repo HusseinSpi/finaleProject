@@ -14,6 +14,7 @@ const ChatRoom = () => {
   const { roomNumber } = useParams();
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
+  const [isRoomClosed, setIsRoomClosed] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,7 +36,13 @@ const ChatRoom = () => {
 
     socket.on("roomEnded", (endedRoom) => {
       if (endedRoom === roomNumber) {
-        navigate("/");
+        setIsRoomClosed(true);
+      }
+    });
+
+    socket.on("roomClosed", (closedRoom) => {
+      if (closedRoom === roomNumber) {
+        setIsRoomClosed(true);
       }
     });
 
@@ -43,11 +50,12 @@ const ChatRoom = () => {
       socket.off("loadMessages");
       socket.off("receiveMessage");
       socket.off("roomEnded");
+      socket.off("roomClosed");
     };
   }, [currentUser, roomNumber, navigate]);
 
   const sendMessage = () => {
-    if (newMessage.trim() === "") return;
+    if (newMessage.trim() === "" || isRoomClosed) return;
 
     socket.emit("sendMessage", {
       senderId: currentUser._id,
@@ -55,6 +63,12 @@ const ChatRoom = () => {
       message: newMessage,
     });
     setNewMessage("");
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
   };
 
   const endRoom = () => {
@@ -68,9 +82,16 @@ const ChatRoom = () => {
         <h2 className="text-xl font-bold">Room {roomNumber}</h2>
       </div>
       <div className="flex-1 p-4 overflow-y-auto bg-gray-100">
-        <ul className="space-y-2">
+        <ul className="space-y-2 flex flex-col">
           {messages.map((message) => (
-            <li key={message._id} className="p-2 bg-white rounded shadow">
+            <li
+              key={message._id}
+              className={`mb-2 p-2 inline-block rounded-xl break-words ${
+                message.senderId === currentUser._id
+                  ? "bg-green-200 self-end text-right"
+                  : "bg-stone-300 self-start text-left"
+              }`}
+            >
               {message.message}
             </li>
           ))}
@@ -82,11 +103,15 @@ const ChatRoom = () => {
             type="text"
             value={newMessage}
             onChange={(e) => setNewMessage(e.target.value)}
+            onKeyDown={handleKeyDown}
             className="flex-1 p-2 border rounded"
+            placeholder="Type your message..."
+            disabled={isRoomClosed}
           />
           <button
             onClick={sendMessage}
             className="bg-blue-600 text-white p-2 rounded"
+            disabled={isRoomClosed}
           >
             Send
           </button>
@@ -97,6 +122,11 @@ const ChatRoom = () => {
             End Room
           </button>
         </div>
+        {isRoomClosed && (
+          <p className="text-red-500 mt-2">
+            This room has been closed. No new messages can be sent.
+          </p>
+        )}
       </div>
     </div>
   );

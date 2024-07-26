@@ -71,38 +71,38 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "admin",
-        element: (
-          <Sidebar>
-            <AdminPage />
-          </Sidebar>
-        ),
-      },
-      {
-        path: "messages",
-        element: (
-          <Sidebar>
-            <Messages />
-          </Sidebar>
-        ),
-      },
-      {
-        path: "chat/:roomNumber",
-        element: <ChatRoom />,
-      },
-      {
-        path: "reviews",
-        element: (
-          <Sidebar>
-            <Reviews />
-          </Sidebar>
-        ),
-      },
-      {
         path: "tetris",
         element: <Tetris />,
       },
     ],
+  },
+  {
+    path: "admin",
+    element: (
+      <Sidebar>
+        <AdminPage />
+      </Sidebar>
+    ),
+  },
+  {
+    path: "messages",
+    element: (
+      <Sidebar>
+        <Messages />
+      </Sidebar>
+    ),
+  },
+  {
+    path: "chat/:roomNumber",
+    element: <ChatRoom />,
+  },
+  {
+    path: "reviews",
+    element: (
+      <Sidebar>
+        <Reviews />
+      </Sidebar>
+    ),
   },
   {
     path: "*",

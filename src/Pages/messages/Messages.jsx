@@ -24,19 +24,27 @@ const Messages = () => {
   };
 
   return (
-    <div className="flex flex-col items-center h-screen p-4 bg-gray-100">
-      <h1 className="text-2xl font-bold mb-4">Open Rooms</h1>
-      <ul className="w-full max-w-md bg-white rounded shadow">
-        {rooms.map((room) => (
-          <li
-            key={room}
-            onClick={() => joinRoom(room)}
-            className="p-4 border-b cursor-pointer hover:bg-gray-200"
-          >
-            Room {room}
-          </li>
-        ))}
-      </ul>
+    <div className="flex flex-col items-center h-screen p-4 text-white">
+      <h1 className="text-4xl font-bold mb-8">Open Rooms</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl">
+        {rooms.length > 0 ? (
+          rooms.map((room) => (
+            <div
+              key={room._id}
+              onClick={() => joinRoom(room._id)}
+              className="p-6 bg-white text-black rounded-lg shadow-lg cursor-pointer transform transition-transform hover:scale-105 hover:bg-indigo-100"
+            >
+              <h2 className="text-2xl font-semibold">Room {room._id}</h2>
+              <p className="mt-2 text-gray-800">Subject: {room.firstMessage}</p>
+              <p className="mt-2 text-gray-600">
+                Date: {new Date(room.firstMessageDate).toLocaleString()}
+              </p>
+            </div>
+          ))
+        ) : (
+          <p>No open rooms available.</p>
+        )}
+      </div>
     </div>
   );
 };
