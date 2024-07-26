@@ -4,13 +4,27 @@ import { FaArrowUp } from "react-icons/fa";
 
 let socket;
 
-const ChatSpecialist = ({ currentUser, roomNumber, messages, setMessages }) => {
+const ChatSpecialist = ({ currentUser, messages, setMessages }) => {
   const [inputValue, setInputValue] = useState("");
-  const [isRoomClosed, setIsRoomClosed] = useState(false);
+  const [isRoomClosed, setIsRoomClosed] = useState(true);
+  const [roomNumber, setRoomNumber] = useState(null);
   const userId = currentUser._id;
 
+  const fetchRoomNumber = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:3000/api/v1/getRoomNumber"
+      );
+      const data = await response.json();
+      console.log(`data: ${JSON.stringify(data)}`);
+      setRoomNumber(data.roomNumber);
+    } catch (error) {
+      console.error("Failed to fetch room number", error);
+    }
+  };
+
   useEffect(() => {
-    if (currentUser) {
+    if (currentUser && roomNumber) {
       socket = io("http://localhost:3000", {
         withCredentials: true,
         extraHeaders: {
@@ -69,7 +83,7 @@ const ChatSpecialist = ({ currentUser, roomNumber, messages, setMessages }) => {
         socket.disconnect();
       };
     }
-  }, [currentUser, roomNumber]);
+  }, [roomNumber]);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -99,26 +113,42 @@ const ChatSpecialist = ({ currentUser, roomNumber, messages, setMessages }) => {
     }
   };
 
+  const startNewChat = () => {
+    setMessages([]);
+    setIsRoomClosed(false);
+    fetchRoomNumber();
+  };
+
   return (
-    <div>
-      <div className="bg-gray-100 p-2 rounded mb-4 h-chat flex flex-col overflow-y-auto">
-        {messages.map((msg, index) => (
-          <div
-            key={index}
-            className={`mb-2 p-2 rounded-xl break-words ${
-              msg.senderId === userId
-                ? "bg-green-200 self-end text-right"
-                : msg.type === "System"
-                ? "bg-red-400 self-center text-center"
-                : "bg-stone-300 self-start text-left"
-            }`}
-            style={{ maxWidth: "70%" }}
+    <div className="relative">
+      <div className="bg-gray-100 p-2 rounded mb-4 h-chat flex flex-col overflow-y-auto relative">
+        {messages
+          .filter((msg) => msg.message && msg.message.trim() !== "")
+          .map((msg, index) => (
+            <div
+              key={index}
+              className={`mb-2 p-2 rounded-xl break-words ${
+                msg.senderId === userId
+                  ? "bg-green-200 self-end text-right"
+                  : msg.type === "System"
+                  ? "bg-red-400 self-center text-center"
+                  : "bg-stone-300 self-start text-left"
+              }`}
+              style={{ maxWidth: "70%" }}
+            >
+              {msg.message}
+            </div>
+          ))}
+        {isRoomClosed && (
+          <button
+            onClick={startNewChat}
+            className="bg-green-500 text-white p-2 rounded-full hover:bg-green-600 transition duration-300 absolute bottom-5 left-1/2 transform -translate-x-1/2"
           >
-            {msg.message}
-          </div>
-        ))}
+            New Chat
+          </button>
+        )}
       </div>
-      {!isRoomClosed ? (
+      {!isRoomClosed && (
         <div className="flex items-center border-2 border-green-500 rounded-full p-1">
           <input
             type="text"
@@ -137,8 +167,6 @@ const ChatSpecialist = ({ currentUser, roomNumber, messages, setMessages }) => {
             <FaArrowUp />
           </button>
         </div>
-      ) : (
-        <button>New Chat</button>
       )}
     </div>
   );

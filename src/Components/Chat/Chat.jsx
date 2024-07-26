@@ -18,30 +18,10 @@ const Chat = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messageType, setMessageType] = useState("Ai");
   const [messages, setMessages] = useState([]);
-  const [roomNumber, setRoomNumber] = useState(null);
 
   useEffect(() => {
     dispatch(getCurrentUser());
   }, [dispatch]);
-
-  useEffect(() => {
-    const fetchRoomNumber = async () => {
-      try {
-        const response = await fetch(
-          "http://localhost:3000/api/v1/getRoomNumber"
-        );
-        const data = await response.json();
-        console.log(`data: ${JSON.stringify(data)}`);
-        setRoomNumber(data.roomNumber);
-      } catch (error) {
-        console.error("Failed to fetch room number", error);
-      }
-    };
-
-    if (isOpen && !roomNumber) {
-      fetchRoomNumber();
-    }
-  }, [isOpen, roomNumber]);
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
@@ -74,7 +54,6 @@ const Chat = () => {
             ) : messageType === "Specialist" ? (
               <ChatSpecialist
                 currentUser={currentUser}
-                roomNumber={roomNumber}
                 messages={messages}
                 setMessages={setMessages}
               />
