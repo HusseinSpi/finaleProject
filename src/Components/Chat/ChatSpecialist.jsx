@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { io } from "socket.io-client";
-import { FaArrowUp } from "react-icons/fa";
-
-let socket;
+import RoomList from "./RoomList";
+import DisplayMessages from "./DisplayMessages";
+import InputMessage from "./InputMessage";
 
 const ChatSpecialist = ({ currentUser }) => {
   const [inputValue, setInputValue] = useState("");
@@ -11,6 +11,8 @@ const ChatSpecialist = ({ currentUser }) => {
   const [rooms, setRooms] = useState([]);
   const [activeRoom, setActiveRoom] = useState(null);
   const [messages, setMessages] = useState([]);
+  const [isFirstMessageSent, setIsFirstMessageSent] = useState(false);
+  const socketRef = useRef(null);
   const userId = currentUser?._id;
 
   const fetchRoomNumber = async () => {
@@ -29,12 +31,14 @@ const ChatSpecialist = ({ currentUser }) => {
   useEffect(() => {
     if (!currentUser) return;
 
-    socket = io("https://finaleprojectbe.onrender.com", {
+    socketRef.current = io("https://finaleprojectbe.onrender.com", {
       withCredentials: true,
       extraHeaders: {
         "my-custom-header": "abcd",
       },
     });
+
+    const socket = socketRef.current;
 
     socket.on("connect", () => {
       console.log("Connected to server");
@@ -49,6 +53,9 @@ const ChatSpecialist = ({ currentUser }) => {
       setMessages(
         loadedMessages.map((msg) => ({ ...msg, type: "Specialist" }))
       );
+      if (loadedMessages.length > 0) {
+        setIsFirstMessageSent(true);
+      }
     });
 
     socket.on("receiveMessage", (message) => {
@@ -93,35 +100,26 @@ const ChatSpecialist = ({ currentUser }) => {
     setActiveRoom(room._id);
     setMessages([]);
     setIsRoomClosed(room.isClosed);
-    socket.emit("joinRoom", userId, room._id);
+    socketRef.current.emit("joinRoom", userId, room._id);
   };
 
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
-
-  const handleSendMessage = () => {
-    if (inputValue.trim() === "" || isRoomClosed) return;
+  const handleSendMessage = (message) => {
+    if (message.trim() === "" || isRoomClosed) return;
 
     const newMessage = {
-      text: inputValue,
+      text: message,
       type: "Specialist",
       sender: "user",
       socketMessage: {
         senderId: userId,
-        message: inputValue,
+        message: message,
         roomNumber: activeRoom,
       },
     };
     setMessages((prevMessages) => [...prevMessages, newMessage]);
-    socket.emit("sendMessage", newMessage.socketMessage);
+    socketRef.current.emit("sendMessage", newMessage.socketMessage);
     setInputValue("");
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      handleSendMessage();
-    }
+    setIsFirstMessageSent(true);
   };
 
   const startNewChat = async () => {
@@ -129,89 +127,42 @@ const ChatSpecialist = ({ currentUser }) => {
     setMessages([]);
     setIsRoomClosed(false);
     setActiveRoom(newRoomNumber);
+    setIsFirstMessageSent(false);
   };
 
   useEffect(() => {
     if (activeRoom) {
-      socket.emit("joinRoom", userId, activeRoom);
+      socketRef.current.emit("joinRoom", userId, activeRoom);
     }
   }, [activeRoom, userId]);
 
   return (
     <div className="bg-gray-100 p-2 rounded mb-4 h-chat flex flex-col overflow-y-auto">
       {!activeRoom ? (
-        <div className="overflow-y-auto h-full">
-          <ul>
-            {rooms.map((room) => (
-              <li
-                key={room._id}
-                className={`p-2 mb-2 rounded cursor-pointer flex items-center ${
-                  room._id === activeRoom
-                    ? "bg-green-500 text-white"
-                    : "bg-white"
-                }`}
-                onClick={() => handleRoomClick(room)}
-              >
-                <div className="flex-grow">
-                  <p className="font-semibold">{room.firstMessage}</p>
-                  <p className="text-sm text-gray-600">
-                    {new Date(room.firstMessageDate).toLocaleDateString()}
-                  </p>
-                </div>
-                {room.isClosed && (
-                  <span className="text-red-500 ml-auto"> (Closed)</span>
-                )}
-              </li>
-            ))}
-          </ul>
-          <button
-            onClick={startNewChat}
-            className="bg-green-500 text-white p-2 rounded-full hover:bg-green-600 transition duration-300 absolute bottom-24 left-1/2 transform -translate-x-1/2"
-          >
-            New Chat
-          </button>
-        </div>
+        <RoomList
+          rooms={rooms}
+          activeRoom={activeRoom}
+          handleRoomClick={handleRoomClick}
+          startNewChat={startNewChat}
+        />
       ) : (
-        <div className="bg-gray-100 p-2 rounded mb-4 h-chat flex flex-col overflow-y-auto relative">
-          {messages
-            .filter((msg) => msg.message && msg.message.trim() !== "")
-            .map((msg, index) => (
-              <div
-                key={index}
-                className={`mb-2 p-2 rounded-xl break-words ${
-                  msg.senderId === userId
-                    ? "bg-green-200 self-end text-right"
-                    : msg.type === "System"
-                    ? "bg-red-400 self-center text-center"
-                    : "bg-stone-300 self-start text-left"
-                }`}
-                style={{ maxWidth: "70%" }}
-              >
-                {msg.message}
-              </div>
-            ))}
-        </div>
+        <DisplayMessages
+          messages={messages}
+          userId={userId}
+          isFirstMessageSent={isFirstMessageSent}
+          isRoomClosed={isRoomClosed}
+          handleSendMessage={handleSendMessage}
+        />
       )}
-      {!isRoomClosed && activeRoom && (
-        <div className="flex items-center border-2 border-green-500 rounded-full p-1">
-          <input
-            type="text"
-            placeholder="Message..."
-            value={inputValue}
-            onChange={handleInputChange}
-            onKeyPress={handleKeyPress}
-            className="flex-1 border-none outline-none px-4 py-2 rounded-full mr-3"
-            disabled={isRoomClosed}
+      {!isRoomClosed &&
+        activeRoom &&
+        isFirstMessageSent && ( // add activeRoom === roomNumber
+          <InputMessage
+            inputValue={inputValue}
+            setInputValue={setInputValue}
+            handleSendMessage={handleSendMessage}
           />
-          <button
-            className="bg-green-500 text-white p-2 rounded-full hover:bg-green-600 transition duration-300"
-            onClick={handleSendMessage}
-            disabled={isRoomClosed}
-          >
-            <FaArrowUp />
-          </button>
-        </div>
-      )}
+        )}
     </div>
   );
 };
