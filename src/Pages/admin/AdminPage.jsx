@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsersData } from "../../redux/thunk/userThunks";
 import { useTranslation } from "react-i18next";
-import "../../i18n";
 
 const AdminPage = () => {
   const { t, i18n } = useTranslation();
@@ -21,7 +20,7 @@ const AdminPage = () => {
         { id: 1, name: t("Users"), value: users.data.users.length.toString() },
       ]);
     }
-  }, [users, i18n]);
+  }, [users, t]);
 
   return (
     <div>

@@ -3,8 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { signUpUser } from "../../redux/thunk/userThunks";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
+import { useTranslation } from "react-i18next";
 
 const SignUpForm = () => {
+  const { t, i18n } = useTranslation();
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -45,41 +48,77 @@ const SignUpForm = () => {
       className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
     >
       <p className="text-center text-lg font-medium text-thirdColor">
-        Create your account
+        {t("SignUpTitle")}
       </p>
 
       <div className="flex space-x-4">
-        <div className="w-1/2">
-          <label htmlFor="firstName" className="sr-only">
-            First Name
-          </label>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
-            className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-            placeholder="Enter first name"
-            required
-          />
-        </div>
-
-        <div className="w-1/2">
-          <label htmlFor="lastName" className="sr-only">
-            Last Name
-          </label>
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-            className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-            placeholder="Enter last name"
-            required
-          />
-        </div>
+        {i18n.language === "en" ? (
+          <>
+            <div className="w-1/2">
+              <label htmlFor="firstName" className="sr-only">
+                First Name
+              </label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                placeholder={t("FirstName")}
+                required
+              />
+            </div>
+            <div className="w-1/2">
+              <label htmlFor="lastName" className="sr-only">
+                Last Name
+              </label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                placeholder={t("LastName")}
+                required
+              />
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="w-1/2">
+              <label htmlFor="lastName" className="sr-only">
+                Last Name
+              </label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                placeholder={t("LastName")}
+                required
+              />
+            </div>
+            <div className="w-1/2">
+              <label htmlFor="firstName" className="sr-only">
+                First Name
+              </label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                placeholder={t("FirstName")}
+                required
+              />
+            </div>
+          </>
+        )}
       </div>
 
       <div>
@@ -95,7 +134,7 @@ const SignUpForm = () => {
             value={formData.email}
             onChange={handleChange}
             className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-            placeholder="Enter email"
+            placeholder={t("Email")}
             required
           />
 
@@ -118,7 +157,7 @@ const SignUpForm = () => {
             value={formData.password}
             onChange={handleChange}
             className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-            placeholder="Enter password"
+            placeholder={t("Password")}
             required
           />
 
@@ -144,7 +183,7 @@ const SignUpForm = () => {
             value={formData.passwordConfirm}
             onChange={handleChange}
             className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-            placeholder="Confirm password"
+            placeholder={t("ConfirmPassword")}
             required
           />
 
@@ -161,14 +200,14 @@ const SignUpForm = () => {
         type="submit"
         className="block w-full rounded-lg bg-thirdColorO px-5 py-3 text-sm font-medium text-white bg-black"
       >
-        Sign up
+        {t("SignUp")}
       </button>
 
       <p className="text-center text-sm text-gray-500 ">
-        Already have an account?
+        {t("AlreadyHaveAnAccount")}
         <a className="underline" href="/sign-in">
           {" "}
-          Sign in
+          {t("SignIn")}
         </a>
       </p>
     </form>

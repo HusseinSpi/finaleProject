@@ -1,10 +1,16 @@
 import { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../../../public/logo6.png";
 import bubble from "../../../public/bubble.png";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleLanguageChange = (event) => {
+    i18n.changeLanguage(event.target.value);
+  };
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -12,11 +18,8 @@ const Navbar = () => {
 
   return (
     <nav className="relative p-2 bg-cover bg-[#32BAF1]">
-      <div className="flex justify-between mt-5 items-center md:hidden  ">
-        <Link className="w-56 h-24" to="/">
-          <img src={logo} alt="Logo" />
-        </Link>
-
+      <div className="flex justify-between mt-5 items-center md:hidden">
+        <img src={logo} alt="Logo" />
         <button onClick={toggleMenu} className="text-black focus:outline-none">
           <svg
             className="w-6 h-6"
@@ -39,54 +42,12 @@ const Navbar = () => {
           isOpen ? "block" : "hidden"
         }`}
       >
-        <ul className="flex flex-col md:flex-row md:space-x-4 w-full md:justify-center items-center ">
+        <ul className="flex flex-col md:flex-row md:space-x-4 w-full md:justify-center items-center">
           <li>
             <NavLink
               to="games"
               className={({ isActive }) =>
-                `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold  bg-cover  transition-transform duration-300 ease-in-out hover:scale-105  ${
-                  isActive
-                    ? " scale-110 text-primaryColor"
-                    : "text-primaryColor animate-float"
-                } pt-5`
-              }
-              style={{
-                backgroundImage: `url(${bubble})`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                padding: "2rem",
-              }}
-            >
-              Games
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="songs"
-              className={({ isActive }) =>
-                `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover  transition-transform duration-300 ease-in-out hover:scale-105  ${
-                  isActive
-                    ? " scale-110 text-primaryColor"
-                    : "text-primaryColor animate-float"
-                } pt-5`
-              }
-              style={{
-                backgroundImage: `url(${bubble})`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                padding: "2rem",
-              }}
-            >
-              Songs
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="stories"
-              className={({ isActive }) =>
-                `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover  transition-transform duration-300 ease-in-out hover:scale-105   ${
+                `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover transition-transform duration-300 ease-in-out hover:scale-105 ${
                   isActive
                     ? "scale-110 text-primaryColor"
                     : "text-primaryColor animate-float"
@@ -100,7 +61,49 @@ const Navbar = () => {
                 padding: "2rem",
               }}
             >
-              Stories
+              {t("Games")}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="songs"
+              className={({ isActive }) =>
+                `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover transition-transform duration-300 ease-in-out hover:scale-105 ${
+                  isActive
+                    ? "scale-110 text-primaryColor"
+                    : "text-primaryColor animate-float"
+                } pt-5`
+              }
+              style={{
+                backgroundImage: `url(${bubble})`,
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                padding: "2rem",
+              }}
+            >
+              {t("Songs")}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="stories"
+              className={({ isActive }) =>
+                `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover transition-transform duration-300 ease-in-out hover:scale-105 ${
+                  isActive
+                    ? "scale-110 text-primaryColor"
+                    : "text-primaryColor animate-float"
+                } pt-5`
+              }
+              style={{
+                backgroundImage: `url(${bubble})`,
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                padding: "2rem",
+              }}
+            >
+              {t("Stories")}
             </NavLink>
           </li>
           <li className="hidden md:flex justify-center">
@@ -110,7 +113,7 @@ const Navbar = () => {
             <NavLink
               to="sign-in"
               className={({ isActive }) =>
-                `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover  transition-transform duration-300 ease-in-out hover:scale-105  ${
+                `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover transition-transform duration-300 ease-in-out hover:scale-105 ${
                   isActive
                     ? "scale-110 text-primaryColor"
                     : "text-primaryColor animate-float"
@@ -124,14 +127,14 @@ const Navbar = () => {
                 padding: "2rem",
               }}
             >
-              Sign In
+              {t("SignIn")}
             </NavLink>
           </li>
           <li>
             <NavLink
               to="sign-up"
               className={({ isActive }) =>
-                `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover  transition-transform duration-300 ease-in-out hover:scale-105   ${
+                `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover transition-transform duration-300 ease-in-out hover:scale-105 ${
                   isActive
                     ? "scale-110 text-primaryColor"
                     : "text-primaryColor animate-float"
@@ -145,17 +148,17 @@ const Navbar = () => {
                 padding: "2rem",
               }}
             >
-              Sign Up
+              {t("SignUp")}
             </NavLink>
           </li>
           <li>
             <NavLink
               to="parents"
               className={({ isActive }) =>
-                `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover  transition-transform duration-300 ease-in-out hover:scale-105  ${
+                `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover transition-transform duration-300 ease-in-out hover:scale-105 ${
                   isActive
                     ? "scale-110 text-primaryColor"
-                    : " animate-float text-primaryColor"
+                    : "animate-float text-primaryColor"
                 } pt-5`
               }
               style={{
@@ -166,10 +169,20 @@ const Navbar = () => {
                 padding: "2rem",
               }}
             >
-              Parents
+              {t("Parents")}
             </NavLink>
           </li>
         </ul>
+        <div className="relative top-12 right-4 md:static md:ml-auto md:mr-4 mt-4 md:mt-0">
+          <select
+            onChange={handleLanguageChange}
+            className=" p-2 text-lg font-semibold bg-transparent rounded-md "
+          >
+            <option value="en">En</option>
+            <option value="ar">Ar</option>
+            <option value="he">He</option>
+          </select>
+        </div>
       </div>
     </nav>
   );
