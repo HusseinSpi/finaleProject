@@ -3,10 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getAllMusic } from "../../redux/thunk/musicsThunk";
 
-
 const Songs = () => {
   const dispatch = useDispatch();
-  const musics = useSelector((state) => state.musics.data);
+  const musics = useSelector((state) => state.musics.data[0].He);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
