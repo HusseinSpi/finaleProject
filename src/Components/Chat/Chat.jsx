@@ -34,7 +34,7 @@ const Chat = () => {
       <div className="fixed bottom-4 right-4 p-4 w-chat z-10">
         {!isOpen && (
           <div
-            className="fixed bottom-4 right-4 bg-green-500 text-white p-3 cursor-pointer rounded-full text-center hover:bg-green-600 transition duration-300"
+            className="fixed bottom-4 right-4 bg-blue-800 text-white p-3 cursor-pointer rounded-full text-center hover:bg-blue-900 transition duration-300"
             onClick={toggleChat}
           >
             <IoChatboxEllipses className="text-3xl" />
@@ -59,7 +59,7 @@ const Chat = () => {
             <div className="flex justify-around mt-4">
               <button
                 className={`text-black ${
-                  messageType === "Ai" ? "text-green-500" : ""
+                  messageType === "Ai" ? "text-blue-800" : ""
                 }`}
                 onClick={() => handleMessageTypeChange("Ai")}
               >
@@ -68,7 +68,7 @@ const Chat = () => {
               </button>
               <button
                 className={`text-black ${
-                  messageType === "Specialist" ? "text-green-500" : ""
+                  messageType === "Specialist" ? "text-blue-800" : ""
                 }`}
                 onClick={() => handleMessageTypeChange("Specialist")}
               >
@@ -81,7 +81,7 @@ const Chat = () => {
       </div>
       {isOpen && (
         <div
-          className="fixed bottom-4 right-4 bg-green-500 text-white p-3 cursor-pointer rounded-full text-center hover:bg-green-600 transition duration-300 z-10"
+          className="fixed bottom-4 right-4 bg-blue-800 text-white p-3 cursor-pointer rounded-full text-center hover:bg-blue-900 transition duration-300 z-10"
           onClick={toggleChat}
         >
           <IoMdClose className="text-3xl" />

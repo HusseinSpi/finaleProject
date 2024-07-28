@@ -59,7 +59,7 @@ const ChatAi = ({ messages, setMessages }) => {
               key={index}
               className={`mb-2 p-2 rounded-xl break-words ${
                 msg.sender === "user"
-                  ? "bg-green-200 text-right self-end"
+                  ? "bg-blue-200 text-right self-end"
                   : "bg-stone-300 text-left self-start"
               }`}
             >
@@ -67,7 +67,7 @@ const ChatAi = ({ messages, setMessages }) => {
             </div>
           ))}
       </div>
-      <div className="flex items-center border-2 border-green-500 rounded-full p-1">
+      <div className="flex items-center border-2 border-blue-800 rounded-full p-1">
         <input
           type="text"
           placeholder="Message..."
@@ -77,7 +77,7 @@ const ChatAi = ({ messages, setMessages }) => {
           className="flex-1 border-none outline-none px-4 py-2 rounded-full mr-3"
         />
         <button
-          className="bg-green-500 text-white p-2 rounded-full hover:bg-green-600 transition duration-300"
+          className="bg-blue-800 text-white p-2 rounded-full hover:bg-blue-900 transition duration-300"
           onClick={handleSendMessage}
         >
           <FaArrowUp />

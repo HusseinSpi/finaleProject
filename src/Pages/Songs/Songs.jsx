@@ -5,7 +5,7 @@ import { getAllMusic } from "../../redux/thunk/musicsThunk";
 
 const Songs = () => {
   const dispatch = useDispatch();
-  const musics = useSelector((state) => state.musics.data[0].He);
+  const musics = useSelector((state) => state.musics.data[0].En);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

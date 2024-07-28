@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import NotFound from "./Pages/NotFound/NotFound";
 // import Home from "./Pages/Home/Home";
-import Home from "./Pages/Home/Home"
+import Home from "./Pages/Home/Home";
 import Songs from "./Pages/Songs/Songs";
 import Stories from "./Pages/Stories/Stoeies";
 
@@ -24,22 +24,19 @@ import Sidebar from "./Components/sidebar/Sidebar";
 import Messages from "./Pages/messages/Messages";
 import Reviews from "./Pages/reviews/Reviews";
 import Tetris from "./Components/Tetris/Tetris";
-<<<<<<< HEAD
 import Navbar from "./Components/Navbar/Navbar";
-=======
 import ChatRoom from "./Pages/messages/ChatRoom";
 import MatchingGame from "./Pages/Games/MatchingGame";
->>>>>>> 0bb617719fccbf6fe6559e5c0d1e6c87e69c861f
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-    <>
-      <Navbar />
-      <Chat />
-    </>
-  ),
+      <>
+        <Navbar />
+        <Chat />
+      </>
+    ),
     children: [
       {
         index: true,

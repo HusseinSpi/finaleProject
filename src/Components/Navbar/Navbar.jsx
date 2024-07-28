@@ -47,8 +47,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold  bg-cover  transition-transform duration-300 ease-in-out hover:scale-105  ${
                   isActive
-                    ? " scale-110 text-primaryColor"
-                    : "text-primaryColor animate-float"
+                    ? " scale-110 text-blue-900"
+                    : "text-blue-900 animate-float"
                 } pt-5`
               }
               style={{
@@ -68,8 +68,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover  transition-transform duration-300 ease-in-out hover:scale-105  ${
                   isActive
-                    ? " scale-110 text-primaryColor"
-                    : "text-primaryColor animate-float"
+                    ? " scale-110 text-blue-900"
+                    : "text-blue-900 animate-float"
                 } pt-5`
               }
               style={{
@@ -89,8 +89,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover  transition-transform duration-300 ease-in-out hover:scale-105   ${
                   isActive
-                    ? "scale-110 text-primaryColor"
-                    : "text-primaryColor animate-float"
+                    ? "scale-110 text-blue-900"
+                    : "text-blue-900 animate-float"
                 } pt-5`
               }
               style={{
@@ -113,8 +113,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover  transition-transform duration-300 ease-in-out hover:scale-105  ${
                   isActive
-                    ? "scale-110 text-primaryColor"
-                    : "text-primaryColor animate-float"
+                    ? "scale-110 text-blue-900"
+                    : "text-blue-900 animate-float"
                 } pt-5`
               }
               style={{
@@ -134,8 +134,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover  transition-transform duration-300 ease-in-out hover:scale-105   ${
                   isActive
-                    ? "scale-110 text-primaryColor"
-                    : "text-primaryColor animate-float"
+                    ? "scale-110 text-blue-900"
+                    : "text-blue-900 animate-float"
                 } pt-5`
               }
               style={{
@@ -155,8 +155,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover  transition-transform duration-300 ease-in-out hover:scale-105  ${
                   isActive
-                    ? "scale-110 text-primaryColor"
-                    : " animate-float text-primaryColor"
+                    ? "scale-110 text-blue-900"
+                    : " animate-float text-blue-900"
                 } pt-5`
               }
               style={{
