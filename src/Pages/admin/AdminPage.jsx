@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsersData } from "../../redux/thunk/userThunks";
+import { useTranslation } from "react-i18next";
+import "../../i18n";
 
 const AdminPage = () => {
+  const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const [stats, setStats] = useState([]);
 
@@ -15,14 +18,16 @@ const AdminPage = () => {
   useEffect(() => {
     if (users?.data?.users) {
       setStats([
-        { id: 1, name: "Users", value: users.data.users.length.toString() },
+        { id: 1, name: t("Users"), value: users.data.users.length.toString() },
       ]);
     }
-  }, [users]);
+  }, [users, i18n]);
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-center mb-8">Admin Page</h1>
+      <h1 className="text-3xl font-bold text-center mb-8">
+        {t("AdminPageTitle")}
+      </h1>
 
       {stats.length > 0 && (
         <div className="flex justify-around mb-8">
@@ -38,7 +43,7 @@ const AdminPage = () => {
       )}
 
       <div className="bg-white shadow-lg rounded-lg p-6 mb-8">
-        <h2 className="text-xl font-semibold mb-4">Users</h2>
+        <h2 className="text-xl font-semibold mb-4">{t(`Users`)}</h2>
         <ul>
           {users?.data?.users.map((user) => (
             <li key={user.id} className="mb-2">
@@ -49,7 +54,7 @@ const AdminPage = () => {
       </div>
 
       <div className="bg-white shadow-lg rounded-lg p-6 mb-8">
-        <h2 className="text-xl font-semibold mb-4">Message Requests</h2>
+        <h2 className="text-xl font-semibold mb-4">{t("MessageRequests")}</h2>
         <ul>
           {/* Replace with actual message requests data */}
           <li className="mb-2">
@@ -62,9 +67,8 @@ const AdminPage = () => {
       </div>
 
       <div className="bg-white shadow-lg rounded-lg p-6">
-        <h2 className="text-xl font-semibold mb-4">Reviews</h2>
+        <h2 className="text-xl font-semibold mb-4">{t("Reviews")}</h2>
         <ul>
-          {/* Replace with actual reviews data */}
           <li className="mb-2">
             <p>Review 1</p>
           </li>

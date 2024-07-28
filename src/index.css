@@ -2,8 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap'); */
+
 .h-chat {
-  height: 470px;
+  height: 450px;
 }
 
 .w-chat {
@@ -49,21 +51,21 @@
 }
 
 .circle {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  overflow: hidden;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .circle-img {
-  width: 100%;
-  height: 100%;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
 }
+<<<<<<< HEAD
 
 .circle:nth-child(1) {
   top: 10%;
@@ -84,3 +86,46 @@
   top: 80%;
   left: 50%;
 }
+
+@keyframes spin-around-circle {
+  0% {
+    transform: rotate(0deg) translateX(95px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(95px) rotate(-360deg);
+  }
+}
+
+.animate-spin-around-circle {
+  animation: spin-around-circle 6s linear infinite;
+}
+
+body {
+    font-family: "Amatic SC", sans-serif;
+    letter-spacing: 1px;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+    animation-timing-function: ease-in-out;
+  }
+  50% {
+    transform: translateY(-6%); 
+    animation-timing-function: ease-in-out;
+  }
+}
+
+.animate-float {
+  animation: float 2s infinite; 
+}
+
+.logo {
+  width: 15rem;
+  height: 5rem;
+}
+.custom-radial {
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(249,253,255,1) 0%, rgba(50,186,241,1) 100%);
+}
+=======
+>>>>>>> 0bb617719fccbf6fe6559e5c0d1e6c87e69c861f
