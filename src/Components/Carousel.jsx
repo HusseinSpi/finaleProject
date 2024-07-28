@@ -1,4 +1,4 @@
-import Song from "../Components/SongYT";
+import SongYTWrapper from "./SongYTWrapper";
 import { useState } from "react";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
@@ -19,7 +19,7 @@ const Carousel = ({ songs }) => {
   if (totalSongs === 0) return null;
 
   return (
-    <div className="relative">
+    <div className="relative carousel-container">
       <div className="flex overflow-hidden">
         <div
           className="flex gap-16 transition-transform duration-500 ease-in-out"
@@ -27,7 +27,7 @@ const Carousel = ({ songs }) => {
         >
           {songs.map((song) => (
             <div key={song._id} className="flex-none w-full max-w-xs p-4">
-              <Song videoId={song.code} />
+              <SongYTWrapper videoId={song.code} />
               <p className="text-center mt-2">{song.name}</p>
             </div>
           ))}

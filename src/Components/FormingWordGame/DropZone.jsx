@@ -82,24 +82,20 @@ const DropZone = ({ targetWord, onCorrectWord }) => {
   startWelcomeTimer()
 
   return (
-    <div>
+    <div className="drop-zone-father-container">
       <div
         ref={drop}
         className="drop-zone"
-        style={{ backgroundColor: isOver ? 'lightgreen' : 'white' }}
+        style={{ backgroundColor: isOver ? 'lightgreen' : ' #e9f0d8' }}
       >
         {droppedLetters.join('')}
       </div>
       <button className="erase" onClick={handleEraseLastLetter}>
-        &#x2408;
+        {' '}
+        &crarr;
       </button>
       {/* {showTryAgain && <div className="popup popup-two">Try again!</div>} */}
-      {showWelcome && (
-        <div className=" popup">
-          Kindly drag letters to create a word that matches the name of the
-          animal in the picture
-        </div>
-      )}
+      {showWelcome && <div className=" popup">Drag letters to the Box</div>}
     </div>
   )
 }

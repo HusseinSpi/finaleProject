@@ -39,9 +39,14 @@ const FormingWordGame = () => {
       const sound = new Audio(
         `https://finaleprojectbe.onrender.com/sounds/${currentAnimal.audioUrl}`
       )
-      sound.play()
+
       setTimeout(() => {
-        sound.stop()
+        sound.play()
+        setTimeout(() => {
+          sound.pause()
+          sound.currentTime = 0
+        }, 4000) // Stop the sound after 4 seconds
+
         setCorrectWord(false)
         setShowPopup(false)
         setCurrentAnimalIndex((prevIndex) => (prevIndex + 1) % animals.length)
