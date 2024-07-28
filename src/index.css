@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap'); */
+
 .h-chat {
   height: 470px;
 }
@@ -83,4 +85,42 @@
 .circle:nth-child(4) {
   top: 80%;
   left: 50%;
+}
+
+@keyframes spin-around-circle {
+  0% {
+    transform: rotate(0deg) translateX(95px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(95px) rotate(-360deg);
+  }
+}
+
+.animate-spin-around-circle {
+  animation: spin-around-circle 6s linear infinite;
+}
+
+body {
+    font-family: "Amatic SC", sans-serif;
+    letter-spacing: 1px;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+    animation-timing-function: ease-in-out;
+  }
+  50% {
+    transform: translateY(-6%); 
+    animation-timing-function: ease-in-out;
+  }
+}
+
+.animate-float {
+  animation: float 2s infinite; 
+}
+
+.logo {
+  width: 15rem;
+  height: 5rem;
 }

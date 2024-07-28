@@ -24,16 +24,16 @@ const navigate = useNavigate()
 
   return (
     <div
-      className="p-4 "
+      className="p-4 w-full h-full"
       style={{
         backgroundImage: `url('https://i.pinimg.com/originals/e1/31/53/e13153cf62ba84a0df806d6d54b353b0.jpg')`,
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        width: "100%",
+        // width: "100%",
       }}
     >
       <h1 className="text-3xl font-bold text-center mt-20">{song.name}</h1>
-      <div className="flex justify-center mb-6 p-10">
+      <div className="flex justify-center mb-6 p-7">
         <Song videoId={song.code} />
       </div>
 
@@ -45,7 +45,7 @@ const navigate = useNavigate()
           {otherSongs.map((otherSong) => (
             <div
               key={otherSong.code}
-              className=" items-center cursor-pointer w-full bg-yellow-200 p-3 rounded-lg hover:transform hover:-translate-x-2 hover:-translate-y-2 hover:ease-in-out mb-20"
+              className=" items-center cursor-pointer w-full bg-yellow-200 p-2  rounded-lg hover:transform hover:-translate-x-2 hover:-translate-y-2 hover:ease-in-out mb-14"
               onClick={() => navigate(`/song/${otherSong.code}`)}
             >
               <img
