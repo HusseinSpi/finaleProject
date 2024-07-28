@@ -5,7 +5,7 @@ import { getAllMusic } from "../../redux/thunk/musicsThunk";
 
 const Songs = () => {
   const dispatch = useDispatch();
-  const musics = useSelector((state) => state.musics.data[0].He);
+  const musics = useSelector((state) => state.musics.data[0].En);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -13,6 +13,7 @@ const Songs = () => {
       setIsLoading(true);
       await dispatch(getAllMusic());
       setIsLoading(false);
+      console.log(musics);
     };
 
     if (!musics || musics.length === 0) {
