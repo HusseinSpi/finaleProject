@@ -124,3 +124,6 @@ body {
   width: 15rem;
   height: 5rem;
 }
+.custom-radial {
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(249,253,255,1) 0%, rgba(50,186,241,1) 100%);
+}

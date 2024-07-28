@@ -30,7 +30,7 @@ const Home = () => {
         />
         {/* <div className="absolute inset-0 bg-black opacity-70"></div> */}
       </div>
-      <div className="relative flex flex-col items-center justify-center h-[15rem] p-1 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 ">
+      <div className="relative flex flex-col items-center justify-center h-[15rem] p-1 custom-radial ">
         <div className="flex flex-col items-center justify-center h-full w-full bg-white ">
           <h1 className="text-blue-900 text-3xl md:text-5xl font-bold text-center items-center justify-center mb-4 flex">
             <MdOutlineBubbleChart /> Welcome to KiddoFun{" "}
