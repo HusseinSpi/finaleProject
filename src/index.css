@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap'); */
 
 .h-chat {
@@ -65,7 +61,6 @@
   height: 150px;
   object-fit: cover;
 }
-<<<<<<< HEAD
 
 .circle:nth-child(1) {
   top: 10%;
@@ -101,23 +96,24 @@
 }
 
 body {
-    font-family: "Amatic SC", sans-serif;
-    letter-spacing: 1px;
+  font-family: "Amatic SC", sans-serif;
+  letter-spacing: 1px;
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
     animation-timing-function: ease-in-out;
   }
   50% {
-    transform: translateY(-6%); 
+    transform: translateY(-6%);
     animation-timing-function: ease-in-out;
   }
 }
 
 .animate-float {
-  animation: float 2s infinite; 
+  animation: float 2s infinite;
 }
 
 .logo {
@@ -125,7 +121,10 @@ body {
   height: 5rem;
 }
 .custom-radial {
-  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(249,253,255,1) 0%, rgba(50,186,241,1) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(249, 253, 255, 1) 0%,
+    rgba(50, 186, 241, 1) 100%
+  );
 }
-=======
->>>>>>> 0bb617719fccbf6fe6559e5c0d1e6c87e69c861f
