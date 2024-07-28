@@ -27,6 +27,7 @@ import Tetris from "./Components/Tetris/Tetris";
 import Navbar from "./Components/Navbar/Navbar";
 import ChatRoom from "./Pages/messages/ChatRoom";
 import MatchingGame from "./Pages/Games/MatchingGame";
+import Draw from "./Pages/Draw/Draw";
 
 const router = createBrowserRouter([
   {
@@ -81,6 +82,10 @@ const router = createBrowserRouter([
       {
         path: "tetris",
         element: <Tetris />,
+      },
+      {
+        path: "Draw",
+        element: <Draw />,
       },
       {
         path: "MatchingGame",
