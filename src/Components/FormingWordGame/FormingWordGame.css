@@ -119,7 +119,7 @@ button.erase {
 
 .popup {
   position: fixed;
-  top: 92%;
+  top: 94%;
   left: 69.5%;
   transform: translate(-50%, -50%);
   padding: 20px;
@@ -129,6 +129,20 @@ button.erase {
   width: 50vw;
   height: 10vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.popup-correct {
+  position: fixed;
+  top: 87%;
+  left: 71.5%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: transparent;
+  font-size: 2rem;
+  z-index: 1000;
+  width: 50vw;
+  height: 10vh;
+  color: #ff7e5f;
+  font-family: 'TherenRegular';
 }
 
 .h1 {

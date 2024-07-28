@@ -42,15 +42,16 @@ const FormingWordGame = () => {
 
       setTimeout(() => {
         sound.play()
+
         setTimeout(() => {
           sound.pause()
-          sound.currentTime = 0
-        }, 4000) // Stop the sound after 4 seconds
+          sound.currentTime = 1
+        }, 3000)
 
         setCorrectWord(false)
         setShowPopup(false)
         setCurrentAnimalIndex((prevIndex) => (prevIndex + 1) % animals.length)
-      }, 3000)
+      }, 4000)
     }
   }
 
@@ -78,7 +79,7 @@ const FormingWordGame = () => {
         <button className="skip" onClick={handleSkipAnimal}>
           Skip &#10140;
         </button>
-        {showPopup && <div className="popup">You did it!</div>}
+        {showPopup && <div className="popup-correct">You did it </div>}
       </div>
     </div>
   )
