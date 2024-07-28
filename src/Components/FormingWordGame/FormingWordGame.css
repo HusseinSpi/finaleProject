@@ -42,11 +42,11 @@
   font-size: 2rem;
 }
 
-button {
+/* button {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 1rem;
-}
+} */
 
 .popup {
   position: fixed;
@@ -71,6 +71,6 @@ button {
   z-index: 1000;
 }
 
-h1 {
-  font-family: url('/public/fonts/TherenRegular/TherenRegular-vmrnE.ttf');
-}
+/* h1 {
+  font-family: url("/public/fonts/TherenRegular/TherenRegular-vmrnE.ttf");
+} */

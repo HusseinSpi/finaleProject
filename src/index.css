@@ -1,11 +1,15 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap'); */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .h-chat {
-  height: 450px;
+  height: 27rem;
 }
 
 .w-chat {
-  width: 430px;
+  width: 27rem;
 }
 
 @keyframes fall {

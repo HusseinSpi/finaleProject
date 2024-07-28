@@ -1,8 +1,8 @@
-body {
+/* body {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 .draw-body {
   background-color: aliceblue;
   display: flex;
