@@ -24,7 +24,12 @@ import Sidebar from "./Components/sidebar/Sidebar";
 import Messages from "./Pages/messages/Messages";
 import Reviews from "./Pages/reviews/Reviews";
 import Tetris from "./Components/Tetris/Tetris";
+<<<<<<< HEAD
 import Navbar from "./Components/Navbar/Navbar";
+=======
+import ChatRoom from "./Pages/messages/ChatRoom";
+import MatchingGame from "./Pages/Games/MatchingGame";
+>>>>>>> 0bb617719fccbf6fe6559e5c0d1e6c87e69c861f
 
 const router = createBrowserRouter([
   {
@@ -77,34 +82,42 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "admin",
-        element: (
-          <Sidebar>
-            <AdminPage />
-          </Sidebar>
-        ),
-      },
-      {
-        path: "messages",
-        element: (
-          <Sidebar>
-            <Messages />
-          </Sidebar>
-        ),
-      },
-      {
-        path: "reviews",
-        element: (
-          <Sidebar>
-            <Reviews />
-          </Sidebar>
-        ),
-      },
-      {
         path: "tetris",
         element: <Tetris />,
       },
+      {
+        path: "MatchingGame",
+        element: <MatchingGame />,
+      },
     ],
+  },
+  {
+    path: "admin",
+    element: (
+      <Sidebar>
+        <AdminPage />
+      </Sidebar>
+    ),
+  },
+  {
+    path: "messages",
+    element: (
+      <Sidebar>
+        <Messages />
+      </Sidebar>
+    ),
+  },
+  {
+    path: "chat/:roomNumber",
+    element: <ChatRoom />,
+  },
+  {
+    path: "reviews",
+    element: (
+      <Sidebar>
+        <Reviews />
+      </Sidebar>
+    ),
   },
   {
     path: "*",

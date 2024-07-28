@@ -5,6 +5,8 @@ import animalsGameReducer from "../features/animalsGameSlice";
 import chatWithAiReducer from "../features/chatWithAiSlice";
 import userReducer from "../features/userSlice";
 import currentUserReducer from "../features/currentUserSlice";
+import wordReducer from "../features/wordsSlice";
+import scoreReducer from "../features/scoreSlice";
 
 const store = configureStore({
   reducer: {
@@ -14,6 +16,8 @@ const store = configureStore({
     chatWithAi: chatWithAiReducer,
     user: userReducer,
     currentUser: currentUserReducer,
+    words: wordReducer,
+    score: scoreReducer,
   },
 });
 

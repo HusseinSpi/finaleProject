@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllStories } from "../../redux/thunk/storiesThunk";
+import { useTranslation } from "react-i18next";
 
 const Stories = () => {
+  const [t, i18n] = useTranslation();
+
   const dispatch = useDispatch();
   const stories = useSelector((state) => state.stories.data);
   const [currentStoryIndex, setCurrentStoryIndex] = useState(0);
@@ -43,7 +46,20 @@ const Stories = () => {
 
   if (!stories.length) return <div>Loading...</div>;
 
-  const { title, paragraphs, img } = stories[currentStoryIndex];
+  let title, paragraphs, img;
+
+  if (i18n.language === "ar") {
+    title = stories[currentStoryIndex].title_Ar;
+    paragraphs = stories[currentStoryIndex].paragraphs_Ar;
+  } else if (i18n.language === "he") {
+    title = stories[currentStoryIndex].title_He;
+    paragraphs = stories[currentStoryIndex].paragraphs_He;
+  } else {
+    title = stories[currentStoryIndex].title;
+    paragraphs = stories[currentStoryIndex].paragraphs;
+  }
+
+  img = stories[currentStoryIndex].img;
 
   return (
     <div className="bg-white text-gray-800 p-8 font-serif">
@@ -54,14 +70,14 @@ const Stories = () => {
             disabled={currentStoryIndex === 0}
             className="text-gray-500 hover:text-gray-700"
           >
-            ‹ back
+            ‹ {t("back")}
           </button>
           <button
             onClick={() => handleNavigation(1)}
             disabled={currentStoryIndex === stories.length - 1}
             className="text-gray-500 hover:text-gray-700"
           >
-            next ›
+            {t("next")} ›
           </button>
         </div>
         <h1 className="text-center text-xl font-bold mb-16">{title}</h1>

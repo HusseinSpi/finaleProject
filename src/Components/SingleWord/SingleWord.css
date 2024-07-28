@@ -1,0 +1,84 @@
+.word-container {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: black;
+  display: flex;
+  height: 15vh;
+  width: 100%;
+}
+
+.word-front {
+  background-image: url(../../img/card-front.png);
+  background-repeat: no-repeat;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  background-size: contain;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.word-language {
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 0;
+}
+
+.word-english {
+  font-size: 0.7rem;
+  font-weight: 300;
+  width: 100%;
+}
+
+.word-back {
+  background-image: url(../../img/card-back.png);
+  background-repeat: no-repeat;
+  backface-visibility: hidden;
+  background-size: contain;
+  border-radius: 5px;
+  position: absolute;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  right: 0;
+  top: 0;
+}
+
+.word-back:hover {
+  filter: brightness(0.8);
+}
+
+.word-container .word-front {
+  transition: all ease-in 0.2s;
+  transform: rotateY(90deg);
+  position: absolute;
+}
+
+.flipped .word-front {
+  transform: rotateY(0deg) scale(1);
+  transition-delay: 0.2s;
+  opacity: 1;
+}
+
+.word-container .word-back {
+  transition: 0.5s;
+}
+
+.flipped .word-back {
+  transform: rotateY(180deg);
+  transition: 0.6s;
+  opacity: 0;
+}
+
+/* Tablet Responsiveness*/
+@media screen and (min-width: 430px) and (max-width: 800px) {
+  .word-container {
+    height: 15vh;
+    width: 15vw;
+  }
+}
