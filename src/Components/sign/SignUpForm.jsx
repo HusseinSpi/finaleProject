@@ -3,16 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { signUpUser } from "../../redux/thunk/userThunks";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
-<<<<<<< HEAD
 import { useTranslation } from "react-i18next";
 
 const SignUpForm = () => {
   const { t, i18n } = useTranslation();
 
-=======
-
-const SignUpForm = () => {
->>>>>>> origin/DanielaBranch
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -53,7 +48,6 @@ const SignUpForm = () => {
       className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
     >
       <p className="text-center text-lg font-medium text-thirdColor">
-<<<<<<< HEAD
         {t("SignUpTitle")}
       </p>
 
@@ -125,43 +119,6 @@ const SignUpForm = () => {
             </div>
           </>
         )}
-=======
-        Create your account
-      </p>
-
-      <div className="flex space-x-4">
-        <div className="w-1/2">
-          <label htmlFor="firstName" className="sr-only">
-            First Name
-          </label>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
-            className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-            placeholder="Enter first name"
-            required
-          />
-        </div>
-
-        <div className="w-1/2">
-          <label htmlFor="lastName" className="sr-only">
-            Last Name
-          </label>
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-            className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-            placeholder="Enter last name"
-            required
-          />
-        </div>
->>>>>>> origin/DanielaBranch
       </div>
 
       <div>
@@ -177,11 +134,7 @@ const SignUpForm = () => {
             value={formData.email}
             onChange={handleChange}
             className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-<<<<<<< HEAD
             placeholder={t("Email")}
-=======
-            placeholder="Enter email"
->>>>>>> origin/DanielaBranch
             required
           />
 
@@ -204,11 +157,7 @@ const SignUpForm = () => {
             value={formData.password}
             onChange={handleChange}
             className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-<<<<<<< HEAD
             placeholder={t("Password")}
-=======
-            placeholder="Enter password"
->>>>>>> origin/DanielaBranch
             required
           />
 
@@ -234,11 +183,7 @@ const SignUpForm = () => {
             value={formData.passwordConfirm}
             onChange={handleChange}
             className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-<<<<<<< HEAD
             placeholder={t("ConfirmPassword")}
-=======
-            placeholder="Confirm password"
->>>>>>> origin/DanielaBranch
             required
           />
 
@@ -255,7 +200,6 @@ const SignUpForm = () => {
         type="submit"
         className="block w-full rounded-lg bg-thirdColorO px-5 py-3 text-sm font-medium text-white bg-black"
       >
-<<<<<<< HEAD
         {t("SignUp")}
       </button>
 
@@ -264,16 +208,6 @@ const SignUpForm = () => {
         <a className="underline" href="/sign-in">
           {" "}
           {t("SignIn")}
-=======
-        Sign up
-      </button>
-
-      <p className="text-center text-sm text-gray-500 ">
-        Already have an account?
-        <a className="underline" href="/sign-in">
-          {" "}
-          Sign in
->>>>>>> origin/DanielaBranch
         </a>
       </p>
     </form>

@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import { useState, useEffect } from "react";
-import "../FormingWordGame/FormingWordGame.css";
-import Picture from "../FormingWordGame/Picture";
-import DropZone from "../FormingWordGame/DropZone";
-import DraggableLetter from "../FormingWordGame/DraggableLetter";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllAnimalsGame } from "../../redux/thunk/animalsGameThunk";
-
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-=======
 import { useState, useEffect } from 'react'
 import '../FormingWordGame/FormingWordGame.css'
 import Picture from '../FormingWordGame/Picture'
@@ -21,7 +10,6 @@ import { getAllAnimalsGame } from '../../redux/thunk/animalsGameThunk'
 Howler.volume(0.1)
 
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
->>>>>>> origin/DanielaBranch
 
 const FormingWordGame = () => {
   const dispatch = useDispatch()
