@@ -1,13 +1,12 @@
-// src/Draw.jsx
+
 
 import React, { useEffect } from "react";
-import "./Draw.css"; // Import your styles
+import "./Draw.css"; 
 
 const Draw = () => {
   useEffect(() => {
-    // Dynamically load the JavaScript file
     const script = document.createElement("script");
-    script.src = "/Draw/Draw.js"; // Adjust the path accordingly
+    script.src = "/Draw/Draw.js"; 
     script.async = true;
     document.body.appendChild(script);
 
