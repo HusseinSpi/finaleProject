@@ -169,6 +169,79 @@ const TicTacToe = () => {
             ></div>
           </div>
         </div>
+        <img
+          className="bubble-class-for-tic-tac-toe"
+          alt="bubble-img-one"
+          src="/public/bubble.png"
+        ></img>
+
+        <img
+          className="bubble-class-for-tic-tac-toe-two"
+          alt="bubble-img-two"
+          src="/public/bubble.png"
+        ></img>
+
+        <img
+          className="bubble-class-for-tic-tac-toe-three"
+          alt="bubble-img-three"
+          src="/public/bubble.png"
+        ></img>
+        <img
+          className="bubble-class-for-tic-tac-toe-four"
+          alt="bubble-img-four"
+          src="/public/bubble.png"
+        ></img>
+        <img
+          className="bubble-class-for-tic-tac-toe-five"
+          alt="bubble-img-five"
+          src="/public/bubble.png"
+        ></img>
+        <img
+          className="bubble-class-for-tic-tac-toe-six"
+          alt="bubble-img-five"
+          src="/public/bubble.png"
+        ></img>
+        <img
+          className="bubble-class-for-tic-tac-toe-seven"
+          alt="bubble-img-five"
+          src="/public/bubble.png"
+        ></img>
+        <img
+          className="bubble-class-for-tic-tac-toe-green-squid"
+          alt="green-squid"
+          src="/public/green-squid.png"
+        ></img>
+        <img
+          className="bubble-class-for-tic-tac-toe-horse-sea"
+          alt="horse-sea"
+          src="/public/horse-sea.png"
+        ></img>
+        <img
+          className="bubble-class-for-tic-tac-toe-blue-trigon"
+          alt="blue-trigon"
+          src="/public/blue-trigon.png"
+        ></img>
+        <img
+          className="bubble-class-for-tic-tac-toe-blue-fish"
+          alt="blue-fish"
+          src="/public/blue-fish.png"
+        ></img>
+        <img
+          className="bubble-class-for-tic-tac-toe-lighter-star"
+          alt="lighter-star"
+          src="/public/lighter-star.png"
+        ></img>
+        <img
+          className="bubble-class-for-tic-tac-toe-red-fish"
+          alt="red-fish"
+          src="/public/red-fish.png"
+        ></img>
+        <img
+          className="bubble-class-for-tic-tac-toe-red-star"
+          alt="red-star"
+          src="/public/red-star.png"
+        ></img>
+
         <button
           className="TicTacToe-reset"
           onClick={() => {
