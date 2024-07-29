@@ -27,6 +27,7 @@ import Tetris from "./Components/Tetris/Tetris";
 import Navbar from "./Components/Navbar/Navbar";
 import ChatRoom from "./Pages/messages/ChatRoom";
 import MatchingGame from "./Pages/Games/MatchingGame";
+import Draw from "./Pages/Draw/Draw";
 
 const router = createBrowserRouter([
   {
@@ -71,7 +72,7 @@ const router = createBrowserRouter([
         element: <Stories />,
       },
       {
-        path: "forming-word-game",
+         path: "forming-word-game",
         element: (
           <DndProvider backend={HTML5Backend}>
             <FormingWordGame />
@@ -81,6 +82,10 @@ const router = createBrowserRouter([
       {
         path: "tetris",
         element: <Tetris />,
+      },
+      {
+        path: "Draw",
+        element: <Draw />,
       },
       {
         path: "MatchingGame",
@@ -120,7 +125,7 @@ const router = createBrowserRouter([
     path: "*",
     element: <NotFound />,
   },
-]);
+])
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -137,4 +142,4 @@ function App() {
   return <RouterProvider router={router} />;
 }
 
-export default App;
+export default App

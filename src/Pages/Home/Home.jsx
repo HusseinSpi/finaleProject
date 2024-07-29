@@ -1,7 +1,10 @@
+// import familybg from "./pictures/familybg.mp4";
 import underwater from "./pictures/underwater.mp4";
+// import flower from "./pictures/flower.png"
+// import flower from "./pictures/yellow.png";
 import starfish from "./pictures/starfish.png";
-import background from "../../../public/bbg.jpg"
-import { GiMeal, GiCoral, GiSeahorse, GiSeaStar } from "react-icons/gi";
+import background from "../../../public/bbg.jpg";
+import { GiMeal } from "react-icons/gi";
 import { MdOutlineMenuBook } from "react-icons/md";
 import { HiOutlineMusicNote } from "react-icons/hi";
 import { RiParentLine } from "react-icons/ri";
@@ -10,11 +13,11 @@ import { MdOutlineBubbleChart } from "react-icons/md";
 
 import { Link } from "react-router-dom";
 import "../../index.css";
-import bg from "../../../public/backgroundTriangles.jpg";
-import bubble from "../../../public/bubble.png"
-
+import bubble from "../../../public/bubble.png";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
+  const { t, i18n } = useTranslation();
   return (
     <div>
       <div className="h-screen w-full relative overflow-hidden">
@@ -27,12 +30,20 @@ const Home = () => {
         />
         {/* <div className="absolute inset-0 bg-black opacity-70"></div> */}
       </div>
-      <div className="relative flex flex-col items-center justify-center h-[15rem] p-1  ">
-        <div className="flex flex-col items-center justify-center h-full w-full bg-white ">
+      <div className="relative flex flex-col items-center justify-center h-[15rem] p-1 custom-radial">
+        <div className="flex flex-col items-center justify-center h-full w-full bg-white">
           <h1 className="text-blue-900 text-3xl md:text-5xl font-bold text-center items-center justify-center mb-4 flex">
-            <GiCoral />
-            Welcome to KiddoFun
-            <GiCoral />
+            {i18n.language === "en" ? (
+              <>
+                <MdOutlineBubbleChart /> {t("Welcome")} KiddoFun{" "}
+                <MdOutlineBubbleChart />
+              </>
+            ) : (
+              <>
+                <MdOutlineBubbleChart /> KiddoFun {t("Welcome")}
+                <MdOutlineBubbleChart />
+              </>
+            )}
           </h1>
         </div>
       </div>
@@ -48,8 +59,8 @@ const Home = () => {
       >
         {/* Circle Containers */}
         <div className="text-center">
-          <h1 className="text-blue-900 text-4xl flex font-bold mt-4">
-            <GiSeaStar /> Kids Section <GiSeaStar />
+          <h1 className="text-blue-900 text-4xl font-bold mt-4">
+            {t("KidsSection")}
           </h1>
         </div>
         <div className="flex justify-center gap-8 -mt-6 relative">
@@ -64,7 +75,7 @@ const Home = () => {
                 padding: "2rem",
               }}
             >
-              Games <LuGamepad2 size={40} color="#1E3A8A" />
+              {t("Games")} <LuGamepad2 size={40} color="#2E1065" />
               <img
                 src={starfish}
                 alt="Rain"
@@ -83,7 +94,7 @@ const Home = () => {
                 padding: "2rem",
               }}
             >
-              Stories <MdOutlineMenuBook size={40} color="#1E3A8A" />
+              {t("Stories")} <MdOutlineMenuBook size={40} color="#2E1065" />
               <img
                 src={starfish}
                 alt="Rain"
@@ -102,7 +113,7 @@ const Home = () => {
                 padding: "2rem",
               }}
             >
-              Songs <HiOutlineMusicNote size={40} color="#1E3A8A" />
+              {t("Songs")} <HiOutlineMusicNote size={40} color="#2E1065" />
               <img
                 src={starfish}
                 alt="Rain"
@@ -113,8 +124,8 @@ const Home = () => {
         </div>
 
         <div className="text-center">
-          <h1 className="text-blue-900 text-4xl flex font-bold">
-            <GiSeaStar /> Parents Section <GiSeaStar />
+          <h1 className="text-blue-900 text-4xl font-bold">
+            {t("ParentsSection")}
           </h1>
         </div>
         <div className="flex justify-center gap-8 relative -mt-6">
@@ -129,7 +140,7 @@ const Home = () => {
                 padding: "2rem",
               }}
             >
-              Meal Recipes <GiMeal size={40} color="#1E3A8A" />
+              {t("MealRecipes")} <GiMeal size={40} color="#2E1065" />
               <img
                 src={starfish}
                 alt="Rain"
@@ -148,7 +159,7 @@ const Home = () => {
                 padding: "2rem",
               }}
             >
-              Parenting Tips <RiParentLine size={40} color="#1E3A8A" />
+              {t("ParentingTips")} <RiParentLine size={40} color="#2E1065" />
               <img
                 src={starfish}
                 alt="Rain"

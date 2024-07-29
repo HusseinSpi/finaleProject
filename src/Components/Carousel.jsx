@@ -4,16 +4,14 @@ import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
 const Carousel = ({ songs }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const totalSongs = songs.length
+  const totalSongs = songs.length;
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSongs);
   };
 
   const prevSlide = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + totalSongs) % totalSongs
-    );
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + totalSongs) % totalSongs);
   };
 
   if (totalSongs === 0) return null;

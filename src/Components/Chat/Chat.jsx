@@ -7,8 +7,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCurrentUser } from "../../redux/thunk/currentUserThunks";
 import ChatAi from "./ChatAi";
 import ChatSpecialist from "./ChatSpecialist";
+import { useTranslation } from "react-i18next";
 
 const Chat = () => {
+  const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const currentUser = useSelector(
     (state) => state.currentUser.data?.data?.user
@@ -34,7 +36,7 @@ const Chat = () => {
       <div className="fixed bottom-4 right-4 p-4 w-chat z-10">
         {!isOpen && (
           <div
-            className="fixed bottom-4 right-4 bg-blue-800 text-white p-3 cursor-pointer rounded-full text-center hover:bg-blue-900 transition duration-300"
+            className="fixed bottom-4 right-4 bg-blue-500 text-white p-3 cursor-pointer rounded-full text-center hover:bg-blue-600 transition duration-300"
             onClick={toggleChat}
           >
             <IoChatboxEllipses className="text-3xl" />
@@ -44,7 +46,13 @@ const Chat = () => {
           <div className="relative bg-white border border-gray-300 rounded-lg shadow-lg p-4 mt-2 mb-12">
             <div className="flex items-center justify-between mb-4">
               <div className="m-auto flex flex-col">
-                <span className="font-bold text-lg">Kids Land Support</span>
+                <span className="font-bold text-lg">
+                  {i18n.language === "en" ? (
+                    <>KIDDOFUN {t("Support")}</>
+                  ) : (
+                    <>{t("Support")} KIDDOFUN</>
+                  )}
+                </span>
               </div>
             </div>
             {messageType === "Ai" ? (
@@ -59,21 +67,21 @@ const Chat = () => {
             <div className="flex justify-around mt-4">
               <button
                 className={`text-black ${
-                  messageType === "Ai" ? "text-blue-800" : ""
+                  messageType === "Ai" ? "text-blue-500" : ""
                 }`}
                 onClick={() => handleMessageTypeChange("Ai")}
               >
                 <FaRobot className="m-auto text-2xl" />
-                Chat With AI
+                {t("ChatWithAI")}
               </button>
               <button
                 className={`text-black ${
-                  messageType === "Specialist" ? "text-blue-800" : ""
+                  messageType === "Specialist" ? "text-blue-500" : ""
                 }`}
                 onClick={() => handleMessageTypeChange("Specialist")}
               >
                 <IoPersonSharp className="m-auto text-2xl" />
-                Virtual Specialist
+                {t("VirtualSpecialist")}
               </button>
             </div>
           </div>
@@ -81,7 +89,7 @@ const Chat = () => {
       </div>
       {isOpen && (
         <div
-          className="fixed bottom-4 right-4 bg-blue-800 text-white p-3 cursor-pointer rounded-full text-center hover:bg-blue-900 transition duration-300 z-10"
+          className="fixed bottom-4 right-4 bg-blue-500 text-white p-3 cursor-pointer rounded-full text-center hover:bg-blue-600 transition duration-300 z-10"
           onClick={toggleChat}
         >
           <IoMdClose className="text-3xl" />

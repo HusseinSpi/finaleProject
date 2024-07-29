@@ -6,9 +6,16 @@ import { FaHome } from "react-icons/fa";
 import { RiAdminLine } from "react-icons/ri";
 import { IoMailOutline } from "react-icons/io5";
 import { AiOutlineStar } from "react-icons/ai";
+import { useTranslation } from "react-i18next";
+import logo from "../../../public/logo6.png";
 
 const Sidebar = ({ children }) => {
+  const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
+
+  const handleLanguageChange = (event) => {
+    i18n.changeLanguage(event.target.value);
+  };
 
   const currentUser = useSelector(
     (state) => state.currentUser.data?.data?.user
@@ -22,9 +29,9 @@ const Sidebar = ({ children }) => {
     <div className="flex h-full">
       <div className="bg-gray-300 fixed top-0 left-0 h-full bg-primaryColor w-64 flex flex-col justify-between">
         <div className="py-6">
-          <span className="ml-16 grid h-10 w-32 place-content-center rounded-lg bg-transparent">
-            Kids Land
-          </span>
+          <div className="ml-16 grid h-10 w-32 place-content-center rounded-lg bg-transparent">
+            <img src={logo} alt="Logo" />
+          </div>
           <ul className="mt-10 space-y-1">
             <li>
               <NavLink
@@ -38,7 +45,7 @@ const Sidebar = ({ children }) => {
                 }
               >
                 <FaHome className="text-xl" />
-                Home
+                {t("Home")}
               </NavLink>
             </li>
             {currentUser?.role === "admin" && (
@@ -54,7 +61,7 @@ const Sidebar = ({ children }) => {
                   }
                 >
                   <RiAdminLine className="text-xl" />
-                  Admin
+                  {t("Admin")}
                 </NavLink>
               </li>
             )}
@@ -73,27 +80,22 @@ const Sidebar = ({ children }) => {
                     }
                   >
                     <IoMailOutline className="text-xl" />
-                    Message Requests
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/reviews"
-                    className={({ isActive }) =>
-                      `flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium ml-4 h-11 ${
-                        isActive
-                          ? "text-red-600 mr-0 rounded-r-none"
-                          : "text-secondaryColor"
-                      }`
-                    }
-                  >
-                    <AiOutlineStar className="text-xl" />
-                    Reviews
+                    {t("MessageRequests")}
                   </NavLink>
                 </li>
               </>
             )}
           </ul>
+        </div>
+        <div className="px-4 pb-4">
+          <select
+            onChange={handleLanguageChange}
+            className="w-full px-4 py-2 text-sm font-medium bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="en">English (US)</option>
+            <option value="ar">العربية</option>
+            <option value="he">עברית</option>
+          </select>
         </div>
       </div>
       <div className="ml-64 flex-1 p-6 bg-secondaryColor">{children}</div>

@@ -1,26 +1,26 @@
-import { useParams } from "react-router-dom"
-import Song from "../../Components/SongYT"
-import { useSelector } from "react-redux"
-import { useNavigate } from "react-router-dom"
-import {shuffle} from "lodash"
+import { useParams } from "react-router-dom";
+import Song from "../../Components/SongYT";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { shuffle } from "lodash";
+import { useTranslation } from "react-i18next";
 
 const SingleSong = () => {
-const {videoId} = useParams()
-const navigate = useNavigate()
+  const { t, i18n } = useTranslation();
+  const { videoId } = useParams();
+  const navigate = useNavigate();
 
+  const songs = useSelector((state) => state.musics.data[0]);
 
-  const songs = useSelector((state) => state.musics.data);
-
-  const song = songs.find((song) => song.code === videoId);
-
+  const song = songs[i18n.language].find((song) => song.code === videoId);
+  console.log(song);
   if (!song) {
     return <div className="text-center">Song not found</div>;
   }
 
-   const otherSongs = shuffle(songs.filter((s) => s.code !== videoId)).slice(
-     0,
-     5
-   );
+  const otherSongs = shuffle(
+    songs[i18n.language].filter((s) => s.code !== videoId)
+  ).slice(0, 5);
 
   return (
     <div
@@ -60,5 +60,5 @@ const navigate = useNavigate()
       </div>
     </div>
   );
-}
-export default SingleSong
+};
+export default SingleSong;

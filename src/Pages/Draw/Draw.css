@@ -1,0 +1,103 @@
+.draw-body {
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.drawcanvas {
+  width: 700px;
+  height: 700px;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 6px 8px rgba(50, 50, 93, 0.11), 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.controls__colors {
+  display: flex;
+}
+.controls__colors .controls__colors {
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 6px 8px rgba(50, 50, 93, 0.11), 0 20px 60px rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+}
+.controls .controls__btn {
+  margin-bottom: 30px;
+}
+.controls__btn button {
+  cursor: pointer;
+  padding: 5px 10px;
+  background-color: white;
+  width: 80px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 6px 8px rgba(50, 50, 93, 0.11), 0 20px 60px rgba(0, 0, 0, 0.08);
+  border: 2px solid rgb(20, 19, 19, 0.2);
+  color: rgb(128, 116, 116, 0.8);
+  font-weight: 600;
+  font-size: 12px;
+}
+.controls__btn button:active {
+  transform: scale(0.95);
+}
+.controls__range {
+  margin-bottom: 30px;
+}
+
+.draw-Image-threshold {
+  width: 300px;
+  height: 30px;
+  margin-bottom: 20px;
+  appearance: none;
+  background: #ddd;
+  border-radius: 10px;
+  outline: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.draw-Image-threshold::-webkit-slider-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4a4e4a;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #333;
+  appearance: none;
+}
+
+.draw-Image-threshold::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4a4e4a;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #333;
+}
+
+.draw-Button-threshold {
+  width: 100px;
+  height: 40px;
+  background: #4a4e4a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.draw-Button-threshold:hover {
+  background: #4a4e4a;
+}
+
+.draw-Button-threshold:active {
+  background: #255227;
+}

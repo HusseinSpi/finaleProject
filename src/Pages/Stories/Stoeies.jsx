@@ -4,7 +4,7 @@ import { getAllStories } from "../../redux/thunk/storiesThunk";
 import { useTranslation } from "react-i18next";
 
 const Stories = () => {
-  const [t, i18n] = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const dispatch = useDispatch();
   const stories = useSelector((state) => state.stories.data);
@@ -15,6 +15,15 @@ const Stories = () => {
   useEffect(() => {
     dispatch(getAllStories());
   }, [dispatch]);
+
+  useEffect(() => {
+    return () => {
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    };
+  }, [audio]);
 
   const togglePlay = () => {
     if (isPlaying) {
@@ -100,7 +109,7 @@ const Stories = () => {
             onClick={togglePlay}
             className="px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600"
           >
-            {isPlaying ? "Pause" : "Play"}
+            {isPlaying ? t("Pause") : t("Play")}
           </button>
         </div>
       </div>

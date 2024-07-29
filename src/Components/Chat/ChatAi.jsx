@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FaArrowUp } from "react-icons/fa";
 import { getReplyFromAiChat } from "../../redux/thunk/chatWithAiThunk";
+import { useTranslation } from "react-i18next";
 
 const ChatAi = ({ messages, setMessages }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const chatWithAi = useSelector((state) => state.chatWithAi.data);
   const [inputValue, setInputValue] = useState("");
@@ -67,17 +69,17 @@ const ChatAi = ({ messages, setMessages }) => {
             </div>
           ))}
       </div>
-      <div className="flex items-center border-2 border-blue-800 rounded-full p-1">
+      <div className="flex items-center border-2 border-blue-500 rounded-full p-1">
         <input
           type="text"
-          placeholder="Message..."
+          placeholder={t("Message")}
           value={inputValue}
           onChange={handleInputChange}
           onKeyPress={handleKeyPress}
           className="flex-1 border-none outline-none px-4 py-2 rounded-full mr-3"
         />
         <button
-          className="bg-blue-800 text-white p-2 rounded-full hover:bg-blue-900 transition duration-300"
+          className="bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition duration-300"
           onClick={handleSendMessage}
         >
           <FaArrowUp />
