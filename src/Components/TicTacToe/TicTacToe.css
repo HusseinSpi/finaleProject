@@ -1,6 +1,6 @@
-/*body {
+body {
   overflow: hidden;
-}*/
+}
 .TicTacToe-main-container {
   background: radial-gradient(
     circle,
@@ -25,16 +25,19 @@
 }
 .TicTacToe-container {
   text-align: center;
+  position: relative;
 }
 .TicTacToe-title {
-  padding-top: 20px;
+  padding-top: 6rem;
   padding-bottom: 20px;
+
   color: aliceblue;
   font-size: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'TherenRegular';
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
 }
 .TicTacToe-title img {
   padding: 20px 20px;
@@ -49,8 +52,9 @@
   cursor: pointer;
   border-radius: 50px;
   background-color: rgb(124, 196, 255);
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 1);
   color: rgb(9, 58, 104);
-  margin-top: 15px;
+  margin-top: 5rem;
   margin-bottom: 50px;
   font-family: 'TherenRegular';
 
@@ -126,8 +130,9 @@
   height: 2.5vh;
   width: 1.3vw;
   margin-left: 90%;
-  animation: float 2s infinite;
-  transition-duration: 300ms;
+  animation: float 2.5s infinite;
+  transition-duration: 11500ms;
+  margin-top: -24%;
 }
 
 .bubble-class-for-tic-tac-toe-two {
@@ -135,27 +140,30 @@
   z-index: 3;
   height: 2.5vh;
   width: 1.3vw;
-  margin-left: 80%;
-  animation: float 4s infinite;
-  transition-duration: 300ms;
+  margin-left: 95%;
+  margin-top: -14%;
+  animation: float 3s infinite;
+  transition-duration: 1500ms;
 }
 .bubble-class-for-tic-tac-toe-three {
   position: absolute;
   z-index: 3;
   height: 2.5vh;
   width: 1.3vw;
-  margin-left: 70%;
-  animation: float 2s infinite;
-  transition-duration: 300ms;
+  margin-left: 97%;
+  margin-top: -20%;
+  animation: float 2.5s infinite;
+  transition-duration: 11500ms;
 }
 .bubble-class-for-tic-tac-toe-four {
   position: absolute;
   z-index: 3;
   height: 2.5vh;
   width: 1.3vw;
-  margin-left: 35%;
+  margin-left: 88%;
+  margin-top: -12%;
   animation: float 3s infinite;
-  transition-duration: 300ms;
+  transition-duration: 1500ms;
 }
 
 .bubble-class-for-tic-tac-toe-five {
@@ -164,6 +172,7 @@
   height: 2.5vh;
   width: 1.3vw;
   margin-left: 25%;
+  margin-top: -22%;
   animation: float 1s infinite;
   transition-duration: 300ms;
 }
@@ -173,8 +182,9 @@
   height: 2.5vh;
   width: 1.3vw;
   margin-left: 15%;
+  margin-top: -26%;
   animation: float 3s infinite;
-  transition-duration: 300ms;
+  transition-duration: 500ms;
 }
 .bubble-class-for-tic-tac-toe-seven {
   position: absolute;
@@ -182,69 +192,146 @@
   height: 2.5vh;
   width: 1.3vw;
   margin-left: 5%;
+  margin-top: -13%;
   animation: float 2s infinite;
-  transition-duration: 300ms;
+  transition-duration: 400ms;
 }
 .bubble-class-for-tic-tac-toe-green-squid {
   position: absolute;
   z-index: 3;
-  height: 2.5vh;
-  width: 1.3vw;
+  height: 22.5vh;
+  width: 10.3vw;
   margin-left: 1%;
-  animation: float 5s infinite;
+  margin-top: -26%;
+
+  animation: float 3s infinite;
   transition-duration: 300ms;
+  animation: swim 100s linear infinite;
+  z-index: -5;
+  animation-delay: 100s;
 }
 .bubble-class-for-tic-tac-toe-horse-sea {
   position: absolute;
   z-index: 3;
-  height: 2.5vh;
-  width: 1.3vw;
-  margin-left: 1.2%;
+  height: 22.5vh;
+  width: 8.3vw;
+  margin-left: 91.2%;
   animation: float 2s infinite;
-  transition-duration: 300ms;
-}
-.bubble-class-for-tic-tac-toe-blue-trigon {
-  position: absolute;
-  z-index: 3;
-  height: 2.5vh;
-  width: 1.3vw;
-  margin-left: 1%;
-  animation: float 3s infinite;
-  transition-duration: 300ms;
-}
-.bubble-class-for-tic-tac-toe-blue-fish {
-  position: absolute;
-  z-index: 3;
-  height: 2.5vh;
-  width: 1.3vw;
-  margin-left: 1%;
-  animation: float 4s infinite;
-  transition-duration: 300ms;
-}
-.bubble-class-for-tic-tac-toe-lighter-star {
-  position: absolute;
-  z-index: 3;
-  height: 2.5vh;
-  width: 1.3vw;
-  margin-left: 1%;
-  animation: float 3s infinite;
-  transition-duration: 300ms;
-}
-.bubble-class-for-tic-tac-toe-red-fish {
-  position: absolute;
-  z-index: 3;
-  height: 2.5vh;
-  width: 1.3vw;
-  margin-left: 1%;
-  animation: float 6s infinite;
-  transition-duration: 300ms;
+  transition-duration: 500ms;
 }
 .bubble-class-for-tic-tac-toe-red-star {
   position: absolute;
   z-index: 3;
-  height: 2.5vh;
-  width: 1.3vw;
-  margin-left: 1%;
-  animation: float 5s infinite;
+  height: 12.5vh;
+  width: 7.3vw;
+  margin-left: 90%;
+  margin-top: -9%;
+  animation: float 3s infinite;
   transition-duration: 300ms;
+}
+.bubble-class-for-tic-tac-toe-lighter-star {
+  position: absolute;
+  z-index: 8;
+  height: 12.5vh;
+  width: 7.3vw;
+  margin-left: 13%;
+  margin-top: -13%;
+  animation: float 2.5s infinite;
+  transition-duration: 11500ms;
+}
+.bubble-class-for-tic-tac-toe-green-1 {
+  position: absolute;
+  z-index: 8;
+  height: 50.5vh;
+  width: 13.3vw;
+  margin-left: 0.03%;
+  margin-top: -10%;
+  animation: float 2.5s infinite;
+  transition-duration: 11500ms;
+}
+.bubble-class-for-tic-tac-toe-green-3 {
+  position: absolute;
+  z-index: 8;
+  height: 18.5vh;
+  width: 17.3vw;
+  margin-left: 0.1%;
+  margin-top: 3.5%;
+  animation: float 2.5s infinite;
+  transition-duration: 11500ms;
+}
+.bubble-class-for-tic-tac-toe-purple {
+  position: absolute;
+  z-index: 8;
+  height: 25.5vh;
+  width: 15.3vw;
+  margin-left: 75%;
+  margin-top: 2%;
+  animation: float 2.5s infinite;
+  transition-duration: 11500ms;
+}
+.bubble-class-for-tic-tac-toe-pink {
+  position: absolute;
+  z-index: 8;
+  height: 22.5vh;
+  width: 15.3vw;
+  margin-left: 84.5%;
+  margin-top: 3%;
+}
+.bubble-class-for-tic-tac-toe-yellow {
+  position: absolute;
+  z-index: 8;
+  height: 22.5vh;
+  width: 10.3vw;
+  margin-left: 13%;
+  margin-top: 4%;
+}
+
+.bubble-class-for-tic-tac-toe-red-fish {
+  position: absolute;
+  z-index: 3;
+  height: 12.5vh;
+  width: 8.3vw;
+  margin-left: 1%;
+  animation: swim 200s linear infinite;
+}
+
+.bubble-class-for-tic-tac-toe-blue-fish {
+  position: absolute;
+  z-index: 3;
+  height: 12.5vh;
+  width: 8.3vw;
+  margin-left: 1%;
+  animation: swim 200s linear infinite;
+  animation-delay: 100s; /* Delay to start the second fish later */
+}
+
+.bubble-class-for-tic-tac-toe-blue-trigon {
+  position: absolute;
+  z-index: -3;
+  height: 22.5vh;
+  width: 18.3vw;
+  margin-left: 76%;
+  margin-top: -24%;
+  animation: float 3s infinite;
+  transition-duration: 300ms;
+  animation: swim 100s linear infinite;
+}
+@keyframes swim {
+  0%,
+  100% {
+    left: -8.3vw; /* Start off-screen left */
+    transform: scaleX(1); /* Face right */
+  }
+  45% {
+    left: 100vw; /* Move to off-screen right */
+    transform: scaleX(1); /* Face right */
+  }
+  50% {
+    left: 100vw; /* Flip to face left */
+    transform: scaleX(-1);
+  }
+  95% {
+    left: -8.3vw; /* Move back to off-screen left */
+    transform: scaleX(-1); /* Face left */
+  }
 }
