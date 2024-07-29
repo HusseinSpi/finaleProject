@@ -60,7 +60,7 @@ const FormingWordGame = () => {
   }
   console.log(currentAnimal)
   return (
-    <div className="background">
+    <div className="FormingWordGame-background">
       <div className="FormingWordGame">
         <h1 className="h1">Animals' Forming Word Game</h1>
         {currentAnimal && <Picture url={currentAnimal.imgUrl} />}
