@@ -32,16 +32,17 @@
   width: 30%;
   height: 40vh;
   border-radius: 50px;
-  margin-left: 34.5%;
+  margin-left: 35.4%;
 }
 
 .letters {
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 1);
   display: flex;
   position: absolute;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 90px;
-  margin-left: 320px;
+  margin-left: 32.8rem;
   font-family: 'TherenRegular';
   animation: move-up6 10s ease-in infinite alternate-reverse;
   color: #414288;
@@ -74,9 +75,10 @@
   margin: auto;
 }
 .drop-zone {
-  width: 200px;
+  width: 16rem;
   height: 50px;
-  border: 2px dashed gray;
+  border: 2px transparent;
+  border-radius: 1rem;
   margin: 20px auto;
   display: flex;
   align-items: center;
@@ -89,16 +91,17 @@ button.skip {
   font-size: 1rem;
   font-family: 'TherenRegular';
   position: absolute;
-  margin-top: -3rem;
-  margin-left: 40.5rem;
+  margin-top: -2.9rem;
+  margin-left: 52.5rem;
   font-size: 1.4rem;
   border-radius: 20px;
-  width: 100px;
-  height: 40px;
-  border: solid #5fb49c 4px;
+  width: 110px;
+  height: 46px;
+  border: solid #fcf80a 4px;
   font-weight: 500;
   color: #414288;
   z-index: 4;
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 1);
 }
 
 button.erase {
@@ -106,20 +109,21 @@ button.erase {
   margin-left: 62rem;
 
   /* margin-top: 8rem; */
-
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 1);
   font-size: 4.5rem;
   border-radius: 20px;
-  margin-top: -7rem;
-  margin-left: 13.5rem;
+  margin-top: -6.3rem;
+  margin-left: 18.5rem;
   font-weight: 500;
   color: #414288;
   position: absolute;
   z-index: 4;
+  font-weight: 600;
 }
 
 .popup {
   position: fixed;
-  top: 94%;
+  top: 85%;
   left: 69.5%;
   transform: translate(-50%, -50%);
   padding: 20px;
@@ -129,6 +133,10 @@ button.erase {
   width: 50vw;
   height: 10vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fcf80a;
+  font-weight: 600;
+  outline-offset: 10px;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
 }
 .popup-correct {
   position: fixed;
@@ -149,5 +157,5 @@ button.erase {
   font-family: 'TherenRegular';
   font-size: 4.5rem;
   color: #414288;
-  margin-left: 20rem;
+  margin-left: 33rem;
 }
