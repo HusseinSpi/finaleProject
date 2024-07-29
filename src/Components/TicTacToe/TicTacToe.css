@@ -208,7 +208,7 @@
   transition-duration: 300ms;
   animation: swim 100s linear infinite;
   z-index: -5;
-  animation-delay: 100s;
+  /* animation-delay: 100s; */
 }
 .bubble-class-for-tic-tac-toe-horse-sea {
   position: absolute;
