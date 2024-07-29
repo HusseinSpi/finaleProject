@@ -15,6 +15,7 @@ import SignInPage from './Pages/signin/SignInPage'
 import ForgotPasswordPage from './Pages/ForgotPasword/ForgotPassword'
 import ResetPassword from './Pages/ForgotPasword/ResetPassword'
 import TicTacToe from './Components/TicTacToe/TicTacToe'
+import CulinaryKids from './Pages/CulinaryKids/CulinaryKids'
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: 'stories',
         element: <Stories />,
+      },
+      {
+        path: 'culinary-kids',
+        element: <CulinaryKids />,
       },
       {
         path: 'tic-tac-toe',
