@@ -1,35 +1,29 @@
-const RestructuringDataFormat = (data) => {
-  const hebrew = data.map((element) => {
-    if (element.HeEn)
-      return {
-        He: element.He,
-        HeEn: element.HeEn,
-        id: element._id,
-        match: false,
-      };
-    else
-      return {
-        He: element.He,
-        match: false,
-        id: element._id,
-      };
+const RestructuringDataFormat = (data, language) => {
+  const languageMap = {
+    en: "word_en",
+    ar: "word_ar",
+    he: "word_he",
+  };
+
+  const languageKey = languageMap[language];
+
+  const word = data.map((element) => {
+    return {
+      word: element[languageKey],
+      id: element._id,
+      match: false,
+    };
   });
-  const arabic = data.map((element) => {
-    if (element.ArEn)
-      return {
-        Ar: element.Ar,
-        ArEn: element.ArEn,
-        id: element._id,
-        match: false,
-      };
-    else
-      return {
-        Ar: element.Ar,
-        match: false,
-        id: element._id,
-      };
+
+  const image = data.map((element) => {
+    return {
+      image: element.image,
+      id: element._id,
+      match: false,
+    };
   });
-  return { arabic: arabic, hebrew: hebrew };
+
+  return { word, image };
 };
 
 export default RestructuringDataFormat;

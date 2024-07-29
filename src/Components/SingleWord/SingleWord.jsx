@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import "./SingleWord.css";
 
-export const SingleWord = ({ handleChoosingWord, flip, word, disabled }) => {
+const SingleWord = ({ handleChoosingWord, flip, word, disabled }) => {
   const [select, setSelect] = useState(false);
 
   const handleSelect = () => {
@@ -13,19 +13,24 @@ export const SingleWord = ({ handleChoosingWord, flip, word, disabled }) => {
     setTimeout(() => setSelect(false), 500);
   };
 
+  console.log(word);
   return (
     <div className="word-container">
       <div className={flip ? "flipped" : ""}>
         <div className="word-front">
-          <p className="word-text word-language text-center">
-            {word?.He || word?.Ar}
-          </p>
-          <p className="word-text word-english text-center">
-            {word?.HeEn || word?.ArEn}
-          </p>
+          {word.word && <p className="word-text text-center">{word.word}</p>}
+          {word.image && (
+            <img
+              src={`https://finaleprojectbe.onrender.com/images/${word.image}`}
+              alt="word"
+              className="word-image"
+            />
+          )}
         </div>
         <div className="word-back" onClick={handleSelect}></div>
       </div>
     </div>
   );
 };
+
+export default SingleWord;

@@ -132,3 +132,56 @@ body {
     rgba(50, 186, 241, 1) 100%
   );
 }
+
+.flipped .word-front {
+  transform: rotateY(0deg) scale(1);
+  transition-delay: 0.2s;
+  opacity: 1;
+}
+
+.word-front {
+  background-image: url(../../img/card-front.png);
+  background-repeat: no-repeat;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  background-size: contain;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.word-back {
+  background-image: url(../../img/card-back.png);
+  background-repeat: no-repeat;
+  backface-visibility: hidden;
+  background-size: contain;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  right: 0;
+  top: 0;
+  transition: 0.5s;
+}
+
+.word-back:hover {
+  filter: brightness(0.8);
+}
+
+.word-image {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.375rem; /* rounded-md equivalent */
+}
+
+@media screen and (min-width: 430px) and (max-width: 800px) {
+  .word-container {
+    height: 15vh;
+    width: 15vw;
+  }
+}
