@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react'
 import circle_icon from '../../assets/circle.png'
 import cross_icon from '../../assets/cross.png'
 import click_sound from '../../../public/click-sound.mp3'
-import win_sound from '../../../public/win-sound.mp3'
+import win_sound from '../../../public/win-sound-sea.mp3'
 
 import './TicTacToe.css'
 
