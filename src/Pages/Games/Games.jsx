@@ -62,7 +62,7 @@ const Games = () => {
           </NavLink>
         </div>
         <div className="bg-blue-900 p-4 m-2 rounded-xl w-[18rem] h-[20rem] transform transition-transform duration-200 hover:scale-105 hover:bg-blue-800">
-          <NavLink to="/tictactoe">
+          <NavLink to="/TicTacToe">
             <img
               className="w-[20rem] h-[15rem]"
               src={tictactoe}

@@ -31,6 +31,7 @@ import Draw from "./Pages/Draw/Draw";
 import Games from "./Pages/Games/Games";
 import Account from "./Pages/account/Account";
 import Parenting from "./Pages/Parenting/Parenting";
+import TicTacToe from "./Components/TicTacToe/TicTacToe"
 
 const router = createBrowserRouter([
   {
@@ -101,6 +102,10 @@ const router = createBrowserRouter([
       {
         path: "MatchingGame",
         element: <MatchingGame />,
+      },
+      {
+        path: "TicTacToe",
+        element: <TicTacToe />,
       },
       {
         path: "account",
