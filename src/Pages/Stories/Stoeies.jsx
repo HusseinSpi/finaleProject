@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllStories } from "../../redux/thunk/storiesThunk";
+import { createRecentActivity } from "../../redux/thunk/recentActivityThunks";
 import { useTranslation } from "react-i18next";
 
 const Stories = () => {
   const { t, i18n } = useTranslation();
-
   const dispatch = useDispatch();
   const stories = useSelector((state) => state.stories.data);
+  const currentUser = useSelector(
+    (state) => state.currentUser?.data?.data?.user
+  );
   const [currentStoryIndex, setCurrentStoryIndex] = useState(0);
   const [audio, setAudio] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -24,6 +27,23 @@ const Stories = () => {
       }
     };
   }, [audio]);
+
+  useEffect(() => {
+    if (currentUser && stories.length > 0) {
+      dispatch(
+        createRecentActivity({
+          type: "story",
+          description:
+            i18n.language === "ar"
+              ? stories[currentStoryIndex].title_Ar
+              : i18n.language === "he"
+              ? stories[currentStoryIndex].title_He
+              : stories[currentStoryIndex].title,
+          user: currentUser._id,
+        })
+      );
+    }
+  }, [currentStoryIndex, dispatch, i18n.language]);
 
   const togglePlay = () => {
     if (isPlaying) {
@@ -58,7 +78,7 @@ const Stories = () => {
     }
   };
 
-  if (!stories.length) return <div>Loading...</div>;
+  if (!stories.length) return <div>{t("Loading...")}</div>;
 
   let title, paragraphs, img;
 
