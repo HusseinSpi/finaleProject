@@ -58,7 +58,7 @@ const SingleSong = () => {
           {otherSongs.map((otherSong) => (
             <div
               key={otherSong.code}
-              className=" items-center cursor-pointer w-[20rem] h-[15rem] bg-[#0A70B8] p-3  rounded-lg animate-float mb-5"
+              className=" items-center cursor-pointer w-[20rem] h-[15rem] bg-[#0A70B8] p-3  rounded-lg  transform transition-transform duration-200 hover:scale-105 hover:bg-blue-500 mb-5"
               onClick={() => navigate(`/song/${otherSong.code}`)}
             >
               <img
