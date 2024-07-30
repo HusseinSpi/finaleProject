@@ -37,7 +37,7 @@ const TicTacToe = () => {
       data[num] = 'x'
       setCount(++count)
     } else {
-      e.target.innerHTML = `<img src='${circle_icon}'>`
+      e.target.innerHTML = `<img  src='${circle_icon}' className="imgCircle">`
       data[num] = 'o'
       setCount(++count)
     }

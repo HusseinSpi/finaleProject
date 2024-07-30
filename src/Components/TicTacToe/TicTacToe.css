@@ -38,8 +38,8 @@
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
 }
 .TicTacToe-title img {
-  padding: 20px 20px;
-  height: 11.5vh;
+  padding: 0 10px;
+  height: 7vh;
 }
 
 .TicTacToe-reset {
@@ -351,29 +351,4 @@
   100% {
     transform: translateY(-100vh);
   }
-}
-
-.bubble-class-for-tic-tac-toe {
-}
-
-.bubble-class-for-tic-tac-toe-two {
-}
-
-.bubble-class-for-tic-tac-toe-three {
-  animation: floatUp 10s linear infinite;
-  animation-delay: 1s;
-}
-
-.bubble-class-for-tic-tac-toe-four {
-}
-
-.bubble-class-for-tic-tac-toe-five {
-}
-
-.bubble-class-for-tic-tac-toe-six {
-  animation: floatUp 16s linear infinite;
-  animation-delay: 4s;
-}
-
-.bubble-class-for-tic-tac-toe-seven {
 }
