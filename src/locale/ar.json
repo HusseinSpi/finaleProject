@@ -18,6 +18,7 @@
   "KidsSection": "قسم الأطفال",
   "ParentsSection": "قسم الأهل",
   "MealRecipes": "وصفات طعام",
+  "Account": "الحساب",
   "ParentingTips": "نصائح للتربية",
   "SignInTitle": "تسجيل الدخول بحسابك",
   "Email": "أدخل الإيميل",
@@ -49,6 +50,6 @@
   "OtherSongsYouMightLike": "أغاني أخرى قد تعجبك",
   "ChatLogIn": "يجب عليك تسجيل الدخول أولا لمواصلة الدردشة.",
   "SongView": "تم مشاهدة أغنية",
-  "Parenting" : "التربية",
-  "Meals" : "وجبات"
+  "Parenting": "التربية",
+  "Meals": "وجبات"
 }
