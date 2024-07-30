@@ -11,9 +11,9 @@ const recipes = [
 const CulinaryKids = () => {
   return (
     <div className="culinary-main-container">
-      <h1>Recipes</h1>
+      <h1 className="culinary-title">Culinary Kids Recipes</h1>
       <div className="card-grid">
-        {Array.from({ length: 12 }).map((_, index) => (
+        {Array.from({ length: 16 }).map((_, index) => (
           <div key={index} className="flip-card">
             <div className="flip-card-inner">
               <div className="flip-card-front">

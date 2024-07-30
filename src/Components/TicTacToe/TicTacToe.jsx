@@ -93,7 +93,7 @@ const TicTacToe = () => {
     })
   }
   return (
-    <div className="TicTacToe-main-container">
+    <div className="TicTacToe-main-container ">
       <div className="TicTacToe-container">
         <h1 className="TicTacToe-title" ref={titleRef}>
           Tic Tac Toe Fun Game
