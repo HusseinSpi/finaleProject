@@ -1,19 +1,14 @@
-import RestructuringDataFormat from "../../Functions/RestructuringDataFormat";
-import { SingleWord } from "../../Components/SingleWord/SingleWord";
-import { getAllWords } from "../../redux/thunk/wordsThunk";
+import React, { useEffect, useState, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { increaseScore } from "../../redux/features/scoreSlice";
+import gsap from "gsap";
+import { useTranslation } from "react-i18next";
+import RestructuringDataFormat from "../../Functions/RestructuringDataFormat";
+import SingleWord from "../../Components/SingleWord/SingleWord";
+import { getAllWords } from "../../redux/thunk/wordsThunk";
 
 import "./Words.css";
 
 function MatchingGame() {
-  const score = useSelector((state) => state.score.value);
-
-  const constTime = 80;
-  const [timeLeft, setTimeLeft] = useState(constTime);
   const wordsAPI = useSelector((state) => state.words.data);
   const [secondWord, setSecondWord] = useState(null);
   const [animation, setAnimation] = useState(true);
@@ -21,10 +16,10 @@ function MatchingGame() {
   const [disabled, setDisabled] = useState(false);
   const [words, setWords] = useState([]);
   const dispatch = useDispatch();
-  gsap.registerPlugin(useGSAP);
+  const { i18n } = useTranslation();
 
   // Random 6 objects
-  const getRandomWords = (allData) => {
+  const getRandomWords = useCallback((allData) => {
     const randomIndexes = [];
     while (randomIndexes.length < 6) {
       const randomIndex = Math.floor(Math.random() * allData.length);
@@ -33,81 +28,72 @@ function MatchingGame() {
       }
     }
     return randomIndexes.map((index) => allData[index]);
-  };
+  }, []);
 
   // Shuffle words
-  function shuffleArray(array) {
+  const shuffleArray = useCallback((array) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]]; // Swap elements
     }
     return array;
-  }
+  }, []);
 
   // Get words from Redux
   useEffect(() => {
     dispatch(getAllWords());
   }, [dispatch]);
 
-  //Restructure data
+  // Restructure data
   useEffect(() => {
     if (wordsAPI.length) {
       const randomWords = getRandomWords(wordsAPI);
-      const restructuredWords = RestructuringDataFormat(randomWords);
+      const restructuredWords = RestructuringDataFormat(
+        randomWords,
+        i18n.language
+      );
       setWords(
-        shuffleArray([...restructuredWords.arabic, ...restructuredWords.hebrew])
+        shuffleArray([...restructuredWords.word, ...restructuredWords.image])
       );
     }
     setAnimation((prev) => !prev);
-  }, [wordsAPI]);
+  }, [wordsAPI, i18n.language, getRandomWords, shuffleArray]);
 
-  // Choosing a word Word
+  // Choosing a word
   const handleChoosingWord = (word) => {
-    if (timeLeft > 0) firstWord ? setSecondWord(word) : setFirstWord(word);
+    if (disabled) return;
+
+    if (firstWord) {
+      setSecondWord(word);
+      setDisabled(true);
+
+      // Check for match
+      if (firstWord.id === word.id) {
+        // Match found
+        setWords((prevWords) =>
+          prevWords.map((w) => (w.id === word.id ? { ...w, match: true } : w))
+        );
+      }
+
+      // Reset the chosen words after a delay
+      setTimeout(() => {
+        handleResetChoosing();
+      }, 1000);
+    } else {
+      setFirstWord(word);
+    }
   };
 
-  // resetting the words
+  // Resetting the words
   const handleResetChoosing = () => {
     setSecondWord(null);
     setFirstWord(null);
     setDisabled(false);
   };
 
-  //  Words logic
-  useEffect(() => {
-    let isFinished = 0;
-    if (words.length > 0) {
-      words.forEach((word) => {
-        if (word.match == false) isFinished++;
-      });
-      if (isFinished == 0) {
-        dispatch(increaseScore(timeLeft));
-        setTimeLeft(0);
-      }
-    }
-  }, [words]);
-  useEffect(() => {
-    let timeout;
-
-    if (firstWord && secondWord) {
-      setDisabled(true);
-
-      if (firstWord.id === secondWord.id) {
-        dispatch(increaseScore(10));
-        setWords((prev) =>
-          prev.map((word) =>
-            word.id === firstWord.id ? { ...word, match: true } : word
-          )
-        );
-      }
-      timeout = setTimeout(() => handleResetChoosing(), 2000);
-    }
-    return () => clearTimeout(timeout);
-  }, [firstWord, secondWord]);
-
   // Gsap Animation
   useEffect(() => {
-    gsap.set(".word-container ", {
+    gsap.set(".word-container", {
       scale: 0,
     });
 
@@ -122,10 +108,18 @@ function MatchingGame() {
     });
   }, [animation]);
 
+  // Restart the game
+  const handleRestart = () => {
+    setWords([]);
+    setFirstWord(null);
+    setSecondWord(null);
+    setDisabled(false);
+    dispatch(getAllWords());
+  };
+
   return (
     <section className="words-section">
       <div className="words-container">
-        <div className="letters-overlay"></div>
         <div className="cards-grid">
           {words?.map((word, index) => (
             <SingleWord
@@ -137,6 +131,9 @@ function MatchingGame() {
             />
           ))}
         </div>
+        <button onClick={handleRestart} className="restart-button">
+          Restart
+        </button>
       </div>
     </section>
   );

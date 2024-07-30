@@ -39,10 +39,16 @@
   "NumbersSongs": "שירי מספרים",
   "AlphabetSongs": "שירי אלפבית",
   "GeneralSongs": "שירים כלליים",
+<<<<<<< HEAD
   "Tetris": "טטריס",
   "Forming Words": " הרכבת מילים ",
   " Drawing and Coloring": " ציור וצבע  ",
   "Matching Pairs": " התאמת זוגות ",
   "Tic Tac Toe": "איקס עיגול ",
   "Puzzel": "פאזל"
+=======
+  "OtherSongsYouMightLike": "שירים אחרים שאולי תאהבו",
+  "ChatLogIn": "עליך להיכנס תחילה כדי להמשיך בצ'אט.",
+  "SongView": "נצפה בשיר"
+>>>>>>> Hussein
 }

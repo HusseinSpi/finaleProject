@@ -28,7 +28,11 @@ import Navbar from "./Components/Navbar/Navbar";
 import ChatRoom from "./Pages/messages/ChatRoom";
 import MatchingGame from "./Pages/Games/MatchingGame";
 import Draw from "./Pages/Draw/Draw";
+<<<<<<< HEAD
 import Games from "./Pages/Games/Games"
+=======
+import Account from "./Pages/account/Account";
+>>>>>>> Hussein
 
 const router = createBrowserRouter([
   {
@@ -73,11 +77,15 @@ const router = createBrowserRouter([
         element: <Stories />,
       },
       {
+<<<<<<< HEAD
         path: "games",
         element: <Games />,
       },
       {
          path: "forming-word-game",
+=======
+        path: "forming-word-game",
+>>>>>>> Hussein
         element: (
           <DndProvider backend={HTML5Backend}>
             <FormingWordGame />
@@ -95,6 +103,10 @@ const router = createBrowserRouter([
       {
         path: "MatchingGame",
         element: <MatchingGame />,
+      },
+      {
+        path: "account",
+        element: <Account />,
       },
     ],
   },
@@ -130,7 +142,7 @@ const router = createBrowserRouter([
     path: "*",
     element: <NotFound />,
   },
-])
+]);
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -147,4 +159,4 @@ function App() {
   return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;

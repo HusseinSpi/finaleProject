@@ -39,7 +39,7 @@ const SingleSong = () => {
 
       <div>
         <h2 className="text-2xl font-semibold mb-4 text-center">
-          Other Songs You Might Like
+          {t("OtherSongsYouMightLike")}
         </h2>
         <div className="flex sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 w-3/4 ml-36 rounded-xl">
           {otherSongs.map((otherSong) => (

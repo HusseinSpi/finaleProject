@@ -33,9 +33,14 @@ const Stories = () => {
       if (audio) {
         audio.pause();
       }
-      const newAudio = new Audio(
-        `https://finaleprojectbe.onrender.com/sounds/${stories[currentStoryIndex].sound}`
-      );
+      const soundUrl = `https://finaleprojectbe.onrender.com/sounds/${
+        i18n.language === "ar"
+          ? stories[currentStoryIndex].sound_Ar
+          : i18n.language === "he"
+          ? stories[currentStoryIndex].sound_He
+          : stories[currentStoryIndex].sound
+      }`;
+      const newAudio = new Audio(soundUrl);
       newAudio.play();
       setAudio(newAudio);
       setIsPlaying(true);
