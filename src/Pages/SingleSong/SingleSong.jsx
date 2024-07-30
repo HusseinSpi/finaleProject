@@ -1,22 +1,34 @@
 import { useParams } from "react-router-dom";
 import Song from "../../Components/SongYT";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { getAllMusic } from "../../redux/thunk/musicsThunk";
 import { useNavigate } from "react-router-dom";
 import { shuffle } from "lodash";
 import { useTranslation } from "react-i18next";
-import background from "../../../public/bbg.jpg"
+import background from "../../../public/bbg.jpg";
 import { PiMusicNotesSimpleBold } from "react-icons/pi";
-
+import { useEffect } from "react";
 
 const SingleSong = () => {
+  const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
   const { videoId } = useParams();
   const navigate = useNavigate();
 
   const songs = useSelector((state) => state.musics.data[0]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      await dispatch(getAllMusic());
+    };
+    fetchData();
+  }, [dispatch]);
+
+  if (!songs || !songs[i18n.language]) {
+    return <div className="text-center">Loading songs...</div>;
+  }
+
   const song = songs[i18n.language].find((song) => song.code === videoId);
-  console.log(song);
   if (!song) {
     return <div className="text-center">Song not found</div>;
   }
@@ -35,13 +47,6 @@ const SingleSong = () => {
         width: "100%",
         height: "100%",
       }}
-      // className="p-4 w-full h-full"
-      // style={{
-      //   backgroundImage: `url('https://i.pinimg.com/originals/e1/31/53/e13153cf62ba84a0df806d6d54b353b0.jpg')`,
-      //   backgroundSize: "contain",
-      //   backgroundRepeat: "no-repeat",
-      //   // width: "100%",
-      // }}
     >
       <h1 className="text-3xl font-bold flex text-center items-center justify-center text-blue-950 ">
         <PiMusicNotesSimpleBold /> {song.name} <PiMusicNotesSimpleBold />
@@ -76,4 +81,5 @@ const SingleSong = () => {
     </div>
   );
 };
+
 export default SingleSong;
