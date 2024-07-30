@@ -49,8 +49,9 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover transition-transform duration-300 ease-in-out hover:scale-105 ${
                   isActive
-                    ? "scale-110 text-primaryColor"
-                    : "text-primaryColor animate-float"
+                    ? " scale-110 text-blue-900"
+                    : "text-blue-900 animate-float"
+                   
                 } pt-5`
               }
               style={{
@@ -70,8 +71,9 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover transition-transform duration-300 ease-in-out hover:scale-105 ${
                   isActive
-                    ? "scale-110 text-primaryColor"
-                    : "text-primaryColor animate-float"
+                    ? " scale-110 text-blue-900"
+                    : "text-blue-900 animate-float"
+                   
                 } pt-5`
               }
               style={{
@@ -91,8 +93,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover transition-transform duration-300 ease-in-out hover:scale-105 ${
                   isActive
-                    ? "scale-110 text-primaryColor"
-                    : "text-primaryColor animate-float"
+                    ? "scale-110 text-blue-900"
+                    : "text-blue-900 animate-float"
                 } pt-5`
               }
               style={{
@@ -115,8 +117,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover transition-transform duration-300 ease-in-out hover:scale-105 ${
                   isActive
-                    ? "scale-110 text-primaryColor"
-                    : "text-primaryColor animate-float"
+                    ? "scale-110 text-blue-900"
+                    : "text-blue-900 animate-float"
                 } pt-5`
               }
               style={{
@@ -136,8 +138,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover transition-transform duration-300 ease-in-out hover:scale-105 ${
                   isActive
-                    ? "scale-110 text-primaryColor"
-                    : "text-primaryColor animate-float"
+                    ? "scale-110 text-blue-900"
+                    : "text-blue-900 animate-float"
                 } pt-5`
               }
               style={{
@@ -157,8 +159,9 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover transition-transform duration-300 ease-in-out hover:scale-105 ${
                   isActive
-                    ? "scale-110 text-primaryColor"
-                    : "animate-float text-primaryColor"
+                    ? "scale-110 text-blue-900"
+                    : " animate-float text-blue-900"
+                   
                 } pt-5`
               }
               style={{
@@ -176,7 +179,7 @@ const Navbar = () => {
         <div className="relative top-12 right-4 md:static md:ml-auto md:mr-4 mt-4 md:mt-0">
           <select
             onChange={handleLanguageChange}
-            className=" p-2 text-lg font-semibold bg-transparent rounded-md "
+            className=" p-2 text-lg font-semibold bg-transparent rounded-md  text-blue-900"
           >
             <option value="en">En</option>
             <option value="ar">Ar</option>
