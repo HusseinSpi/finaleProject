@@ -1,6 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "../../axiosConfig";
-import { toast } from "react-toastify";
 
 axios.defaults.withCredentials = true;
 
@@ -11,7 +10,7 @@ export const getRecentActivity = createAsyncThunk(
       const response = await axios.get("recent-activities");
       return response.data;
     } catch (error) {
-      toast.error("Failed to get recent activity");
+      null;
       throw error;
     }
   }
@@ -24,7 +23,7 @@ export const createRecentActivity = createAsyncThunk(
       const response = await axios.post("recent-activities", activityData);
       return response.data;
     } catch (error) {
-      toast.error("Failed to create recent activity");
+      null;
       return rejectWithValue(error.response?.data || error.message);
     }
   }

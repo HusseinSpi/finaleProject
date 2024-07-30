@@ -41,5 +41,6 @@
   "AlphabetSongs": "Alphabet songs",
   "GeneralSongs": "General songs",
   "OtherSongsYouMightLike": "Other Songs You Might Like",
-  "ChatLogIn": "You must log in first to continue the chat."
+  "ChatLogIn": "You must log in first to continue the chat.",
+  "SongView": "Watched the song"
 }
