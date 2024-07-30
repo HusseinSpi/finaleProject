@@ -1,9 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import axios from "../../axiosConfig";
 
 export const getAllWords = createAsyncThunk("words/getAllWords", async () => {
   try {
-    const response = await axios.get("http://localhost:3000/api/v1/words");
+    const response = await axios.get("words");
     return response.data.data;
   } catch (error) {
     console.error("Error fetching words:", error.message);

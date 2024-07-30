@@ -26,22 +26,24 @@ const Carousel = ({ songs }) => {
           {songs.map((song) => (
             <div key={song._id} className="flex-none w-full max-w-xs p-4">
               <SongYTWrapper videoId={song.code} />
-              <p className="text-center mt-2">{song.name}</p>
+              <p className="text-center text-lg font-semibold text-blue-950 mt-2">
+                {song.name}
+              </p>
             </div>
           ))}
         </div>
       </div>
       <button
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full"
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-sky-800 text-white p-2 rounded-full"
         onClick={prevSlide}
       >
-        <FaChevronLeft />
+        <FaChevronLeft color="#FFFFF" />
       </button>
       <button
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full"
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-sky-800 text-white p-2 rounded-full"
         onClick={nextSlide}
       >
-        <FaChevronRight />
+        <FaChevronRight color="#FFFF" />
       </button>
     </div>
   );

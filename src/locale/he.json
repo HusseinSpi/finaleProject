@@ -19,6 +19,7 @@
   "MealRecipes": "מתכוני ארוחות",
   "ParentingTips": "טיפים להורות",
   "SignInTitle": "תתחבר לחשבון שלך",
+  "Account": "חֶשְׁבּוֹן",
   "Email": "הזן אימייל",
   "Password": "הזן את הסיסמה",
   "ForgotPassword": "שכחת את הסיסמא؟",
@@ -38,5 +39,16 @@
   "learnWithUs": "ללמוד איתנו",
   "NumbersSongs": "שירי מספרים",
   "AlphabetSongs": "שירי אלפבית",
-  "GeneralSongs": "שירים כלליים"
+  "GeneralSongs": "שירים כלליים",
+  "Tetris": "טטריס",
+  "Forming Words": " הרכבת מילים ",
+  " Drawing and Coloring": " ציור וצבע  ",
+  "Matching Pairs": " התאמת זוגות ",
+  "Tic Tac Toe": "איקס עיגול ",
+  "Puzzel": "פאזל",
+  "OtherSongsYouMightLike": "שירים אחרים שאולי תאהבו",
+  "ChatLogIn": "עליך להיכנס תחילה כדי להמשיך בצ'אט.",
+  "SongView": "נצפה בשיר",
+  "Parenting": "הורות",
+  "Meals": "ארוחות"
 }

@@ -24,8 +24,10 @@ import Navbar from './Components/Navbar/Navbar'
 import ChatRoom from './Pages/messages/ChatRoom'
 import MatchingGame from './Pages/Games/MatchingGame'
 import Draw from './Pages/Draw/Draw'
+import Games from './Pages/Games/Games'
+import Account from './Pages/account/Account'
+import Parenting from './Pages/Parenting/Parenting'
 import TicTacToe from './Components/TicTacToe/TicTacToe'
-import CulinaryKids from './Pages/CulinaryKids/CulinaryKids'
 
 const router = createBrowserRouter([
   {
@@ -70,8 +72,12 @@ const router = createBrowserRouter([
         element: <Stories />,
       },
       {
-        path: 'culinary-kids',
-        element: <CulinaryKids />,
+        path: 'games',
+        element: <Games />,
+      },
+      {
+        path: 'parenting',
+        element: <Parenting />,
       },
       {
         path: 'forming-word-game',
@@ -96,6 +102,14 @@ const router = createBrowserRouter([
       {
         path: 'tic-tac-toe',
         element: <TicTacToe />,
+      },
+      {
+        path: 'TicTacToe',
+        element: <TicTacToe />,
+      },
+      {
+        path: 'account',
+        element: <Account />,
       },
     ],
   },

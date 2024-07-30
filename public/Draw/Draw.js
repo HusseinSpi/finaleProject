@@ -52,15 +52,15 @@ function changeColor(event) {
   ctx.strokeStyle = color;
   ctx.fillStyle = color;
 }
-function handleModeClick() {
-  if (filling === true) {
-    filling = false;
-    mode.innerText = "Draw";
-  } else {
-    filling = true;
-    mode.innerText = "Filling";
-  }
-}
+// function handleModeClick() {
+//   if (filling === true) {
+//     filling = false;
+//     mode.innerText = "Draw";
+//   } else {
+//     filling = true;
+//     mode.innerText = "Filling";
+//   }
+// }
 function handleSaveClick() {
   const image = canvas.toDataURL("image/jpeg");
   const link = document.createElement("a");
@@ -95,6 +95,9 @@ function createControls() {
 
   thresholdInput.addEventListener("input", updateThreshold);
   doneButton.addEventListener("click", removeControls);
+
+  window.addEventListener("popstate", handleRouteChange);
+  window.addEventListener("pushstate", handleRouteChange);
 }
 
 function updateThreshold() {
@@ -113,6 +116,8 @@ function removeControls() {
     doneButton.remove();
     doneButton = null;
   }
+  window.removeEventListener("popstate", handleRouteChange);
+  window.removeEventListener("pushstate", handleRouteChange);
 }
 
 function processImage(img, threshold) {
@@ -180,6 +185,12 @@ function handleUploadImage(event) {
   }
 }
 
+function handleRouteChange() {
+  if (window.location.pathname !== "/Draw") {
+    removeControls();
+  }
+}
+
 if (canvas) {
   canvas.addEventListener("mousemove", onMouseMove);
   canvas.addEventListener("mousedown", onMouseDown);
@@ -199,9 +210,9 @@ if (range) {
   range.addEventListener("input", handleRangeChange);
 }
 
-if (mode) {
-  mode.addEventListener("click", handleModeClick);
-}
+// if (mode) {
+//   mode.addEventListener("click", handleModeClick);
+// }
 if (saveBtn) {
   saveBtn.addEventListener("click", handleSaveClick);
 }
