@@ -1,12 +1,10 @@
-
-
 import React, { useEffect } from "react";
-import "./Draw.css"; 
+import "./Draw.css";
 
 const Draw = () => {
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "/Draw/Draw.js"; 
+    script.src = "/Draw/Draw.js";
     script.async = true;
     document.body.appendChild(script);
 
@@ -25,13 +23,13 @@ const Draw = () => {
             type="range"
             id="jsRange"
             min="0.1"
-            max="5.0"
+            max="20.0"
             defaultValue="2.5"
             step="0.1"
           />
         </div>
         <div className="controls__btn">
-          <button id="jsMode">Draw</button>
+          {/* <button id="jsMode">Draw</button> */}
           <button id="jsSave">Save</button>
           <input type="file" id="jsUpload" accept="image/*" />
         </div>
