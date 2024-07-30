@@ -17,13 +17,16 @@ const SongYTWrapper = ({ videoId }) => {
   console.log(song);
 
   const handleSongClicked = () => {
-    dispatch(
-      createRecentActivity({
-        type: "song",
-        description: song.name,
-        user: currentUser._id,
-      })
-    );
+    if (currentUser) {
+      
+      dispatch(
+        createRecentActivity({
+          type: "song",
+          description: song.name,
+          user: currentUser._id,
+        })
+      );
+    }
     navigate(`/song/${videoId}`);
   };
 

@@ -29,8 +29,8 @@ const Navbar = () => {
   const navLinkClasses = ({ isActive }) =>
     `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover transition-transform duration-300 ease-in-out hover:scale-105 ${
       isActive
-        ? "scale-110 text-primaryColor"
-        : "text-primaryColor animate-float"
+        ? "scale-110 text-blue-950"
+        : "text-blue-950 animate-float"
     } pt-5`;
 
   const navLinkStyles = {
@@ -88,11 +88,11 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
-              to="meals"
+              to="parenting"
               className={navLinkClasses}
               style={navLinkStyles}
             >
-              {t("Meals")}
+              {t("Parenting")}
             </NavLink>
           </li>
           <li>
@@ -130,7 +130,7 @@ const Navbar = () => {
         <div className="relative top-12 right-4 md:static md:ml-auto md:mr-4 mt-4 md:mt-0">
           <select
             onChange={handleLanguageChange}
-            className="p-2 text-lg font-semibold bg-transparent rounded-md"
+            className="p-2 text-lg font-semibold bg-transparent rounded-md text-blue-950"
           >
             <option value="en">En</option>
             <option value="ar">Ar</option>

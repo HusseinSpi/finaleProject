@@ -1,10 +1,7 @@
-// import familybg from "./pictures/familybg.mp4";
 import underwater from "./pictures/underwater.mp4";
-// import flower from "./pictures/flower.png"
-// import flower from "./pictures/yellow.png";
 import starfish from "./pictures/starfish.png";
 import background from "../../../public/bbg.jpg";
-import { GiMeal, GiCoral, GiStaryu, GiSeaStar } from "react-icons/gi";
+import { GiMeal, GiCoral, GiSeaStar } from "react-icons/gi";
 import { MdOutlineMenuBook } from "react-icons/md";
 import { HiOutlineMusicNote } from "react-icons/hi";
 import { RiParentLine } from "react-icons/ri";
@@ -13,6 +10,10 @@ import { Link } from "react-router-dom";
 import "../../index.css";
 import bubble from "../../../public/bubble.png";
 import { useTranslation } from "react-i18next";
+import seashell from "../../../public/seashell2.png"
+import coral from "../../../public/coral.png"
+import seahorse from "../../../public/seahorse.png"
+import crab from "../../../public/crab.png"
 
 const Home = () => {
   const { t, i18n } = useTranslation();
@@ -57,7 +58,7 @@ const Home = () => {
         {/* Circle Containers */}
         <div className="text-center">
           <h1 className="text-blue-900 text-4xl flex font-bold mt-4">
-            <GiStaryu /> {t("KidsSection")} <GiStaryu />
+            <GiSeaStar /> {t("KidsSection")} <GiSeaStar />
           </h1>
         </div>
         <div className="flex justify-center gap-8 -mt-6 relative">
@@ -76,7 +77,7 @@ const Home = () => {
               <img
                 src={starfish}
                 alt="Rain"
-                className="absolute w-20 h-20 animate-spin-around-circle"
+                className="absolute w-16 h-16 animate-spin-around-circle"
               />
             </div>
           </Link>
@@ -93,9 +94,9 @@ const Home = () => {
             >
               {t("Stories")} <MdOutlineMenuBook size={40} color="#2E1065" />
               <img
-                src={starfish}
+                src={seashell}
                 alt="Rain"
-                className="absolute w-20 h-20 animate-spin-around-circle"
+                className="absolute w-16 h-16 animate-spin-around-circle"
               />
             </div>
           </Link>
@@ -112,9 +113,9 @@ const Home = () => {
             >
               {t("Songs")} <HiOutlineMusicNote size={40} color="#2E1065" />
               <img
-                src={starfish}
+                src={coral}
                 alt="Rain"
-                className="absolute w-20 h-20 animate-spin-around-circle"
+                className="absolute w-16 h-20 animate-spin-around-circle"
               />
             </div>
           </Link>
@@ -139,9 +140,9 @@ const Home = () => {
             >
               {t("MealRecipes")} <GiMeal size={40} color="#2E1065" />
               <img
-                src={starfish}
+                src={seahorse}
                 alt="Rain"
-                className="absolute w-20 h-20 animate-spin-around-circle"
+                className="absolute w-14 h-16 animate-spin-around-circle"
               />
             </div>
           </Link>
@@ -158,9 +159,9 @@ const Home = () => {
             >
               {t("ParentingTips")} <RiParentLine size={40} color="#2E1065" />
               <img
-                src={starfish}
+                src={crab}
                 alt="Rain"
-                className="absolute w-20 h-20 animate-spin-around-circle"
+                className="absolute w-16 h-16 animate-spin-around-circle"
               />
             </div>
           </Link>

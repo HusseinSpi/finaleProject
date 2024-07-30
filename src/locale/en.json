@@ -1,7 +1,7 @@
 {
-  "back": "back",
-  "next": "next",
-  "AdminPageTitle": "Admin Page",
+  "back": "Back",
+  "next": "Next",
+  "AdminPageTitle": "Admin's Page",
   "Users": "Users",
   "MessageRequests": "Message Requests",
   "Reviews": "Reviews",
@@ -13,8 +13,8 @@
   "Stories": "Stories",
   "Parents": "Parents",
   "Welcome": "Welcome to",
-  "KidsSection": "Kids Section",
-  "ParentsSection": "Parents Section",
+  "KidsSection": "Kids' Section",
+  "ParentsSection": "Parents' Section",
   "MealRecipes": "Meal Recipes",
   "ParentingTips": "Parenting Tips",
   "SignIn": "Sign In",
@@ -48,5 +48,7 @@
   "Puzzel": "Puzzel",
   "OtherSongsYouMightLike": "Other Songs You Might Like",
   "ChatLogIn": "You must log in first to continue the chat.",
-  "SongView": "Watched the song"
+  "SongView": "Watched the song",
+  "Parenting": "Parenting",
+  "Meals": "Meals"
 }

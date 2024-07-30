@@ -27,7 +27,7 @@ const SignInForm = () => {
       onSubmit={handleSubmit}
       className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
     >
-      <p className="text-center text-lg font-medium text-thirdColor">
+      <p className="text-center text-lg font-medium text-blue-900">
         {t("SignInTitle")}
       </p>
 
@@ -78,7 +78,7 @@ const SignInForm = () => {
 
       <button
         type="submit"
-        className="block w-full rounded-lg bg-thirdColorO px-5 py-3 text-sm font-medium text-white bg-black"
+        className="block w-full rounded-lg bg-blue-900 px-5 py-3 text-sm font-medium text-white hover:blue-800 "
       >
         {t("SignIn")}
       </button>
@@ -91,7 +91,7 @@ const SignInForm = () => {
 
       <p className="text-center text-sm text-gray-500">
         {t("NoAccount")}
-        <Link className="underline" to="/sign-up">
+        <Link className="underline text-blue-900 hover:text-blue-700" to="/sign-up">
           {t("SignUp")}
         </Link>
       </p>
