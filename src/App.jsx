@@ -28,6 +28,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import ChatRoom from "./Pages/messages/ChatRoom";
 import MatchingGame from "./Pages/Games/MatchingGame";
 import Draw from "./Pages/Draw/Draw";
+import Games from "./Pages/Games/Games"
 
 const router = createBrowserRouter([
   {
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
       {
         path: "stories",
         element: <Stories />,
+      },
+      {
+        path: "games",
+        element: <Games />,
       },
       {
          path: "forming-word-game",

@@ -4,13 +4,11 @@ import underwater from "./pictures/underwater.mp4";
 // import flower from "./pictures/yellow.png";
 import starfish from "./pictures/starfish.png";
 import background from "../../../public/bbg.jpg";
-import { GiMeal } from "react-icons/gi";
+import { GiMeal, GiCoral, GiStaryu, GiSeaStar } from "react-icons/gi";
 import { MdOutlineMenuBook } from "react-icons/md";
 import { HiOutlineMusicNote } from "react-icons/hi";
 import { RiParentLine } from "react-icons/ri";
 import { LuGamepad2 } from "react-icons/lu";
-import { MdOutlineBubbleChart } from "react-icons/md";
-
 import { Link } from "react-router-dom";
 import "../../index.css";
 import bubble from "../../../public/bubble.png";
@@ -35,13 +33,12 @@ const Home = () => {
           <h1 className="text-blue-900 text-3xl md:text-5xl font-bold text-center items-center justify-center mb-4 flex">
             {i18n.language === "en" ? (
               <>
-                <MdOutlineBubbleChart /> {t("Welcome")} KiddoFun{" "}
-                <MdOutlineBubbleChart />
+                <GiCoral /> {t("Welcome")} KiddoFun <GiCoral />
               </>
             ) : (
               <>
-                <MdOutlineBubbleChart /> KiddoFun {t("Welcome")}
-                <MdOutlineBubbleChart />
+                <GiCoral /> KiddoFun {t("Welcome")}
+                <GiCoral />
               </>
             )}
           </h1>
@@ -59,8 +56,8 @@ const Home = () => {
       >
         {/* Circle Containers */}
         <div className="text-center">
-          <h1 className="text-blue-900 text-4xl font-bold mt-4">
-            {t("KidsSection")}
+          <h1 className="text-blue-900 text-4xl flex font-bold mt-4">
+            <GiStaryu /> {t("KidsSection")} <GiStaryu />
           </h1>
         </div>
         <div className="flex justify-center gap-8 -mt-6 relative">
@@ -124,8 +121,8 @@ const Home = () => {
         </div>
 
         <div className="text-center">
-          <h1 className="text-blue-900 text-4xl font-bold">
-            {t("ParentsSection")}
+          <h1 className="text-blue-900 text-4xl flex font-bold">
+            <GiSeaStar /> {t("ParentsSection")} <GiSeaStar />
           </h1>
         </div>
         <div className="flex justify-center gap-8 relative -mt-6">

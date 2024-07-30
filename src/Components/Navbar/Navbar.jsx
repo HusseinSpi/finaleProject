@@ -51,8 +51,7 @@ const Navbar = () => {
                   isActive
                     ? " scale-110 text-blue-900"
                     : "text-blue-900 animate-float"
-                    ? "scale-110 text-primaryColor"
-                    : "text-primaryColor animate-float"
+                   
                 } pt-5`
               }
               style={{
@@ -74,8 +73,7 @@ const Navbar = () => {
                   isActive
                     ? " scale-110 text-blue-900"
                     : "text-blue-900 animate-float"
-                    ? "scale-110 text-primaryColor"
-                    : "text-primaryColor animate-float"
+                   
                 } pt-5`
               }
               style={{
@@ -163,8 +161,7 @@ const Navbar = () => {
                   isActive
                     ? "scale-110 text-blue-900"
                     : " animate-float text-blue-900"
-                    ? "scale-110 text-primaryColor"
-                    : "animate-float text-primaryColor"
+                   
                 } pt-5`
               }
               style={{
@@ -182,7 +179,7 @@ const Navbar = () => {
         <div className="relative top-12 right-4 md:static md:ml-auto md:mr-4 mt-4 md:mt-0">
           <select
             onChange={handleLanguageChange}
-            className=" p-2 text-lg font-semibold bg-transparent rounded-md "
+            className=" p-2 text-lg font-semibold bg-transparent rounded-md  text-blue-900"
           >
             <option value="en">En</option>
             <option value="ar">Ar</option>
