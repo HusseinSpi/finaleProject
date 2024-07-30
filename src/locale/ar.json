@@ -40,16 +40,13 @@
   "NumbersSongs": "اغاني الارقام",
   "AlphabetSongs": "أغاني الأبجدية",
   "GeneralSongs": "الأغاني عامة",
-<<<<<<< HEAD
-  "Tetris" : "تتريس",
-  "Forming Words" : "تشكيل كلمات",
-  " Drawing and Coloring" : "الرسم والتلوين",
+  "Tetris": "تتريس",
+  "Forming Words": "تشكيل كلمات",
+  " Drawing and Coloring": "الرسم والتلوين",
   "Matching Pairs": "مطابقة الأزواج",
   "Tic Tac Toe": "إكس أو",
-  "Puzzel" : "بازل"
-=======
+  "Puzzel": "بازل",
   "OtherSongsYouMightLike": "أغاني أخرى قد تعجبك",
   "ChatLogIn": "يجب عليك تسجيل الدخول أولا لمواصلة الدردشة.",
   "SongView": "تم مشاهدة اغنية"
->>>>>>> Hussein
 }

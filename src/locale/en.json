@@ -40,16 +40,13 @@
   "NumbersSongs": "Numbers songs",
   "AlphabetSongs": "Alphabet songs",
   "GeneralSongs": "General songs",
-<<<<<<< HEAD
   "Tetris": "Tetris",
   "Forming Words": "Forming Words ",
   " Drawing and Coloring": " Drawing and Coloring ",
   "Matching Pairs": "Matching Pairs ",
   "Tic Tac Toe": "Tic Tac Toe ",
-  "Puzzel": "Puzzel"
-=======
+  "Puzzel": "Puzzel",
   "OtherSongsYouMightLike": "Other Songs You Might Like",
   "ChatLogIn": "You must log in first to continue the chat.",
   "SongView": "Watched the song"
->>>>>>> Hussein
 }

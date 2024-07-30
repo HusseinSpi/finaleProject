@@ -57,26 +57,8 @@ const Navbar = () => {
           <li>
             <NavLink
               to="games"
-<<<<<<< HEAD
-              className={({ isActive }) =>
-                `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover transition-transform duration-300 ease-in-out hover:scale-105 ${
-                  isActive
-                    ? " scale-110 text-blue-900"
-                    : "text-blue-900 animate-float"
-                   
-                } pt-5`
-              }
-              style={{
-                backgroundImage: `url(${bubble})`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                padding: "2rem",
-              }}
-=======
               className={navLinkClasses}
               style={navLinkStyles}
->>>>>>> Hussein
             >
               {t("Games")}
             </NavLink>
@@ -84,26 +66,8 @@ const Navbar = () => {
           <li>
             <NavLink
               to="songs"
-<<<<<<< HEAD
-              className={({ isActive }) =>
-                `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover transition-transform duration-300 ease-in-out hover:scale-105 ${
-                  isActive
-                    ? " scale-110 text-blue-900"
-                    : "text-blue-900 animate-float"
-                   
-                } pt-5`
-              }
-              style={{
-                backgroundImage: `url(${bubble})`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                padding: "2rem",
-              }}
-=======
               className={navLinkClasses}
               style={navLinkStyles}
->>>>>>> Hussein
             >
               {t("Songs")}
             </NavLink>
@@ -111,109 +75,31 @@ const Navbar = () => {
           <li>
             <NavLink
               to="stories"
-<<<<<<< HEAD
-              className={({ isActive }) =>
-                `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover transition-transform duration-300 ease-in-out hover:scale-105 ${
-                  isActive
-                    ? "scale-110 text-blue-900"
-                    : "text-blue-900 animate-float"
-                } pt-5`
-              }
-              style={{
-                backgroundImage: `url(${bubble})`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                padding: "2rem",
-              }}
-=======
               className={navLinkClasses}
               style={navLinkStyles}
->>>>>>> Hussein
             >
               {t("Stories")}
             </NavLink>
           </li>
           <li className="hidden md:flex justify-center">
-<<<<<<< HEAD
-            <img src={logo} alt="Logo" className="w-40 h-10" />
-          </li>
-          <li>
-            <NavLink
-              to="sign-in"
-              className={({ isActive }) =>
-                `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover transition-transform duration-300 ease-in-out hover:scale-105 ${
-                  isActive
-                    ? "scale-110 text-blue-900"
-                    : "text-blue-900 animate-float"
-                } pt-5`
-              }
-              style={{
-                backgroundImage: `url(${bubble})`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                padding: "2rem",
-              }}
-            >
-              {t("SignIn")}
-=======
             <NavLink to="/">
               <img src={logo} alt="Logo" className="w-40 h-10" />
->>>>>>> Hussein
             </NavLink>
           </li>
           <li>
             <NavLink
-<<<<<<< HEAD
-              to="sign-up"
-              className={({ isActive }) =>
-                `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover transition-transform duration-300 ease-in-out hover:scale-105 ${
-                  isActive
-                    ? "scale-110 text-blue-900"
-                    : "text-blue-900 animate-float"
-                } pt-5`
-              }
-              style={{
-                backgroundImage: `url(${bubble})`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                padding: "2rem",
-              }}
-=======
               to="meals"
               className={navLinkClasses}
               style={navLinkStyles}
->>>>>>> Hussein
             >
               {t("Meals")}
             </NavLink>
           </li>
           <li>
             <NavLink
-<<<<<<< HEAD
-              to="parents"
-              className={({ isActive }) =>
-                `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover transition-transform duration-300 ease-in-out hover:scale-105 ${
-                  isActive
-                    ? "scale-110 text-blue-900"
-                    : " animate-float text-blue-900"
-                   
-                } pt-5`
-              }
-              style={{
-                backgroundImage: `url(${bubble})`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                padding: "2rem",
-              }}
-=======
               to="meals"
               className={navLinkClasses}
               style={navLinkStyles}
->>>>>>> Hussein
             >
               {t("Meals")}
             </NavLink>
@@ -244,11 +130,7 @@ const Navbar = () => {
         <div className="relative top-12 right-4 md:static md:ml-auto md:mr-4 mt-4 md:mt-0">
           <select
             onChange={handleLanguageChange}
-<<<<<<< HEAD
-            className=" p-2 text-lg font-semibold bg-transparent rounded-md  text-blue-900"
-=======
             className="p-2 text-lg font-semibold bg-transparent rounded-md"
->>>>>>> Hussein
           >
             <option value="en">En</option>
             <option value="ar">Ar</option>

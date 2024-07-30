@@ -28,11 +28,8 @@ import Navbar from "./Components/Navbar/Navbar";
 import ChatRoom from "./Pages/messages/ChatRoom";
 import MatchingGame from "./Pages/Games/MatchingGame";
 import Draw from "./Pages/Draw/Draw";
-<<<<<<< HEAD
-import Games from "./Pages/Games/Games"
-=======
+import Games from "./Pages/Games/Games";
 import Account from "./Pages/account/Account";
->>>>>>> Hussein
 
 const router = createBrowserRouter([
   {
@@ -77,15 +74,11 @@ const router = createBrowserRouter([
         element: <Stories />,
       },
       {
-<<<<<<< HEAD
         path: "games",
         element: <Games />,
       },
       {
-         path: "forming-word-game",
-=======
         path: "forming-word-game",
->>>>>>> Hussein
         element: (
           <DndProvider backend={HTML5Backend}>
             <FormingWordGame />
