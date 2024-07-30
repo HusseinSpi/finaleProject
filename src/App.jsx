@@ -30,6 +30,7 @@ import MatchingGame from "./Pages/Games/MatchingGame";
 import Draw from "./Pages/Draw/Draw";
 import Games from "./Pages/Games/Games";
 import Account from "./Pages/account/Account";
+import Parenting from "./Pages/Parenting/Parenting";
 
 const router = createBrowserRouter([
   {
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
       {
         path: "games",
         element: <Games />,
+      },
+      {
+        path: "parenting",
+        element: <Parenting />,
       },
       {
         path: "forming-word-game",
