@@ -7,8 +7,8 @@
   position: relative;
   background-color: #e9f0d8;
 
-  width: 100%;
-  height: 100vh;
+  max-width: 100vw;
+  height: 89.9vh;
 
   background-image: url('../../../public/bbbg.jpg');
 
