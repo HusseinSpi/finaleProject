@@ -25,6 +25,7 @@ import ChatRoom from './Pages/messages/ChatRoom'
 import MatchingGame from './Pages/Games/MatchingGame'
 import Draw from './Pages/Draw/Draw'
 import TicTacToe from './Components/TicTacToe/TicTacToe'
+import CulinaryKids from './Pages/CulinaryKids/CulinaryKids'
 
 const router = createBrowserRouter([
   {
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
       {
         path: 'stories',
         element: <Stories />,
+      },
+      {
+        path: 'culinary-kids',
+        element: <CulinaryKids />,
       },
       {
         path: 'forming-word-game',
