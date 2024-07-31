@@ -3,8 +3,10 @@ import { io } from "socket.io-client";
 import RoomList from "./RoomList";
 import DisplayMessages from "./DisplayMessages";
 import InputMessage from "./InputMessage";
+import { useTranslation } from "react-i18next";
 
 const ChatSpecialist = ({ currentUser }) => {
+  const { t } = useTranslation();
   const [inputValue, setInputValue] = useState("");
   const [isRoomClosed, setIsRoomClosed] = useState(true);
   const [roomNumber, setRoomNumber] = useState(null);
@@ -135,6 +137,14 @@ const ChatSpecialist = ({ currentUser }) => {
       socketRef.current.emit("joinRoom", userId, activeRoom);
     }
   }, [activeRoom, userId]);
+
+  if (!currentUser) {
+    return (
+      <div className="bg-gray-100 p-2 rounded mb-4 h-chat flex flex-col overflow-y-auto">
+        <p className="text-red-500 text-center my-auto">{t("ChatLogIn")}</p>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-gray-100 p-2 rounded mb-4 h-chat flex flex-col overflow-y-auto">

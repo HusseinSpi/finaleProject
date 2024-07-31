@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getAllMusic } from "../../redux/thunk/musicsThunk";
 import { useTranslation } from "react-i18next";
+import background from "../../../public/bbg.jpg"
+// import seacreatures from "../../../public/seacreatures.jpg"
+import seacreatures from "../../../public/waves4.png"
 
 const Songs = () => {
   const { t, i18n } = useTranslation();
@@ -40,23 +43,38 @@ const Songs = () => {
   }
 
   return (
-    <div className="p-4">
-      <h1 className="text-3xl font-bold text-center mb-6">
+    <div
+      className="w-screen h-screen p-5 relative "
+      style={{
+        background: `url(${seacreatures})`,
+  // backgroundRepeat: "no-repeat",
+  // backgroundSize: "cover",
+        width: "100%",
+        height: "100%",
+      }}
+    >
+      <h1 className="text-3xl font-bold text-center mt-16 text-blue-950">
         {t("learnWithUs")}
       </h1>
 
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">{t("NumbersSongs")}</h2>
+        <h2 className="text-2xl font-semibold text-blue-950 mb-4">
+          {t("NumbersSongs")}
+        </h2>
         <Carousel songs={numbersSongs} />
       </div>
 
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">{t("AlphabetSongs")}</h2>
+        <h2 className="text-2xl font-semibold text-blue-950 mb-4">
+          {t("AlphabetSongs")}
+        </h2>
         <Carousel songs={alphabetSongs} />
       </div>
 
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">{t("GeneralSongs")}</h2>
+        <h2 className="text-2xl font-semibold text-blue-950 mb-4">
+          {t("GeneralSongs")}
+        </h2>
         <Carousel songs={generalSongs} />
       </div>
     </div>
