@@ -127,7 +127,7 @@ const Home = () => {
           </h1>
         </div>
         <div className="flex justify-center gap-8 relative -mt-6">
-          <Link to="/meals">
+          <Link to="/culinary-kids">
             <div
               className="relative w-[12rem] h-[12rem] rounded-full bg-[#B5A5D0] flex flex-col gap-2 items-center justify-center text-blue-900 text-xl font-semibold text-center"
               style={{
