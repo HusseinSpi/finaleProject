@@ -1,22 +1,22 @@
-import underwater from "./pictures/underwater.mp4";
-import starfish from "./pictures/starfish.png";
-import background from "../../../public/bbg.jpg";
-import { GiMeal, GiCoral, GiSeaStar } from "react-icons/gi";
-import { MdOutlineMenuBook } from "react-icons/md";
-import { HiOutlineMusicNote } from "react-icons/hi";
-import { RiParentLine } from "react-icons/ri";
-import { LuGamepad2 } from "react-icons/lu";
-import { Link } from "react-router-dom";
-import "../../index.css";
-import bubble from "../../../public/bubble.png";
-import { useTranslation } from "react-i18next";
-import seashell from "../../../public/seashell2.png"
-import coral from "../../../public/coral.png"
-import seahorse from "../../../public/seahorse.png"
-import crab from "../../../public/crab.png"
+import underwater from './pictures/underwater.mp4'
+import starfish from './pictures/starfish.png'
+import background from '../../../public/bbg.jpg'
+import { GiMeal, GiCoral, GiSeaStar } from 'react-icons/gi'
+import { MdOutlineMenuBook } from 'react-icons/md'
+import { HiOutlineMusicNote } from 'react-icons/hi'
+import { RiParentLine } from 'react-icons/ri'
+import { LuGamepad2 } from 'react-icons/lu'
+import { Link } from 'react-router-dom'
+import '../../index.css'
+import bubble from '../../../public/bubble.png'
+import { useTranslation } from 'react-i18next'
+import seashell from '../../../public/seashell2.png'
+import coral from '../../../public/coral.png'
+import seahorse from '../../../public/seahorse.png'
+import crab from '../../../public/crab.png'
 
 const Home = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation()
   return (
     <div>
       <div className="h-screen w-full relative overflow-hidden">
@@ -32,13 +32,13 @@ const Home = () => {
       <div className="relative flex flex-col items-center justify-center h-[15rem] p-1 custom-radial">
         <div className="flex flex-col items-center justify-center h-full w-full bg-white">
           <h1 className="text-blue-900 text-3xl md:text-5xl font-bold text-center items-center justify-center mb-4 flex">
-            {i18n.language === "en" ? (
+            {i18n.language === 'en' ? (
               <>
-                <GiCoral /> {t("Welcome")} KiddoFun <GiCoral />
+                <GiCoral /> {t('Welcome')} KiddoFun <GiCoral />
               </>
             ) : (
               <>
-                <GiCoral /> KiddoFun {t("Welcome")}
+                <GiCoral /> KiddoFun {t('Welcome')}
                 <GiCoral />
               </>
             )}
@@ -49,16 +49,16 @@ const Home = () => {
         className="w-screen h-screen  p-5 flex flex-col items-center justify-evenly relative"
         style={{
           background: `url(${background})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          width: "100%",
-          height: "100vh",
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          width: '100%',
+          height: '100vh',
         }}
       >
         {/* Circle Containers */}
         <div className="text-center">
           <h1 className="text-blue-900 text-4xl flex font-bold mt-4">
-            <GiSeaStar /> {t("KidsSection")} <GiSeaStar />
+            <GiSeaStar /> {t('KidsSection')} <GiSeaStar />
           </h1>
         </div>
         <div className="flex justify-center gap-8 -mt-6 relative">
@@ -67,13 +67,13 @@ const Home = () => {
               className="relative w-[12rem] h-[12rem] rounded-full  flex flex-col gap-2 items-center justify-center text-blue-900 text-xl font-semibold "
               style={{
                 backgroundImage: `url(${bubble})`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                padding: "2rem",
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                padding: '2rem',
               }}
             >
-              {t("Games")} <LuGamepad2 size={40} color="#2E1065" />
+              {t('Games')} <LuGamepad2 size={40} color="#2E1065" />
               <img
                 src={starfish}
                 alt="Rain"
@@ -86,13 +86,13 @@ const Home = () => {
               className="relative w-[12rem] h-[12rem] rounded-full bg-[#B5A5D0] flex flex-col gap-2 items-center justify-center text-blue-900 text-xl font-semibold"
               style={{
                 backgroundImage: `url(${bubble})`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                padding: "2rem",
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                padding: '2rem',
               }}
             >
-              {t("Stories")} <MdOutlineMenuBook size={40} color="#2E1065" />
+              {t('Stories')} <MdOutlineMenuBook size={40} color="#2E1065" />
               <img
                 src={seashell}
                 alt="Rain"
@@ -105,13 +105,13 @@ const Home = () => {
               className="relative w-[12rem] h-[12rem] rounded-full bg-[#B5A5D0] flex flex-col gap-2 items-center justify-center text-blue-900 text-xl font-semibold"
               style={{
                 backgroundImage: `url(${bubble})`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                padding: "2rem",
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                padding: '2rem',
               }}
             >
-              {t("Songs")} <HiOutlineMusicNote size={40} color="#2E1065" />
+              {t('Songs')} <HiOutlineMusicNote size={40} color="#2E1065" />
               <img
                 src={coral}
                 alt="Rain"
@@ -123,7 +123,7 @@ const Home = () => {
 
         <div className="text-center">
           <h1 className="text-blue-900 text-4xl flex font-bold">
-            <GiSeaStar /> {t("ParentsSection")} <GiSeaStar />
+            <GiSeaStar /> {t('ParentsSection')} <GiSeaStar />
           </h1>
         </div>
         <div className="flex justify-center gap-8 relative -mt-6">
@@ -132,13 +132,13 @@ const Home = () => {
               className="relative w-[12rem] h-[12rem] rounded-full bg-[#B5A5D0] flex flex-col gap-2 items-center justify-center text-blue-900 text-xl font-semibold text-center"
               style={{
                 backgroundImage: `url(${bubble})`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                padding: "2rem",
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                padding: '2rem',
               }}
             >
-              {t("MealRecipes")} <GiMeal size={40} color="#2E1065" />
+              {t('MealRecipes')} <GiMeal size={40} color="#2E1065" />
               <img
                 src={seahorse}
                 alt="Rain"
@@ -151,13 +151,13 @@ const Home = () => {
               className="relative w-[12rem] h-[12rem] text-center  rounded-full bg-[#B5A5D0] flex flex-col gap-2 items-center justify-center text-blue-900 text-xl font-semibold"
               style={{
                 backgroundImage: `url(${bubble})`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                padding: "2rem",
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                padding: '2rem',
               }}
             >
-              {t("ParentingTips")} <RiParentLine size={40} color="#2E1065" />
+              {t('ParentingTips')} <RiParentLine size={40} color="#2E1065" />
               <img
                 src={crab}
                 alt="Rain"
@@ -168,7 +168,7 @@ const Home = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
