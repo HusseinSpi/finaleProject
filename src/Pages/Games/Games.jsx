@@ -29,10 +29,6 @@ const Games = () => {
     }
   };
 
-  if (!currentUser) {
-    return <div>{t("Loading...")}</div>;
-  }
-
   const games = [
     { link: "/tetris", imgSrc: tetris, alt: "tetris", label: t("Tetris") },
     {
