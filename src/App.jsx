@@ -1,37 +1,50 @@
-import { useEffect, useState } from 'react'
-import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
-import NotFound from './Pages/NotFound/NotFound'
-// import Home from "./Pages/Home/Home";
-import Home from './Pages/Home/Home'
-import Songs from './Pages/Songs/Songs'
-import Stories from './Pages/Stories/Stoeies'
+import { useEffect, useState } from "react";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+  Outlet,
+} from "react-router-dom";
+import NotFound from "./Pages/NotFound/NotFound";
+import Home from "./Pages/Home/Home";
+import Songs from "./Pages/Songs/Songs";
+import Stories from "./Pages/Stories/Stoeies";
+import FormingWordGame from "./Components/FormingWordGame/FormingWordGame";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import SingleSong from "./Pages/SingleSong/SingleSong";
+import Chat from "./Components/Chat/Chat";
+import SignUpPage from "./Pages/signup/Signup";
+import SignInPage from "./Pages/signin/SignInPage";
+import ForgotPasswordPage from "./Pages/ForgotPasword/ForgotPassword";
+import ResetPassword from "./Pages/ForgotPasword/ResetPassword";
+import AdminPage from "./Pages/admin/AdminPage";
+import Sidebar from "./Components/sidebar/Sidebar";
+import Messages from "./Pages/messages/Messages";
+import Reviews from "./Pages/reviews/Reviews";
+import Tetris from "./Components/Tetris/Tetris";
+import Navbar from "./Components/Navbar/Navbar";
+import ChatRoom from "./Pages/messages/ChatRoom";
+import MatchingGame from "./Pages/Games/MatchingGame";
+import Draw from "./Pages/Draw/Draw";
+import Games from "./Pages/Games/Games";
+import Account from "./Pages/account/Account";
+import Parenting from "./Pages/Parenting/Parenting";
+import TicTacToe from "./Components/TicTacToe/TicTacToe";
 
-import FormingWordGame from './Components/FormingWordGame/FormingWordGame'
-import { DndProvider } from 'react-dnd'
-import { HTML5Backend } from 'react-dnd-html5-backend'
-import SingleSong from './Pages/SingleSong/SingleSong'
-import Chat from './Components/Chat/Chat'
-import SignUpPage from './Pages/signup/Signup'
-import SignInPage from './Pages/signin/SignInPage'
-import ForgotPasswordPage from './Pages/ForgotPasword/ForgotPassword'
-import ResetPassword from './Pages/ForgotPasword/ResetPassword'
-import AdminPage from './Pages/admin/AdminPage'
-import Sidebar from './Components/sidebar/Sidebar'
-import Messages from './Pages/messages/Messages'
-import Reviews from './Pages/reviews/Reviews'
-import Tetris from './Components/Tetris/Tetris'
-import Navbar from './Components/Navbar/Navbar'
-import ChatRoom from './Pages/messages/ChatRoom'
-import MatchingGame from './Pages/Games/MatchingGame'
-import Draw from './Pages/Draw/Draw'
-import Games from './Pages/Games/Games'
-import Account from './Pages/account/Account'
-import Parenting from './Pages/Parenting/Parenting'
-import TicTacToe from './Components/TicTacToe/TicTacToe'
+const PrivateRoute = ({ element }) => {
+  const isAuthenticated = localStorage.getItem("token");
+  return isAuthenticated ? element : <Navigate to="/sign-in" />;
+};
+
+const PublicRoute = ({ element }) => {
+  const isAuthenticated = localStorage.getItem("token");
+  return !isAuthenticated ? element : <Navigate to="/" />;
+};
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: (
       <>
         <Navbar />
@@ -44,43 +57,43 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: 'sign-up',
-        element: <SignUpPage />,
+        path: "sign-up",
+        element: <PublicRoute element={<SignUpPage />} />,
       },
       {
-        path: 'sign-in',
-        element: <SignInPage />,
+        path: "sign-in",
+        element: <PublicRoute element={<SignInPage />} />,
       },
       {
-        path: 'forgot-password',
-        element: <ForgotPasswordPage />,
+        path: "forgot-password",
+        element: <PublicRoute element={<ForgotPasswordPage />} />,
       },
       {
-        path: 'reset-password/:resetToken',
+        path: "reset-password/:resetToken",
         element: <ResetPassword />,
       },
       {
-        path: 'songs',
+        path: "songs",
         element: <Songs />,
       },
       {
-        path: 'song/:videoId',
+        path: "song/:videoId",
         element: <SingleSong />,
       },
       {
-        path: 'stories',
+        path: "stories",
         element: <Stories />,
       },
       {
-        path: 'games',
+        path: "games",
         element: <Games />,
       },
       {
-        path: 'parenting',
+        path: "parenting",
         element: <Parenting />,
       },
       {
-        path: 'forming-word-game',
+        path: "forming-word-game",
         element: (
           <DndProvider backend={HTML5Backend}>
             <FormingWordGame />
@@ -88,33 +101,33 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: 'tetris',
+        path: "tetris",
         element: <Tetris />,
       },
       {
-        path: 'Draw',
+        path: "Draw",
         element: <Draw />,
       },
       {
-        path: 'MatchingGame',
+        path: "MatchingGame",
         element: <MatchingGame />,
       },
       {
-        path: 'tic-tac-toe',
+        path: "tic-tac-toe",
         element: <TicTacToe />,
       },
       {
-        path: 'TicTacToe',
+        path: "TicTacToe",
         element: <TicTacToe />,
       },
       {
-        path: 'account',
-        element: <Account />,
+        path: "account",
+        element: <PrivateRoute element={<Account />} />,
       },
     ],
   },
   {
-    path: 'admin',
+    path: "admin",
     element: (
       <Sidebar>
         <AdminPage />
@@ -122,7 +135,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: 'messages',
+    path: "messages",
     element: (
       <Sidebar>
         <Messages />
@@ -130,11 +143,11 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: 'chat/:roomNumber',
+    path: "chat/:roomNumber",
     element: <ChatRoom />,
   },
   {
-    path: 'reviews',
+    path: "reviews",
     element: (
       <Sidebar>
         <Reviews />
@@ -142,24 +155,13 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: '*',
+    path: "*",
     element: <NotFound />,
   },
-])
+]);
+
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
-
-  useEffect(() => {
-    const userToken = localStorage.getItem('jwt')
-    if (userToken) {
-      setIsAuthenticated(true)
-    }
-  }, [])
-
-  const PrivateRoute = ({ children }) => {
-    return !isAuthenticated ? <Navigate to="/sign-in" /> : children
-  }
-  return <RouterProvider router={router} />
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
