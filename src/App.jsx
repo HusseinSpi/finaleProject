@@ -28,6 +28,7 @@ import Games from './Pages/Games/Games'
 import Account from './Pages/account/Account'
 import Parenting from './Pages/Parenting/Parenting'
 import TicTacToe from './Components/TicTacToe/TicTacToe'
+import CulinaryKids from './Pages/CulinaryKids/CulinaryKids'
 
 const router = createBrowserRouter([
   {
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
         element: <Parenting />,
       },
       {
+        path: 'culinary-kids',
+        element: <CulinaryKids />,
+      },
+      {
         path: 'forming-word-game',
         element: (
           <DndProvider backend={HTML5Backend}>
@@ -103,10 +108,7 @@ const router = createBrowserRouter([
         path: 'tic-tac-toe',
         element: <TicTacToe />,
       },
-      {
-        path: 'TicTacToe',
-        element: <TicTacToe />,
-      },
+
       {
         path: 'account',
         element: <Account />,
