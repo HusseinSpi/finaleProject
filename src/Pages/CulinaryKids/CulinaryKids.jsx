@@ -1,12 +1,11 @@
-import React from 'react'
-import './CulinaryKids.css'
+import "./CulinaryKids.css";
 
 const recipes = [
-  'Recipe 1: Spaghetti',
-  'Recipe 2: Tacos',
-  'Recipe 3: Pizza',
+  "Recipe 1: Spaghetti",
+  "Recipe 2: Tacos",
+  "Recipe 3: Pizza",
   // Add more recipes here
-]
+];
 
 const CulinaryKids = () => {
   return (
@@ -29,7 +28,7 @@ const CulinaryKids = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CulinaryKids
+export default CulinaryKids;

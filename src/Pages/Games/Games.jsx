@@ -1,72 +1,72 @@
-import { NavLink } from "react-router-dom";
-import background from "../../../public/bbg.jpg";
-import tetris from "../../../public/tetrisBG.jpg";
-import animals from "../../../public/animalsBG.jpg";
-import drawing from "../../../public/drawingBG.jpg";
-import matching from "../../../public/matchingBG.png";
-import tictactoe from "../../../public/tictactoe.webp";
-import puzzel from "../../../public/puzzelBG.jpg";
-import { useTranslation } from "react-i18next";
-import { useDispatch, useSelector } from "react-redux";
-import { createRecentActivity } from "../../redux/thunk/recentActivityThunks";
+import { NavLink } from 'react-router-dom'
+import background from '../../../public/bbg.jpg'
+import tetris from '../../../public/tetrisBG.jpg'
+import animals from '../../../public/animalsBG.jpg'
+import drawing from '../../../public/drawingBG.jpg'
+import matching from '../../../public/matchingBG.png'
+import tictactoe from '../../../public/tictactoe.webp'
+import puzzel from '../../../public/puzzelBG.jpg'
+import { useTranslation } from 'react-i18next'
+import { useDispatch, useSelector } from 'react-redux'
+import { createRecentActivity } from '../../redux/thunk/recentActivityThunks'
 
 const Games = () => {
-  const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const { t } = useTranslation()
+  const dispatch = useDispatch()
   const currentUser = useSelector(
     (state) => state.currentUser?.data?.data?.user
-  );
+  )
 
   const handlePlayGame = (gameName) => {
     if (currentUser) {
       dispatch(
         createRecentActivity({
-          type: "game",
+          type: 'game',
           description: gameName,
           user: currentUser._id,
         })
-      );
+      )
     }
-  };
+  }
 
   const games = [
-    { link: "/tetris", imgSrc: tetris, alt: "tetris", label: t("Tetris") },
+    { link: '/tetris', imgSrc: tetris, alt: 'tetris', label: t('Tetris') },
     {
-      link: "/forming-word-game",
+      link: '/forming-word-game',
       imgSrc: animals,
-      alt: "forming words",
-      label: t("Forming Words"),
+      alt: 'forming words',
+      label: t('Forming Words'),
     },
     {
-      link: "/Draw",
+      link: '/Draw',
       imgSrc: drawing,
-      alt: "drawing",
-      label: t("Drawing and Coloring"),
+      alt: 'drawing',
+      label: t('Drawing and Coloring'),
     },
     {
-      link: "/MatchingGame",
+      link: '/MatchingGame',
       imgSrc: matching,
-      alt: "matching pairs",
-      label: t("Matching Pairs"),
+      alt: 'matching pairs',
+      label: t('Matching Pairs'),
     },
     {
-      link: "/TicTacToe",
+      link: '/tic-tac-toe',
       imgSrc: tictactoe,
-      alt: "tic tac toe",
-      label: t("Tic Tac Toe"),
+      alt: 'tic tac toe',
+      label: t('Tic Tac Toe'),
     },
-    { link: "/puzzel", imgSrc: puzzel, alt: "puzzle", label: t("Puzzle") },
-  ];
+    { link: '/puzzel', imgSrc: puzzel, alt: 'puzzle', label: t('Puzzle') },
+  ]
 
   return (
     <div
       className="w-screen h-screen p-5 relative"
       style={{
         background: `url(${background})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        width: "100%",
-        height: "100%",
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        width: '100%',
+        height: '100%',
       }}
     >
       <div className="flex flex-wrap gap-10 justify-center ">
@@ -87,7 +87,7 @@ const Games = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Games;
+export default Games

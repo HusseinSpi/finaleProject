@@ -31,6 +31,7 @@ import Games from "./Pages/Games/Games";
 import Account from "./Pages/account/Account";
 import Parenting from "./Pages/Parenting/Parenting";
 import TicTacToe from "./Components/TicTacToe/TicTacToe";
+import CulinaryKids from "./Pages/CulinaryKids/CulinaryKids";
 
 const PrivateRoute = ({ element }) => {
   const isAuthenticated = localStorage.getItem("token");
@@ -91,6 +92,10 @@ const router = createBrowserRouter([
       {
         path: "parenting",
         element: <Parenting />,
+      },
+      {
+        path: "culinary-kids",
+        element: <CulinaryKids />,
       },
       {
         path: "forming-word-game",
