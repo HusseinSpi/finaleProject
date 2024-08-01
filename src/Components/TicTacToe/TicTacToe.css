@@ -26,16 +26,17 @@
   position: relative;
 }
 .TicTacToe-title {
-  padding-top: 3.5rem;
+  padding-top: 2.5rem;
   padding-bottom: 20px;
 
   color: aliceblue;
-  font-size: 50px;
+  font-size: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'TherenRegular';
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+  margin-right: 80px;
 }
 .TicTacToe-title img {
   padding: 0 10px;
@@ -55,7 +56,7 @@
   color: rgb(9, 58, 104);
   margin-top: -1rem;
   margin-bottom: 50px;
-  margin-right: 79px;
+  margin-right: 88px;
   font-family: 'TherenRegular';
   font-size: 2.3rem;
 }
@@ -126,14 +127,14 @@
 .bubble-class-for-tic-tac-toe {
   position: absolute;
   z-index: 3;
-  height: 2.5vh;
-  width: 1.3vw;
-  margin-left: 90%;
+  height: 2vh;
+  width: 1vw;
+  margin-left: 70%;
 
   transition-duration: 11500ms;
   margin-top: -24%;
   animation: floatUp 16s linear infinite;
-  animation-delay: 0s;
+  animation-delay: 10s;
 }
 
 .bubble-class-for-tic-tac-toe-two {
@@ -146,13 +147,14 @@
 
   transition-duration: 1500ms;
   animation: floatUp 19s linear infinite;
-  animation-delay: 2s;
+  animation-delay: 6s;
 }
+
 .bubble-class-for-tic-tac-toe-three {
   position: absolute;
   z-index: 3;
-  height: 2.5vh;
-  width: 1.3vw;
+  height: 2vh;
+  width: 1vw;
   margin-left: 97%;
   margin-top: -20%;
 
@@ -175,8 +177,8 @@
 .bubble-class-for-tic-tac-toe-five {
   position: absolute;
   z-index: 3;
-  height: 2.5vh;
-  width: 1.3vw;
+  height: 2vh;
+  width: 1vw;
   margin-left: 25%;
   margin-top: -22%;
   transition-duration: 300ms;
@@ -188,22 +190,82 @@
   z-index: 3;
   height: 2.5vh;
   width: 1.3vw;
-  margin-left: 15%;
+  margin-left: 19%;
   margin-top: -26%;
   transition-duration: 500ms;
   animation: floatUp 9s linear infinite;
-  animation-delay: 1.5s;
+  animation-delay: 2.5s;
 }
 .bubble-class-for-tic-tac-toe-seven {
   position: absolute;
   z-index: 3;
   height: 2.5vh;
   width: 1.3vw;
-  margin-left: 5%;
+  margin-left: 8%;
   margin-top: -13%;
   transition-duration: 400ms;
   animation: floatUp 16s linear infinite;
   animation-delay: 4s;
+}
+.bubble-class-for-tic-tac-toe-eight {
+  position: absolute;
+  z-index: 3;
+  height: 2.5vh;
+  width: 1.3vw;
+  margin-left: 77%;
+  margin-top: -14%;
+
+  transition-duration: 1500ms;
+  animation: floatUp 19s linear infinite;
+  animation-delay: 22s;
+}
+.bubble-class-for-tic-tac-toe-nine {
+  position: absolute;
+  z-index: 3;
+  height: 2vh;
+  width: 1vw;
+  margin-left: 75%;
+  margin-top: -14%;
+
+  transition-duration: 1500ms;
+  animation: floatUp 10s linear infinite;
+  animation-delay: 4s;
+}
+.bubble-class-for-tic-tac-toe-ten {
+  position: absolute;
+  z-index: 3;
+  height: 2vh;
+  width: 1vw;
+  margin-left: 25%;
+  margin-top: -14%;
+
+  transition-duration: 1500ms;
+  animation: floatUp 13s linear infinite;
+  animation-delay: 13s;
+}
+.bubble-class-for-tic-tac-toe-eleven {
+  position: absolute;
+  z-index: 3;
+  height: 2.5vh;
+  width: 1.3vw;
+  margin-left: 13%;
+  margin-top: -14%;
+
+  transition-duration: 1500ms;
+  animation: floatUp 19s linear infinite;
+  animation-delay: 3s;
+}
+.bubble-class-for-tic-tac-toe-twelve {
+  position: absolute;
+  z-index: 3;
+  height: 2vh;
+  width: 1vw;
+  margin-left: 30%;
+  margin-top: -14%;
+
+  transition-duration: 1500ms;
+  animation: floatUp 13s linear infinite;
+  animation-delay: 5s;
 }
 .bubble-class-for-tic-tac-toe-green-squid {
   position: absolute;
@@ -225,8 +287,8 @@
   height: 22.5vh;
   width: 8.3vw;
   margin-left: 91.2%;
-  animation: float 2s infinite;
-  transition-duration: 500ms;
+  animation: float 3s infinite;
+  transition-duration: 1000ms;
   margin-top: -10%;
 }
 .bubble-class-for-tic-tac-toe-red-star {
@@ -234,8 +296,8 @@
   z-index: 3;
   height: 12.5vh;
   width: 7.3vw;
-  margin-left: 90%;
-  margin-top: -21%;
+  margin-left: 70%;
+  margin-top: -15%;
   animation: float 3s infinite;
   transition-duration: 300ms;
 }
@@ -244,8 +306,8 @@
   z-index: 8;
   height: 12.5vh;
   width: 7.3vw;
-  margin-left: 13%;
-  margin-top: -24%;
+  margin-left: 25%;
+  margin-top: -25%;
   animation: float 2.5s infinite;
   transition-duration: 11500ms;
 }

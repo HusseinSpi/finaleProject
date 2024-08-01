@@ -207,6 +207,31 @@ const TicTacToe = () => {
           src="/public/bubble.png"
         ></img>
         <img
+          className="bubble-class-for-tic-tac-toe-eight"
+          alt="bubble-img-five"
+          src="/public/bubble.png"
+        ></img>
+        <img
+          className="bubble-class-for-tic-tac-toe-nine"
+          alt="bubble-img-five"
+          src="/public/bubble.png"
+        ></img>
+        <img
+          className="bubble-class-for-tic-tac-toe-ten"
+          alt="bubble-img-five"
+          src="/public/bubble.png"
+        ></img>
+        <img
+          className="bubble-class-for-tic-tac-toe-eleven"
+          alt="bubble-img-five"
+          src="/public/bubble.png"
+        ></img>
+        <img
+          className="bubble-class-for-tic-tac-toe-twelve"
+          alt="bubble-img-five"
+          src="/public/bubble.png"
+        ></img>
+        <img
           className="bubble-class-for-tic-tac-toe-green-squid"
           alt="green-squid"
           src="/public/green-squid.png"
