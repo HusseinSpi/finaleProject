@@ -39,7 +39,7 @@ const Parenting = () => {
   return (
     <div>
       <Books books={books[i18n.language] || books["en"] || []} />
-      <Videos videos={videos[i18n.language] || videos["en"] || []} />
+      {/* <Videos videos={videos[i18n.language] || videos["en"] || []} /> */}
       <Articles articles={articles[i18n.language] || articles["en"] || []} />
     </div>
   );
