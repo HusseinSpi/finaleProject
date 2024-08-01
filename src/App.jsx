@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useTransition } from 'react'
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 import NotFound from './Pages/NotFound/NotFound'
 // import Home from "./Pages/Home/Home";
@@ -29,6 +29,7 @@ import Account from './Pages/account/Account'
 import Parenting from './Pages/Parenting/Parenting'
 import TicTacToe from './Components/TicTacToe/TicTacToe'
 import CulinaryKids from './Pages/CulinaryKids/CulinaryKids'
+import { useTranslation } from 'react-i18next'
 
 const router = createBrowserRouter([
   {
@@ -151,12 +152,20 @@ const router = createBrowserRouter([
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
 
+  const { i18n } = useTranslation()
   useEffect(() => {
     const userToken = localStorage.getItem('jwt')
     if (userToken) {
       setIsAuthenticated(true)
     }
   }, [])
+  useEffect(() => {
+    if (i18n.language === 'en') {
+      document.body.dir = 'ltr'
+    } else {
+      document.body.dir = 'rtl'
+    }
+  }, [i18n.language])
 
   const PrivateRoute = ({ children }) => {
     return !isAuthenticated ? <Navigate to="/sign-in" /> : children

@@ -4,6 +4,11 @@ const culinaryKidsData = [
     imgEn: '/public/recepies/pizza-en.JPG',
     imgHe: '/public/recepies/pizza-he.JPG',
     imgAr: '/public/recepies/pizza-ar.JPG',
+    imgStyle: {
+      backgroundPosition: 'center',
+      backgroundSize: '100% 100%',
+      backgroundRepeat: 'no-repeat',
+    }, // Example style for image positioning
     recipeTitleEn: 'Mini Pita Pizzas',
     recipeTitleHe: 'מיני פיצה',
     recipeTitleAr: 'ميني بيتزا',
@@ -64,6 +69,11 @@ const culinaryKidsData = [
     imgEn: '/public/recepies/sushi-en.jpg',
     imgHe: '/public/recepies/sushi-he.jpg',
     imgAr: '/public/recepies/sushi-ar.jpg',
+    imgStyle: {
+      backgroundPosition: 'center',
+      backgroundSize: '100% 100%',
+      backgroundRepeat: 'no-repeat',
+    }, // Example style for image positioning
     recipeTitleEn: 'Kids Sushi',
     recipeTitleHe: 'סושי לילדים',
     recipeTitleAr: 'سوشي للأطفال',
@@ -128,11 +138,17 @@ const culinaryKidsData = [
       'قدم مع صلصة الصويا والوسابي.',
     ],
   },
+
   {
     id: 3,
     imgEn: '/public/recepies/pad-thai-en.jpg',
     imgHe: '/public/recepies/pad-thai-he.jpg',
     imgAr: '/public/recepies/pad-thai-ar.jpg',
+    imgStyle: {
+      backgroundPosition: 'center',
+      backgroundSize: '100% 100%',
+      backgroundRepeat: 'no-repeat',
+    }, // Example style for image positioning
     recipeTitleEn: 'Kids Pad Thai',
     recipeTitleHe: 'פאד תאי לילדים',
     recipeTitleAr: 'باد تاي للأطفال',
@@ -205,6 +221,11 @@ const culinaryKidsData = [
     imgEn: '/public/recepies/shakshoka-en.JPG',
     imgHe: '/public/recepies/shakshoka-he.JPG',
     imgAr: '/public/recepies/shakshoka-ar.JPG',
+    imgStyle: {
+      backgroundPosition: 'center',
+      backgroundSize: '100% 100%',
+      backgroundRepeat: 'no-repeat',
+    }, // Example style for image positioning
     recipeTitleEn: 'Kids Shakshouka',
     recipeTitleHe: 'שקשוקה לילדים',
     recipeTitleAr: 'شكشوكة للأطفال',
@@ -274,6 +295,11 @@ const culinaryKidsData = [
     imgEn: '/public/recepies/spaghetti-bolognese-en.jpg',
     imgHe: '/public/recepies/spaghetti-bolognese-he.jpg',
     imgAr: '/public/recepies/spaghetti-bolognese-ar.jpg',
+    imgStyle: {
+      backgroundPosition: 'center',
+      backgroundSize: '100% 100%',
+      backgroundRepeat: 'no-repeat',
+    }, // Example style for image positioning
     recipeTitleEn: 'Kids Spaghetti Bolognese',
     recipeTitleHe: 'ספרגטי בולונז לילדים',
     recipeTitleAr: 'سباغيتي بولونيز للأطفال',
@@ -346,6 +372,11 @@ const culinaryKidsData = [
     imgEn: '/public/recepies/hummus-en.JPG',
     imgHe: '/public/recepies/hummus-he.JPG',
     imgAr: '/public/recepies/hummus-ar.JPG',
+    imgStyle: {
+      backgroundPosition: 'center',
+      backgroundSize: '100% 100%',
+      backgroundRepeat: 'no-repeat',
+    }, // Example style for image positioning
     recipeTitleEn: 'Kids Hummus',
     recipeTitleHe: 'חומוס לילדים',
     recipeTitleAr: 'حمص للأطفال',
@@ -400,6 +431,11 @@ const culinaryKidsData = [
     imgEn: '/public/recepies/schnitzel-en.JPG',
     imgHe: '/public/recepies/schnitzel-he.JPG',
     imgAr: '/public/recepies/schnitzel-ar.JPG',
+    imgStyle: {
+      backgroundPosition: 'center',
+      backgroundSize: '100% 100%',
+      backgroundRepeat: 'no-repeat',
+    }, // Example style for image positioning
     recipeTitleEn: 'Kids Schnitzel',
     recipeTitleHe: 'שניצל לילדים',
     recipeTitleAr: 'شنيتزل للأطفال',
@@ -457,6 +493,11 @@ const culinaryKidsData = [
     imgEn: '/public/recepies/lasagna-en.JPG',
     imgHe: '/public/recepies/lasagna-he.JPG',
     imgAr: '/public/recepies/lasagna-ar.JPG',
+    imgStyle: {
+      backgroundPosition: 'center',
+      backgroundSize: '100% 100%',
+      backgroundRepeat: 'no-repeat',
+    }, // Example style for image positioning
     recipeTitleEn: 'Lasagna with Kids',
     recipeTitleHe: 'לזניה עם ילדים',
     recipeTitleAr: 'لازانيا مع الأطفال',
@@ -523,6 +564,11 @@ const culinaryKidsData = [
     imgEn: '/public/recepies/hamburger-en.JPG',
     imgHe: '/public/recepies/hamburger-he.JPG',
     imgAr: '/public/recepies/hamburger-ar.JPG',
+    imgStyle: {
+      backgroundPosition: 'center',
+      backgroundSize: '100% 100%',
+      backgroundRepeat: 'no-repeat',
+    }, // Example style for image positioning
     recipeTitleEn: 'Hamburger with Kids',
     recipeTitleHe: 'המבורגר עם ילדים',
     recipeTitleAr: 'همبرغر مع الأطفال',
@@ -575,6 +621,11 @@ const culinaryKidsData = [
     imgEn: '/public/recepies/vegtable-en.jpg',
     imgHe: '/public/recepies/vegtable-he.jpg',
     imgAr: '/public/recepies/vegtable-ar.jpg',
+    imgStyle: {
+      backgroundPosition: 'center',
+      backgroundSize: '100% 100%',
+      backgroundRepeat: 'no-repeat',
+    }, // Example style for image positioning
     recipeTitleEn: 'Vegetable Stir-Fry with Kids',
     recipeTitleHe: 'מוקפץ ירקות',
     recipeTitleAr: 'خضروات مقليّة مع الأطفال',
@@ -626,6 +677,11 @@ const culinaryKidsData = [
     imgEn: '/public/recepies/salad-en.JPG',
     imgHe: '/public/recepies/salad-he.JPG',
     imgAr: '/public/recepies/salad-ar.JPG',
+    imgStyle: {
+      backgroundPosition: 'center',
+      backgroundSize: '100% 100%',
+      backgroundRepeat: 'no-repeat',
+    }, // Example style for image positioning
     recipeTitleEn: 'Kid-Friendly Salad',
     recipeTitleHe: 'סלט אהוב',
     recipeTitleAr: 'سلطة محببة للأطفال',
@@ -680,6 +736,11 @@ const culinaryKidsData = [
     imgEn: '/public/recepies/peppers-en.jpg',
     imgHe: '/public/recepies/peppers-he.jpg',
     imgAr: '/public/recepies/peppers-ar.jpg',
+    imgStyle: {
+      backgroundPosition: 'center',
+      backgroundSize: '100% 100%',
+      backgroundRepeat: 'no-repeat',
+    }, // Example style for image positioning
     recipeTitleEn: 'Stuffed Bell Peppers',
     recipeTitleHe: 'פלפלים ממולאים',
     recipeTitleAr: 'فلفل محشي',
@@ -734,9 +795,14 @@ const culinaryKidsData = [
   },
   {
     id: 13,
-    ImgEn: '/public/recepies/churros-en.JPG',
+    imgEn: '/public/recepies/churros-en.JPG',
     imgHe: '/public/recepies/churros-he.JPG',
     imgAr: '/public/recepies/churros-ar.JPG',
+    imgStyle: {
+      backgroundPosition: 'center',
+      backgroundSize: '100% 100%',
+      backgroundRepeat: 'no-repeat',
+    }, // Example style for image positioning
     recipeTitleEn: 'Churros',
     recipeTitleHe: "צ'ורוס",
     recipeTitleAr: 'تشوروس',
@@ -800,9 +866,14 @@ const culinaryKidsData = [
   },
   {
     id: 14,
-    ImgEn: '/public/recepies/cinnabon-en.JPG',
+    imgEn: '/public/recepies/cinnabon-en.JPG',
     imgHe: '/public/recepies/cinnabon-he.JPG',
     imgAr: '/public/recepies/cinnabon-ar.JPG',
+    imgStyle: {
+      backgroundPosition: 'center',
+      backgroundSize: '100% 100%',
+      backgroundRepeat: 'no-repeat',
+    }, // Example style for image positioning
     recipeTitleEn: 'Cinnabon',
     recipeTitleHe: 'סינבון',
     recipeTitleAr: 'سينابون',
@@ -878,9 +949,14 @@ const culinaryKidsData = [
   },
   {
     id: 15,
-    ImgEn: '/public/recepies/amsterdam-cookies-en.JPG',
+    imgEn: '/public/recepies/amsterdam-cookies-en.JPG',
     imgHe: '/public/recepies/amsterdam-cookies-he.JPG',
     imgAr: '/public/recepies/amsterdam-cookies-ar.JPG',
+    imgStyle: {
+      backgroundPosition: 'center',
+      backgroundSize: '100% 100%',
+      backgroundRepeat: 'no-repeat',
+    }, // Example style for image positioning
     recipeTitleEn: 'Amsterdam Cookies',
     recipeTitleHe: 'עוגיות אמסטרדם',
     recipeTitleAr: 'كوكيز أمستردام',
@@ -932,9 +1008,14 @@ const culinaryKidsData = [
   },
   {
     id: 16,
-    ImgEn: '/public/recepies/blinches-en.jpg',
+    imgEn: '/public/recepies/blinches-en.jpg',
     imgHe: '/public/recepies/blinches-he.jpg',
     imgAr: '/public/recepies/blinches-ar.jpg',
+    imgStyle: {
+      backgroundPosition: 'center',
+      backgroundSize: '100% 100%',
+      backgroundRepeat: 'no-repeat',
+    }, // Example style for image positioning
     recipeTitleEn: 'Blinches',
     recipeTitleHe: "בלינצ'ס",
     recipeTitleAr: 'بلينشس',
@@ -978,6 +1059,157 @@ const culinaryKidsData = [
       'التقديم: أضف الفاكهة أو المربى أو الشراب.',
     ],
   },
-]
+  {
+    id: 17,
+    imgEn: '/public/recepies/Maamul-en.jpg',
+    imgHe: '/public/recepies/Maamul-he.jpg',
+    imgAr: '/public/recepies/Maamul-ar.jpg',
+    imgStyle: {
+      backgroundPosition: 'center',
+      backgroundSize: '100% 100%',
+      backgroundRepeat: 'no-repeat',
+    }, // Example style for image positioning
+    recipeTitleEn: "Ma'amul Cookies",
+    recipeTitleHe: 'עוגיות מעמול',
+    recipeTitleAr: 'كوكيز معمول',
 
+    ingredientsEn: [
+      '2 cups semolina',
+      '1 cup all-purpose flour',
+      '1 cup melted butter',
+      '1/2 cup sugar',
+      '1/2 cup milk',
+      '1/2 teaspoon baking powder',
+      '1 teaspoon vanilla extract',
+      'Date paste or nut filling (walnuts, pistachios)',
+    ],
+    ingredientsHe: [
+      '2 כוסות סולת',
+      '1 כוס קמח רגיל',
+      '1 כוס חמאה מומסת',
+      '1/2 כוס סוכר',
+      '1/2 כוס חלב',
+      '1/2 כפית אבקת סודה לשתייה',
+      '1 כפית תמצית וניל',
+      'רסק תמרים או מילוי אגוזים (אגוזי לוז, פיסטוקים)',
+    ],
+    ingredientsAr: [
+      '2 أكواب سميد',
+      '1 كوب دقيق متعدد الاستخدامات',
+      '1 كوب زبدة ذائبة',
+      '1/2 كوب سكر',
+      '1/2 كوب حليب',
+      '1/2 ملعقة صغيرة مسحوق الخبز',
+      '1 ملعقة صغيرة مستخلص الفانيليا',
+      'معجون تمر أو حشوة مكسرات (جوز، فستق)',
+    ],
+    preparationMethodEn: [
+      'Mix dry ingredients: semolina, flour, sugar, and baking powder.',
+      'Add wet ingredients: melted butter, milk, and vanilla. Stir until dough forms.',
+      'Prepare filling: Roll small balls of date paste or chopped nuts mixed with sugar.',
+      'Shape cookies: Flatten a piece of dough, place filling in the center, fold dough around filling, and shape into a ball or use a mold.',
+      'Bake: Place on a baking sheet and bake at 350°F (175°C) for 15-20 minutes until golden.',
+      'Cool and serve.',
+    ],
+    preparationMethodHe: [
+      'מערבבים את המרכיבים היבשים: סולת, קמח, סוכר, ואבקת סודה לשתייה.',
+      'מוסיפים את המרכיבים הנוזליים: חמאה מומסת, חלב, ותמצית וניל. מערבבים עד שהבצק מתגבש.',
+      'מכינים את המילוי: מגלגלים כדורים קטנים של רסק תמרים או אגוזים קצוצים מעורבבים עם סוכר.',
+      'מעצבים את העוגיות: מflatten את חתיכת הבצק, מניחים את המילוי במרכז, מקפלים את הבצק סביב המילוי, ומעגלים לכדור או משתמשים בתבנית.',
+      'אופים: מניחים על תבנית ואופים ב-175°C (350°F) במשך 15-20 דקות עד שהעוגיות משחימות.',
+      'מקררים ומגישים.',
+    ],
+    preparationMethodAr: [
+      'امزج المكونات الجافة: السميد، الدقيق، السكر، ومسحوق الخبز.',
+      'أضف المكونات السائلة: الزبدة الذائبة، الحليب، ومستخلص الفانيليا. حرك حتى يتشكل العجين.',
+      'حضّر الحشوة: شكل كرات صغيرة من معجون التمر أو المكسرات المفرومة مع السكر.',
+      'شكل الكوكيز: افرد قطعة من العجين، ضع الحشوة في الوسط، اطوِ العجين حول الحشوة، وشكلها إلى كرة أو استخدم قالبًا.',
+      'اخبز: ضعها على صينية خبز واطبخها على حرارة 175°C (350°F) لمدة 15-20 دقيقة حتى تتحول إلى اللون الذهبي.',
+      'اتركها لتبرد ثم قدمها.',
+    ],
+  },
+  {
+    id: 18,
+    imgEn: '/public/recepies/Baklava-en.jpg',
+    imgHe: '/public/recepies/Baklava-he.jpg',
+    imgAr: '/public/recepies/Baklava-ar.jpg',
+    imgStyle: {
+      backgroundPosition: 'center',
+      backgroundSize: '100% 100%',
+      backgroundRepeat: 'no-repeat',
+    }, // Example style for image positioning
+    recipeTitleEn: 'Baklava Dessert',
+    recipeTitleHe: 'בקלאווה',
+    recipeTitleAr: 'بقلاوة',
+
+    ingredientsEn: [
+      '1 package phyllo dough (16 oz)',
+      '1 cup unsalted butter, melted',
+      '2 cups chopped nuts (walnuts, pistachios, or almonds)',
+      '1 cup sugar',
+      '1 teaspoon ground cinnamon',
+      '1 cup water',
+      '1 cup honey',
+    ],
+
+    ingredientsHe: [
+      '1 חבילת בצק פילו (16 אונקיות)',
+      '1 כוס חמאה לא מומלחת, מומסת',
+      '2 כוסות אגוזים קצוצים (אגוזי מלך, פיסטוק או שקדים)',
+      '1 כוס סוכר',
+      '1 כפית קינמון טחון',
+      '1 כוס מים',
+      '1 כוס דבש',
+    ],
+
+    ingredientsAr: [
+      'عبوة واحدة من عجينة الفيلو (16 أونصة)',
+      '1 كوب زبدة غير مملحة، مذابة',
+      '2 كوب مكسرات مفرومة (جوز، فستق، أو لوز)',
+      '1 كوب سكر',
+      '1 ملعقة صغيرة قرفة مطحونة',
+      '1 كوب ماء',
+      '1 كوب عسل',
+    ],
+
+    preparationMethodEn: [
+      'Preheat oven to 350°F (175°C).',
+      'Mix nuts, sugar, and cinnamon in a bowl.',
+      'Brush a baking dish with melted butter. Layer 8 sheets of phyllo dough, brushing each sheet with butter.',
+      'Sprinkle a layer of nut mixture on top.',
+      'Add 5 more layers of phyllo dough, brushing each with butter, then add another layer of nuts.',
+      'Repeat until all nuts and phyllo dough are used, finishing with 8 layers of phyllo dough.',
+      'Cut into squares or diamonds before baking.',
+      'Bake for 45-50 minutes until golden brown.',
+      'Heat water and honey in a pan until combined, then pour over baked baklava.',
+      'Cool before serving. Enjoy!',
+    ],
+
+    preparationMethodHe: [
+      'חממים תנור ל-350°F (175°C).',
+      'ערבבו אגוזים, סוכר וקינמון בקערה.',
+      'מרחו חמאה מומסת על תבנית אפייה. סדרו 8 שכבות של בצק פילו, מרחו כל שכבה בחמאה.',
+      'פזרו שכבת אגוזים מעל.',
+      'הוסיפו 5 שכבות נוספות של בצק פילו, מרחו כל שכבה בחמאה, ואז הוסיפו שכבת אגוזים נוספת.',
+      'ח повторו עד שיסתיימו כל האגוזים ובצק הפילו, וסיימו ב-8 שכבות של בצק פילו.',
+      'חתכו לריבועים או לdiamonds לפני האפייה.',
+      'אפו במשך 45-50 דקות עד שיתקבל צבע זהוב.',
+      'חממו מים ודבש במחבת עד שהתערובת מתאחדת, ואז שפכו על הבקלאווה האפויה.',
+      'הניחו להתקרר לפני ההגשה. בתיאבון!',
+    ],
+
+    preparationMethodAr: [
+      'سخن الفرن إلى 350°F (175°C).',
+      'اخلط المكسرات والسكر والقرفة في وعاء.',
+      'ادهن صينية الخبز بالزبدة المذابة. رتب 8 طبقات من عجينة الفيلو، مع دهن كل طبقة بالزبدة.',
+      'رش طبقة من خليط المكسرات فوقها.',
+      'أضف 5 طبقات أخرى من عجينة الفيلو، مع دهن كل طبقة بالزبدة، ثم أضف طبقة أخرى من المكسرات.',
+      'كرر حتى تنتهي من جميع المكسرات وعجينة الفيلو، مع إنهاء بـ 8 طبقات من عجينة الفيلو.',
+      'قطع إلى مربعات أو ألماس قبل الخبز.',
+      'اخبز لمدة 45-50 دقيقة حتى يصبح اللون ذهبياً.',
+      'سخن الماء والعسل في مقلاة حتى يتمازجوا، ثم اسكب فوق البقلاوة المخبوزة.',
+      'اتركها لتبرد قبل التقديم. استمتع!',
+    ],
+  },
+]
 export default culinaryKidsData
