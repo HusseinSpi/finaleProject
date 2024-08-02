@@ -1,5 +1,3 @@
-import axios from "../../src/axiosConfig";
-
 const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
 const colors = document.getElementsByClassName("jsColor");
@@ -54,15 +52,26 @@ function changeColor(event) {
   ctx.strokeStyle = color;
   ctx.fillStyle = color;
 }
-// function handleModeClick() {
-//   if (filling === true) {
-//     filling = false;
-//     mode.innerText = "Draw";
-//   } else {
-//     filling = true;
-//     mode.innerText = "Filling";
-//   }
-// }
+
+const getCurrentUser = async () => {
+  try {
+    const token = localStorage.getItem("token");
+    const response = await fetch("http://localhost:3000/api/v1/users/me", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const data = await response.json();
+    console.log(data.data.user._id);
+    return data.data.user._id;
+  } catch (error) {
+    console.log("error", error);
+    throw error;
+  }
+};
+
 async function handleSaveClick() {
   const image = canvas.toDataURL("image/jpeg");
   const blob = dataURLToBlob(image);
@@ -70,16 +79,20 @@ async function handleSaveClick() {
   formData.append("image", blob, "canvasImage.jpg");
 
   try {
+    const userId = await getCurrentUser();
+    formData.append("user", userId);
+
     const response = await fetch("http://localhost:3000/api/v1/upload", {
       method: "POST",
       body: formData,
     });
 
-    const result = await response.json();
     if (response.ok) {
-      console.log("Image uploaded successfully:", result.filePath);
+      const responseData = await response.json();
+      console.log("Image uploaded successfully:", responseData);
     } else {
-      console.error("Failed to upload image:", result.message);
+      const responseData = await response.json();
+      console.error("Failed to upload image:", responseData.message);
     }
   } catch (error) {
     console.error("Error uploading image:", error);
@@ -237,9 +250,6 @@ if (range) {
   range.addEventListener("input", handleRangeChange);
 }
 
-// if (mode) {
-//   mode.addEventListener("click", handleModeClick);
-// }
 if (saveBtn) {
   saveBtn.addEventListener("click", handleSaveClick);
 }
