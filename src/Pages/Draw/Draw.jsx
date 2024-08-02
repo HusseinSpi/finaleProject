@@ -1,12 +1,22 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getCurrentUser } from "../../redux/thunk/currentUserThunks";
 import "./Draw.css";
 
 const Draw = () => {
+  const dispatch = useDispatch();
+  const currentUser = useSelector(
+    (state) => state.currentUser?.data?.data?.user
+  );
   const canvasRef = useRef(null);
   const colorsRef = useRef(null);
   const rangeRef = useRef(null);
   const saveBtnRef = useRef(null);
   const uploadBtnRef = useRef(null);
+
+  useEffect(() => {
+    dispatch(getCurrentUser());
+  }, [dispatch]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -194,6 +204,7 @@ const Draw = () => {
       const blob = dataURLToBlob(image);
       const formData = new FormData();
       formData.append("image", blob, "canvasImage.jpg");
+      formData.append("user", currentUser._id);
 
       try {
         const response = await fetch("http://localhost:3000/api/v1/upload", {
@@ -211,7 +222,6 @@ const Draw = () => {
         console.error("Error uploading image:", error);
       }
 
-      // Save the image locally
       const link = document.createElement("a");
       link.href = image;
       link.download = "Paint";
