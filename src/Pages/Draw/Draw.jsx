@@ -203,14 +203,18 @@ const Draw = () => {
       const image = canvas.toDataURL("image/jpeg");
       const blob = dataURLToBlob(image);
       const formData = new FormData();
+      console.log(currentUser._id);
       formData.append("image", blob, "canvasImage.jpg");
       formData.append("user", currentUser._id);
 
       try {
-        const response = await fetch("http://localhost:3000/api/v1/upload", {
-          method: "POST",
-          body: formData,
-        });
+        const response = await fetch(
+          "https://finaleprojectbe.onrender.com/api/v1/upload",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
 
         const result = await response.json();
         if (response.ok) {
