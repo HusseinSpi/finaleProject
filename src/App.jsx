@@ -162,10 +162,7 @@ const router = createBrowserRouter([
         path: 'tic-tac-toe',
         element: <TicTacToe />,
       },
-      {
-        path: 'TicTacToe',
-        element: <TicTacToe />,
-      },
+
       {
         path: 'account',
         element: <PrivateRoute element={<Account />} />,
