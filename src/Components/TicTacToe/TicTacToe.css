@@ -41,7 +41,7 @@
 .TicTacToe-title img {
   padding: 0 10px;
   height: 7vh;
-  margin-right: 66px;
+  margin-right: 10px;
 }
 
 .TicTacToe-reset {
@@ -761,7 +761,7 @@
     height: 15.5vh;
     width: 20.3vw;
     margin-left: 75%;
-    margin-top: 80rem;
+    margin-top: -3rem;
     animation: float 2.5s infinite;
     transition-duration: 11500ms;
   }
