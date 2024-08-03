@@ -1,15 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import {
   createBrowserRouter,
   RouterProvider,
   Navigate,
 } from "react-router-dom";
 import NotFound from "./Pages/NotFound/NotFound";
-// import Home from "./Pages/Home/Home";
 import Home from "./Pages/Home/Home";
 import Songs from "./Pages/Songs/Songs";
-import Stories from "./Pages/Stories/Stoeies";
-
+import Stories from "./Pages/Stories/Stories";
 import FormingWordGame from "./Components/FormingWordGame/FormingWordGame";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
@@ -17,42 +15,8 @@ import SingleSong from "./Pages/SingleSong/SingleSong";
 import Chat from "./Components/Chat/Chat";
 import SignUpPage from "./Pages/signup/Signup";
 import SignInPage from "./Pages/signin/SignInPage";
-import ForgotPasswordPage from "./Pages/ForgotPasword/ForgotPassword";
-import ResetPassword from "./Pages/ForgotPasword/ResetPassword";
-import AdminPage from "./Pages/admin/AdminPage";
-import Sidebar from "./Components/sidebar/Sidebar";
-import Messages from "./Pages/messages/Messages";
-import Reviews from "./Pages/reviews/Reviews";
-import Tetris from "./Components/Tetris/Tetris";
-import Navbar from "./Components/Navbar/Navbar";
-import ChatRoom from "./Pages/messages/ChatRoom";
-import MatchingGame from "./Pages/Games/MatchingGame";
-import Draw from "./Pages/Draw/Draw";
-import Games from "./Pages/Games/Games";
-import Account from "./Pages/account/Account";
-import Parenting from "./Pages/Parenting/Parenting";
-import TicTacToe from "./Components/TicTacToe/TicTacToe";
-import Puzzle from "./Pages/Puzzle/Puzzle";
-import { useEffect, useState } from "react";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Navigate,
-  Outlet,
-} from "react-router-dom";
-import NotFound from "./Pages/NotFound/NotFound";
-import Home from "./Pages/Home/Home";
-import Songs from "./Pages/Songs/Songs";
-import Stories from "./Pages/Stories/Stoeies";
-import FormingWordGame from "./Components/FormingWordGame/FormingWordGame";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
-import SingleSong from "./Pages/SingleSong/SingleSong";
-import Chat from "./Components/Chat/Chat";
-import SignUpPage from "./Pages/signup/Signup";
-import SignInPage from "./Pages/signin/SignInPage";
-import ForgotPasswordPage from "./Pages/ForgotPasword/ForgotPassword";
-import ResetPassword from "./Pages/ForgotPasword/ResetPassword";
+import ForgotPasswordPage from "./Pages/ForgotPassword/ForgotPassword";
+import ResetPassword from "./Pages/ForgotPassword/ResetPassword";
 import AdminPage from "./Pages/admin/AdminPage";
 import Sidebar from "./Components/sidebar/Sidebar";
 import Messages from "./Pages/messages/Messages";
@@ -67,6 +31,8 @@ import Account from "./Pages/account/Account";
 import Parenting from "./Pages/Parenting/Parenting";
 import TicTacToe from "./Components/TicTacToe/TicTacToe";
 import CulinaryKids from "./Pages/CulinaryKids/CulinaryKids";
+import Puzzle from "./Pages/Puzzle/Puzzle";
+import { useTranslation } from "react-i18next";
 
 const PrivateRoute = ({ element }) => {
   const isAuthenticated = localStorage.getItem("token");
@@ -94,19 +60,13 @@ const router = createBrowserRouter([
       },
       {
         path: "sign-up",
-        element: <SignUpPage />,
-        path: "sign-up",
         element: <PublicRoute element={<SignUpPage />} />,
       },
       {
         path: "sign-in",
-        element: <SignInPage />,
-        path: "sign-in",
         element: <PublicRoute element={<SignInPage />} />,
       },
       {
-        path: "forgot-password",
-        element: <ForgotPasswordPage />,
         path: "forgot-password",
         element: <PublicRoute element={<ForgotPasswordPage />} />,
       },
@@ -135,7 +95,6 @@ const router = createBrowserRouter([
         element: <Parenting />,
       },
       {
-        path: "forming-word-game",
         path: "culinary-kids",
         element: <CulinaryKids />,
       },
@@ -152,13 +111,14 @@ const router = createBrowserRouter([
         element: <Tetris />,
       },
       {
-        path: "Draw",
+        path: "draw",
         element: <Draw />,
       },
       {
-        path: "puzzel",
+        path: "puzzle",
         element: <Puzzle />,
       },
+
       {
         path: "MatchingGame",
         path: "MatchingGame",
@@ -169,13 +129,10 @@ const router = createBrowserRouter([
         element: <TicTacToe />,
       },
       {
-        path: "TicTacToe",
-        element: <TicTacToe />,
-      },
-      {
         path: "account",
         element: <Account />,
         path: "account",
+        element: <PrivateRoute element={<Account />} />,
         element: <PrivateRoute element={<Account />} />,
       },
     ],
@@ -215,19 +172,12 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const { i18n } = useTranslation();
 
   useEffect(() => {
-    const userToken = localStorage.getItem("jwt");
-    if (userToken) {
-      setIsAuthenticated(true);
-    }
-  }, []);
+    document.body.dir = i18n.language === "en" ? "ltr" : "rtl";
+  }, [i18n.language]);
 
-  const PrivateRoute = ({ children }) => {
-    return !isAuthenticated ? <Navigate to="/sign-in" /> : children;
-  };
-  return <RouterProvider router={router} />;
   return <RouterProvider router={router} />;
 }
 

@@ -8,9 +8,10 @@ import currentUserReducer from "../features/currentUserSlice";
 import wordReducer from "../features/wordsSlice";
 import scoreReducer from "../features/scoreSlice";
 import recentActivityReducer from "../features/recentActivitySlice";
-import booksReducer from "../features/booksSlice"
-import videosReducer from "../features/videosSlice"
-import articlesReducer from "../features/articlesSlice"
+import booksReducer from "../features/booksSlice";
+import videosReducer from "../features/videosSlice";
+import articlesReducer from "../features/articlesSlice";
+import drawReducer from "../features/drawSlice";
 
 const store = configureStore({
   reducer: {
@@ -25,7 +26,8 @@ const store = configureStore({
     recentActivity: recentActivityReducer,
     books: booksReducer,
     videos: videosReducer,
-    articles: articlesReducer
+    articles: articlesReducer,
+    draws: drawReducer,
   },
 });
 
