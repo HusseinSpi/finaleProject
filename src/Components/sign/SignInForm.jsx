@@ -1,13 +1,16 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../../redux/thunk/userThunks";
 import { Link } from "react-router-dom";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const SignInForm = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const user = useSelector((state) => state.user.data);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -17,6 +20,12 @@ const SignInForm = () => {
     e.preventDefault();
     dispatch(loginUser({ email, password }));
   };
+
+  useEffect(() => {
+    if (user) {
+      window.location.reload();
+    }
+  }, [user]);
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -91,7 +100,10 @@ const SignInForm = () => {
 
       <p className="text-center text-sm text-gray-500">
         {t("NoAccount")}
-        <Link className="underline text-blue-900 hover:text-blue-700" to="/sign-up">
+        <Link
+          className="underline text-blue-900 hover:text-blue-700"
+          to="/sign-up"
+        >
           {t("SignUp")}
         </Link>
       </p>

@@ -1,3 +1,5 @@
+import axios from "../../src/axiosConfig";
+
 const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
 const colors = document.getElementsByClassName("jsColor");
@@ -61,13 +63,38 @@ function changeColor(event) {
 //     mode.innerText = "Filling";
 //   }
 // }
-function handleSaveClick() {
+async function handleSaveClick() {
   const image = canvas.toDataURL("image/jpeg");
-  const link = document.createElement("a");
-  link.href = image;
-  link.download = "Paint";
-  link.click();
+  const blob = dataURLToBlob(image);
+  const formData = new FormData();
+  formData.append("image", blob, "canvasImage.jpg");
+
+  try {
+    const response = await fetch("http://localhost:3000/api/v1/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+      console.log("Image uploaded successfully:", result.filePath);
+    } else {
+      console.error("Failed to upload image:", result.message);
+    }
+  } catch (error) {
+    console.error("Error uploading image:", error);
+  }
 }
+
+function dataURLToBlob(dataURL) {
+  const binary = atob(dataURL.split(",")[1]);
+  const array = [];
+  for (let i = 0; i < binary.length; i++) {
+    array.push(binary.charCodeAt(i));
+  }
+  return new Blob([new Uint8Array(array)], { type: "image/jpeg" });
+}
+
 function handleCanvasClick() {
   if (filling && uploadedImage) {
     ctx.drawImage(uploadedImage, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
