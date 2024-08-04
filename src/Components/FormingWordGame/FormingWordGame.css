@@ -28,15 +28,15 @@
   z-index: 1;
 }
 
-.h1 {
+.h1-title {
   font-family: 'TherenRegular';
-  font-size: 4.5rem;
+  font-size: 2rem;
   color: #414288;
   margin-left: 16.5rem;
 }
 .picture img {
-  width: 30%;
-  height: 40vh;
+  width: 10%;
+  height: 20vh;
   border-radius: 50px;
   margin-left: 33%;
 }
@@ -133,8 +133,8 @@ button.erase {
 
 .popup {
   position: relative;
-  top: 73%;
-  left: 60%;
+  top: -200%;
+  left: 62rem;
   transform: translate(-50%, -50%);
   padding: 20px;
   background-color: transparent;
