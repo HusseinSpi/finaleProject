@@ -1,24 +1,29 @@
 @import url("./sketchBtn.css");
 @import url("./gameMenu.css");
 @import url("./tetromino.css");
+
 .tetris {
   background-image: url("../img/background.jpg");
   background-size: cover;
   background-position: center center;
   display: flex;
+  width: 100%;
+
   align-items: center;
   justify-content: center;
   font-family: sans-serif;
   margin: 0;
-  height: 100vh;
+  height: 73.6vh;
+  overflow: hidden;
 }
 .tetris-game {
   background-image: url("../img/background.jpg");
   background-size: cover;
   background-position: center center;
   margin: 0;
-  height: 100vh;
-  width: 100vw;
+  padding: 0;
+  height: 120vh;
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -26,13 +31,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
 
 .title {
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   font-size: 40px;
   text-align: center;
   color: #fff;
@@ -67,12 +73,12 @@ canvas,
   align-items: flex-start;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.7);
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .next__title {
   position: absolute;
-  top: 10px;
+  /* top: 10px; */
   left: 55px;
   display: block;
   width: 100%;
@@ -91,7 +97,7 @@ canvas,
 
 .game-content__score {
   background-color: rgba(0, 0, 0, 0.7);
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   height: 100px;
   text-align: center;
   padding-top: 10px;

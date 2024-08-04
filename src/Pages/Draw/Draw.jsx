@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentUser } from "../../redux/thunk/currentUserThunks";
 import "./Draw.css";
@@ -13,7 +13,8 @@ const Draw = () => {
   const rangeRef = useRef(null);
   const saveBtnRef = useRef(null);
   const uploadBtnRef = useRef(null);
-
+  const [showThresholdControls, setShowThresholdControls] = useState(false);
+  const [chooseFile, setChooseFile] = useState(false);
   useEffect(() => {
     dispatch(getCurrentUser());
   }, [dispatch]);
@@ -26,8 +27,8 @@ const Draw = () => {
     const saveBtn = saveBtnRef.current;
     const uploadBtn = uploadBtnRef.current;
 
-    const CANVAS_WIDTH = 700;
-    const CANVAS_HEIGHT = 700;
+    const CANVAS_WIDTH = 710;
+    const CANVAS_HEIGHT = 610;
     const INITIAL_COLOR = "#2c2c2c";
 
     canvas.width = CANVAS_WIDTH;
@@ -75,6 +76,11 @@ const Draw = () => {
       const color = event.target.style.backgroundColor;
       ctx.strokeStyle = color;
       ctx.fillStyle = color;
+
+      Array.from(colors).forEach((colorElement) =>
+        colorElement.classList.remove("active")
+      );
+      event.target.classList.add("active");
     }
 
     function handleCanvasClick() {
@@ -88,6 +94,13 @@ const Draw = () => {
     }
 
     function createControls() {
+      const controlsDiv = document.querySelector(".thresholdContainer");
+
+      const thresholdText = document.createElement("p");
+      thresholdText.innerText = "Please choose the Threshold";
+      thresholdText.className = "draw-threshold-text";
+      controlsDiv.appendChild(thresholdText);
+
       thresholdInput = document.createElement("input");
       thresholdInput.type = "range";
       thresholdInput.min = "5";
@@ -95,19 +108,19 @@ const Draw = () => {
       thresholdInput.value = "10";
       thresholdInput.id = "thresholdRange";
       thresholdInput.className = "draw-threshold draw-Image-threshold";
-      document.body.appendChild(thresholdInput);
+      controlsDiv.appendChild(thresholdInput);
 
       doneButton = document.createElement("button");
       doneButton.innerText = "Done";
       doneButton.id = "doneButton";
       doneButton.className = "draw-threshold draw-Button-threshold";
-      document.body.appendChild(doneButton);
+      controlsDiv.appendChild(doneButton);
 
       thresholdInput.addEventListener("input", updateThreshold);
-      doneButton.addEventListener("click", removeControls);
+      doneButton.addEventListener("click", handleDoneClick);
 
-      window.addEventListener("popstate", handleRouteChange);
-      window.addEventListener("pushstate", handleRouteChange);
+      window.addEventListener("popstate", removeControls);
+      window.addEventListener("pushstate", removeControls);
     }
 
     function updateThreshold() {
@@ -118,6 +131,10 @@ const Draw = () => {
     }
 
     function removeControls() {
+      const thresholdText = document.querySelector(".draw-threshold-text");
+      if (thresholdText) {
+        thresholdText.remove();
+      }
       if (thresholdInput) {
         thresholdInput.remove();
         thresholdInput = null;
@@ -126,8 +143,8 @@ const Draw = () => {
         doneButton.remove();
         doneButton = null;
       }
-      window.removeEventListener("popstate", handleRouteChange);
-      window.removeEventListener("pushstate", handleRouteChange);
+      window.removeEventListener("popstate", removeControls);
+      window.removeEventListener("pushstate", removeControls);
     }
 
     function processImage(img, threshold) {
@@ -192,6 +209,8 @@ const Draw = () => {
             uploadedImage = img;
             createControls();
             processImage(img, 10);
+            setShowThresholdControls(true);
+            setChooseFile(false);
           };
           img.src = event.target.result;
         };
@@ -244,9 +263,16 @@ const Draw = () => {
       return new Blob([ab], { type: mimeString });
     }
 
+    function handleDoneClick() {
+      removeControls();
+      setShowThresholdControls(false);
+      setChooseFile(true);
+    }
+
     function handleRouteChange() {
       if (window.location.pathname !== "/Draw") {
         removeControls();
+        setShowThresholdControls(false);
       }
     }
 
@@ -304,14 +330,19 @@ const Draw = () => {
       if (uploadBtn) {
         uploadBtn.removeEventListener("change", handleUploadImage);
       }
+
+      window.removeEventListener("popstate", removeControls);
+      window.removeEventListener("pushstate", removeControls);
+
+      removeControls();
     };
-  }, []);
+  }, [dispatch, currentUser]);
 
   return (
     <div className="draw-body">
       <canvas id="jsCanvas" ref={canvasRef} className="drawcanvas"></canvas>
-      <div className="draw-threshold"></div>
       <div className="controls">
+        <h1>Choose the width </h1>
         <div className="controls__range" ref={rangeRef}>
           <input
             type="range"
@@ -322,56 +353,66 @@ const Draw = () => {
             step="0.1"
           />
         </div>
-        <div className="controls__btn">
-          {/* <button id="jsMode">Draw</button> */}
-          <button id="jsSave" ref={saveBtnRef}>
-            Save
-          </button>
-          <input
-            type="file"
-            id="jsUpload"
-            ref={uploadBtnRef}
-            accept="image/*"
-          />
-        </div>
+        {!showThresholdControls && (
+          <div className="controls__btn">
+            <h1>Please Choose the picture</h1>
+            <button id="jsSave" ref={saveBtnRef}>
+              Save
+            </button>
+            <input
+              type="file"
+              id="jsUpload"
+              ref={uploadBtnRef}
+              accept="image/*"
+            />
+          </div>
+        )}
         <div className="controls__colors" id="jsColors" ref={colorsRef}>
-          <div
-            className="controls__colors jsColor"
-            style={{ backgroundColor: "black" }}
-          ></div>
-          <div
-            className="controls__colors jsColor"
-            style={{ backgroundColor: "white" }}
-          ></div>
-          <div
-            className="controls__colors jsColor"
-            style={{ backgroundColor: "orange" }}
-          ></div>
-          <div
-            className="controls__colors jsColor"
-            style={{ backgroundColor: "red" }}
-          ></div>
-          <div
-            className="controls__colors jsColor"
-            style={{ backgroundColor: "yellow" }}
-          ></div>
-          <div
-            className="controls__colors jsColor"
-            style={{ backgroundColor: "green" }}
-          ></div>
-          <div
-            className="controls__colors jsColor"
-            style={{ backgroundColor: "rgb(79, 79, 177)" }}
-          ></div>
-          <div
-            className="controls__colors jsColor"
-            style={{ backgroundColor: "blue" }}
-          ></div>
-          <div
-            className="controls__colors jsColor"
-            style={{ backgroundColor: "rgb(187, 76, 187)" }}
-          ></div>
+          <div>
+            <div
+              className="controls__colors jsColor"
+              style={{ backgroundColor: "black" }}
+            ></div>
+            <div
+              className="controls__colors jsColor"
+              style={{ backgroundColor: "white" }}
+            ></div>
+            <div
+              className="controls__colors jsColor"
+              style={{ backgroundColor: "orange" }}
+            ></div>
+          </div>
+          <div>
+            <div
+              className="controls__colors jsColor"
+              style={{ backgroundColor: "red" }}
+            ></div>
+            <div
+              className="controls__colors jsColor"
+              style={{ backgroundColor: "yellow" }}
+            ></div>
+            <div
+              className="controls__colors jsColor"
+              style={{ backgroundColor: "green" }}
+            ></div>
+          </div>
+          <div>
+            <div
+              className="controls__colors jsColor"
+              style={{ backgroundColor: "rgb(79, 79, 177)" }}
+            ></div>
+
+            <div
+              className="controls__colors jsColor"
+              style={{ backgroundColor: "blue" }}
+            ></div>
+            <div
+              className="controls__colors jsColor"
+              style={{ backgroundColor: "rgb(187, 76, 187)" }}
+            ></div>
+          </div>
         </div>
+        <div className="thresholdContainer"></div>
       </div>
     </div>
   );

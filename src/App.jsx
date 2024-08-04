@@ -115,7 +115,7 @@ const router = createBrowserRouter([
         element: <Draw />,
       },
       {
-        path: "puzzle",
+        path: "puzzel",
         element: <Puzzle />,
       },
 
