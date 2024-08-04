@@ -55,7 +55,7 @@ const Games = () => {
       alt: 'tic tac toe',
       label: t('Tic Tac Toe'),
     },
-    { link: '/puzzel', imgSrc: puzzel, alt: 'puzzle', label: t('Puzzle') },
+    { link: '/puzzle', imgSrc: puzzel, alt: 'puzzle', label: t('Puzzle') },
   ]
 
   return (
