@@ -28,8 +28,8 @@ const Home = () => {
           loop
           muted
         />
-        <div className="absolute top-[7rem] flex flex-col  items-center left-0 w-full p-4 text-xl font-extrabold leading-8 tracking-wider text-center">
-          <h1 className=" text-3xl md:text-5xl font-bold flex mb-4 text-white">
+        <div className="absolute top-[5.5rem] flex flex-col  items-center left-0 w-full p-4 text-xl font-extrabold leading-8 tracking-wider text-center">
+          <h1 className=" text-4xl md:text-6xl font-bold flex mb-4 text-white">
             {i18n.language === "en" ? (
               <>
                 <GiCoral /> {t("Welcome")} KiddoFun <GiCoral />
@@ -41,28 +41,21 @@ const Home = () => {
               </>
             )}
           </h1>
-          <p className="text-white w-2/3 text-base sm:text-lg md:text-xl lg:text-xl font-bold leading-tight mb-4">
-            A world where learning meets adventure! Dive into a world of
-            interactive games, enchanting stories, and delightful songs designed
-            to spark curiosity and imagination in every child.
+          <p className="text-white w-2/3 text-base sm:text-xl md:text-2xl lg:text-2xl font-bold leading-tight mb-4">
+            {t("homeIntroP1")}
           </p>
-          <p className="text-white w-2/3 text-base sm:text-lg md:text-xl lg:text-xl font-bold leading-tight">
-            Discover a world of resources designed for both children and
-            parents, offering a blend of educational videos, engaging articles,
-            and enriching books to support your family’s growth and learning
-            journey.
+          <p className="text-white w-2/3 text-base sm:text-xl md:text-2xl lg:text-2xl font-bold leading-tight">
+            {t("homeIntroP2")}
           </p>
         </div>
       </div>
 
       <div className="relative flex flex-col items-center justify-center h-[12rem] p-1 custom-radial">
-        <div className="flex flex-col items-center justify-center h-full w-full bg-white font-bold">
+        <div className="flex flex-col items-center justify-center h-full w-full bg-white text-blue-900 font-bold">
           <p className="text-md md:text-xl lg:text-xl text-center">
-            “A child’s mind is like a sponge, absorbing everything around it.
-            Through play and imagination, they transform the ordinary into the
-            extraordinary.”
+            {t("quote")}
           </p>
-          <span>— Albert Einstein</span>
+          <span>— {t("einstein")} </span>
         </div>
       </div>
 

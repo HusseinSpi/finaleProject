@@ -26,7 +26,7 @@ const Sidebar = ({ children }) => {
 
   return (
     <div className="flex h-full">
-      <div className="bg-gray-300 fixed top-0 left-0 h-full bg-primaryColor w-64 flex flex-col justify-between">
+      <div className="bg-zinc-400 fixed top-0 left-0 h-full  w-64 flex flex-col justify-between">
         <div className="py-6">
           <div className="ml-16 grid h-10 w-32 place-content-center rounded-lg bg-transparent">
             <img src={logo} alt="Logo" />

@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import background from "../../../public/bbg.jpg"
 // import seacreatures from "../../../public/seacreatures.jpg"
 import seacreatures from "../../../public/waves4.png"
+import { PiMusicNotesSimpleBold } from "react-icons/pi";
 
 const Songs = () => {
   const { t, i18n } = useTranslation();
@@ -53,8 +54,8 @@ const Songs = () => {
         height: "100%",
       }}
     >
-      <h1 className="text-3xl font-bold text-center mt-16 text-blue-950 ">
-        {t("learnWithUs")}
+      <h1 className=" flex items-center  justify-center text-3xl font-bold text-center mt-16 text-blue-950 ">
+        <PiMusicNotesSimpleBold /> {t("learnWithUs")} <PiMusicNotesSimpleBold />
       </h1>
 
       <div className="mb-8 bg- p-3 rounded-lg text-blue-950 bg-white">
