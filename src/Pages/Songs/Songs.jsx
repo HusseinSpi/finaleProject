@@ -47,31 +47,31 @@ const Songs = () => {
       className="w-screen h-screen p-5 relative "
       style={{
         background: `url(${seacreatures})`,
-  // backgroundRepeat: "no-repeat",
-  // backgroundSize: "cover",
+        // backgroundRepeat: "no-repeat",
+        // backgroundSize: "cover",
         width: "100%",
         height: "100%",
       }}
     >
-      <h1 className="text-3xl font-bold text-center mt-16 text-blue-950">
+      <h1 className="text-3xl font-bold ml-[36rem] mt-16 text-blue-950 ">
         {t("learnWithUs")}
       </h1>
 
-      <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-blue-950 mb-4">
+      <div className="mb-8 bg- p-3 rounded-lg text-blue-950 bg-white">
+        <h2 className="text-2xl font-semibold text-blue-950 bg-white mb-4">
           {t("NumbersSongs")}
         </h2>
         <Carousel songs={numbersSongs} />
       </div>
 
-      <div className="mb-8">
+      <div className="mb-8 text-blue-950 bg-white ">
         <h2 className="text-2xl font-semibold text-blue-950 mb-4">
           {t("AlphabetSongs")}
         </h2>
         <Carousel songs={alphabetSongs} />
       </div>
 
-      <div className="mb-8">
+      <div className="mb-8 text-blue-950 bg-white ">
         <h2 className="text-2xl font-semibold text-blue-950 mb-4">
           {t("GeneralSongs")}
         </h2>
