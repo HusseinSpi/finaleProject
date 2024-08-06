@@ -108,10 +108,6 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "tetris",
-        element: <Tetris />,
-      },
-      {
         path: "draw",
         element: <Draw />,
       },
@@ -137,6 +133,10 @@ const router = createBrowserRouter([
         element: <VideoCall />,
       },
     ],
+  },
+  {
+    path: "tetris",
+    element: <Tetris />,
   },
   {
     path: "admin",

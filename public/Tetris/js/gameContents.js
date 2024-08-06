@@ -15,7 +15,6 @@ export const tetrisContent = `
 <div class="tetris-game">
 
 <div class="game-content__inner">
-
     <div class="canvas-bg">
         <canvas width="320" height="640" id="game"></canvas>
     </div>
@@ -39,6 +38,9 @@ export const tetrisContent = `
             <button class="sketch-button start">START</button>
             <button class="sketch-button pause">PAUSE</button>
             <button class="sketch-button restart">RESTART</button>
+            <a href="/games">
+  <button class="sketch-button start">Back to games</button>
+</a>
         </div>
         <div class="game-controls">
             <button class="sketch-button top">
