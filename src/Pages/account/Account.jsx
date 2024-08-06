@@ -154,7 +154,7 @@ const Account = () => {
                 alt="Selected draw"
                 className="w-full h-image mb-4 rounded-lg"
               />
-              <div className="p-4 bg-gray-100 rounded-lg">
+              <div className="p-4 bg-blue-100 rounded-lg">
                 <ReactMarkdown className="prose">
                   {selectedDraw.analysis}
                 </ReactMarkdown>

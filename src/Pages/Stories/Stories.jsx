@@ -97,7 +97,7 @@ const Stories = () => {
 
   return (
     <div className="bg-white text-gray-800 p-8 font-serif">
-      <div className="relative bg-gray-100 p-12 shadow-md rounded-lg max-w-1xl mx-auto">
+      <div className="relative bg-blue-50 p-12 shadow-md rounded-lg max-w-1xl mx-auto">
         <div className="flex justify-between mb-10">
           <button
             onClick={() => handleNavigation(-1)}
