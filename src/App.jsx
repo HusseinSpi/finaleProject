@@ -107,15 +107,11 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "tetris",
-        element: <Tetris />,
-      },
-      {
         path: "draw",
         element: <Draw />,
       },
       {
-        path: "puzzel",
+        path: "puzzle",
         element: <Puzzle />,
       },
 
@@ -136,6 +132,10 @@ const router = createBrowserRouter([
         element: <PrivateRoute element={<Account />} />,
       },
     ],
+  },
+  {
+    path: "tetris",
+    element: <Tetris />,
   },
   {
     path: "admin",

@@ -8,21 +8,21 @@
   background-position: center center;
   display: flex;
   width: 100%;
-
   align-items: center;
   justify-content: center;
   font-family: sans-serif;
   margin: 0;
-  height: 86.7vh;
+  height: 100vh;
   overflow: hidden;
 }
+
 .tetris-game {
   background-image: url("../img/background.jpg");
   background-size: cover;
   background-position: center center;
   margin: 0;
   padding: 0;
-  height: 120vh;
+  height: 100vh;
   width: 100%;
   box-sizing: border-box;
 }
@@ -156,6 +156,7 @@ canvas,
   top: 35px;
   right: 0;
 }
+
 @keyframes pulsate {
   100% {
     text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #bc13fe,
@@ -165,5 +166,136 @@ canvas,
   0% {
     text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px #bc13fe,
       0 0 45px #bc13fe, 0 0 55px #bc13fe, 0 0 70px #bc13fe, 0 0 80px #bc13fe;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .tetris {
+    height: 90vh;
+  }
+
+  .tetris-game {
+    height: 100vh;
+  }
+
+  .canvas-bg {
+    width: 250px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .game-content__next {
+    width: 120px;
+    height: 150px;
+  }
+
+  .game-content__score {
+    height: 80px;
+  }
+
+  .score__total {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tetris {
+    height: 100vh;
+    flex-direction: column;
+  }
+
+  .canvas-bg {
+    width: 200px;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .game-content__inner {
+    flex-direction: column;
+  }
+
+  .game-content__next {
+    width: 100px;
+    height: 130px;
+  }
+
+  .game-content__score {
+    height: 70px;
+  }
+
+  .score__total {
+    font-size: 16px;
+  }
+
+  .game-buttons {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .game-controls {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .left,
+  .right {
+    position: static;
+    transform: none;
+    margin: 0 10px;
+  }
+
+  .bottom {
+    transform: none;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tetris {
+    height: 100vh;
+  }
+
+  .canvas-bg {
+    width: 160px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .game-content__next {
+    width: 80px;
+    height: 100px;
+  }
+
+  .game-content__score {
+    height: 60px;
+  }
+
+  .score__total {
+    font-size: 14px;
+  }
+
+  .game-buttons {
+    flex-direction: column;
+  }
+
+  .game-controls {
+    flex-direction: column;
+  }
+
+  .left,
+  .right,
+  .bottom {
+    position: static;
+    transform: none;
+    margin: 10px 0;
   }
 }
