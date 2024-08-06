@@ -60,7 +60,9 @@ const Home = () => {
       <div className="relative flex flex-col items-center justify-center h-[12rem] p-1 custom-radial">
         <div className="flex flex-col items-center justify-center h-full w-full bg-white font-bold">
           <p className="text-md md:text-xl lg:text-xl text-center text-blue-900">
-            “A child’s mind is like a sponge, absorbing everything around it.
+            “A child’s mind is like a sponge, <bold>absorbing</bold> everything
+            around it.
+            <br />
             Through play and imagination, they transform the ordinary into the
             extraordinary.”
           </p>
