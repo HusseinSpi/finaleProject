@@ -1,0 +1,7 @@
+/*samsung galaxy S20 ultra*/
+@media only screen and (max-width: 412px) {
+  .culinary-title {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+}

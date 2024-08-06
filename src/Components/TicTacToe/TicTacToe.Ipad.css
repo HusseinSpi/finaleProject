@@ -13,7 +13,7 @@
     justify-content: center;
   }
   .TicTacToe-title {
-    font-size: 5rem;
+    font-size: 3.2rem;
     margin-left: 4rem;
     margin-top: 1rem;
   }
@@ -24,7 +24,7 @@
     margin: 0;
     justify-content: center;
     align-items: center;
-    margin-top: -2.5rem;
+    margin-top: 1.5rem;
   }
 
   .TicTacToe-boxes {
@@ -41,10 +41,14 @@
     font-size: 1.8rem;
     margin-left: 5.6rem;
   }
+  .bubble-class-for-tic-tac-toe-green-squid {
+    height: 14.5vh;
+    width: 12.3vw;
+  }
   .bubble-class-for-tic-tac-toe-horse-sea {
     height: 10vh;
     width: 8vw;
-    top: 114%;
+    top: 108%;
     right: 6%;
   }
 
@@ -64,20 +68,20 @@
     height: 20.5vh;
     width: 15.3vw;
     left: 12%;
-    top: 120%;
+    top: 110%;
   }
   .bubble-class-for-tic-tac-toe-green-3 {
     height: 13.5vh;
     width: 22.3vw;
     left: 0%;
-    top: 112%;
+    top: 102%;
   }
   .bubble-class-for-tic-tac-toe-purple {
     height: 13.5vh;
     width: 22.3vw;
     right: 10%;
 
-    top: 114%;
+    top: 108%;
   }
   .bubble-class-for-tic-tac-toe-pink {
     position: absolute;
@@ -85,19 +89,19 @@
     height: 10.5vh;
     width: 22.3vw;
     right: -3%;
-    top: 114%;
+    top: 108%;
   }
   .bubble-class-for-tic-tac-toe-yellow {
     height: 10.5vh;
     width: 15.3vw;
     left: 9%;
-    top: 114%;
+    top: 108%;
   }
   .bubble-class-for-tic-tac-toe-red-fish {
     position: absolute;
     z-index: 3;
-    height: 4vh;
-    width: 6.3vw;
+    height: 8vh;
+    width: 10.3vw;
     margin-left: 1%;
     animation: swim 200s linear infinite;
     top: 83%;
@@ -105,70 +109,70 @@
   .bubble-class-for-tic-tac-toe-blue-fish {
     position: absolute;
     z-index: 3;
-    height: 2vh;
-    width: 5.3vw;
+    height: 6vh;
+    width: 10.3vw;
     margin-left: 1%;
     animation: swim 200s linear infinite;
     animation-delay: 100s;
   }
   .bubble-class-for-tic-tac-toe-blue-trigon {
-    height: 6.5vh;
-    width: 6.3vw;
+    height: 26.5vh;
+    width: 22.3vw;
   }
   .bubble-class-for-tic-tac-toe {
-    height: 1vh;
-    width: 0.5vw;
+    height: 1.1vh;
+    width: 1.1vw;
     margin-inline-start: -25rem;
   }
 
   .bubble-class-for-tic-tac-toe-two {
-    height: 2.5vh;
-    width: 1.3vw;
+    height: 1.1vh;
+    width: 1.1vw;
     margin-inline-start: -15rem;
   }
 
   .bubble-class-for-tic-tac-toe-three {
-    height: 2vh;
-    width: 1vw;
+    height: 1.1vh;
+    width: 1.1vw;
   }
   .bubble-class-for-tic-tac-toe-four {
-    height: 2.5vh;
-    width: 1.3vw;
+    height: 1.1vh;
+    width: 1.1vw;
     margin-inline-start: -20rem;
   }
 
   .bubble-class-for-tic-tac-toe-five {
-    height: 2vh;
-    width: 1vw;
+    height: 1.1vh;
+    width: 1.1vw;
   }
   .bubble-class-for-tic-tac-toe-six {
-    height: 2.5vh;
-    width: 1.3vw;
+    height: 1.1vh;
+    width: 1.1vw;
   }
   .bubble-class-for-tic-tac-toe-seven {
-    height: 2.5vh;
-    width: 1.3vw;
+    height: 1.1vh;
+    width: 1.1vw;
     margin-inline-start: -18rem;
   }
   .bubble-class-for-tic-tac-toe-eight {
-    height: 2.5vh;
-    width: 1.3vw;
+    height: 1.1vh;
+    width: 1.1vw;
   }
   .bubble-class-for-tic-tac-toe-nine {
-    height: 2vh;
-    width: 1vw;
+    height: 1.1vh;
+    width: 1.1vw;
     margin-inline-start: -16rem;
   }
   .bubble-class-for-tic-tac-toe-ten {
-    height: 2vh;
-    width: 1vw;
+    height: 1.1vh;
+    width: 1.1vw;
   }
   .bubble-class-for-tic-tac-toe-eleven {
-    height: 2.5vh;
-    width: 1.3vw;
+    height: 1.1vh;
+    width: 1.1vw;
   }
   .bubble-class-for-tic-tac-toe-twelve {
-    height: 2vh;
-    width: 1vw;
+    height: 1.1vh;
+    width: 1.1vw;
   }
 }
