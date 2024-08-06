@@ -3,65 +3,196 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding: 77px;
+  box-sizing: border-box;
+  position: relative;
 }
+
 .drawcanvas {
   width: 700px;
-  height: 700px;
+  height: 600px;
   border-radius: 15px;
   background-color: white;
   box-shadow: 0 6px 8px rgba(50, 50, 93, 0.11), 0 20px 60px rgba(0, 0, 0, 0.3);
+  cursor: url("https://www.google.com/intl/en_ALL/mapfiles/openhand.cur"), auto;
+  transition: transform 0.3s ease-in-out;
 }
 
-.controls__colors {
-  display: flex;
+.drawcanvas:hover {
+  cursor: url("https://www.google.com/intl/en_ALL/mapfiles/closedhand.cur"),
+    auto;
+  transform: scale(1.05);
+  border: 2px dashed #ff4081;
 }
-.controls__colors .controls__colors {
-  width: 50px;
-  height: 50px;
-  box-shadow: 0 6px 8px rgba(50, 50, 93, 0.11), 0 20px 60px rgba(0, 0, 0, 0.08);
-  border-radius: 50%;
-  cursor: pointer;
+
+.controls h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: glow 1.5s infinite;
 }
 
 .controls {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 80px;
+  justify-content: center;
+  margin-left: 40px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 6px 8px rgba(50, 50, 93, 0.11), 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
 }
-.controls .controls__btn {
-  margin-bottom: 30px;
-}
-.controls__btn button {
-  cursor: pointer;
-  padding: 5px 10px;
-  background-color: white;
-  width: 80px;
-  text-align: center;
-  border-radius: 5px;
-  box-shadow: 0 6px 8px rgba(50, 50, 93, 0.11), 0 20px 60px rgba(0, 0, 0, 0.08);
-  border: 2px solid rgb(20, 19, 19, 0.2);
-  color: rgb(128, 116, 116, 0.8);
-  font-weight: 600;
-  font-size: 12px;
-}
-.controls__btn button:active {
-  transform: scale(0.95);
-}
+
 .controls__range {
   margin-bottom: 30px;
 }
 
-.draw-Image-threshold {
+.controls__range input[type="range"] {
   width: 300px;
-  height: 30px;
-  margin-bottom: 20px;
+  -webkit-appearance: none;
   appearance: none;
   background: #ddd;
   border-radius: 10px;
   outline: none;
   padding: 0;
   margin: 20px 0;
+  transition: background 0.3s ease-in-out;
+}
+
+.controls__range input[type="range"]::-webkit-slider-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4a4e4a;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #333;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.controls__range input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #ff4081;
+}
+
+.controls__btn {
+  margin-bottom: 30px;
+}
+
+.controls__btn button {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #4a4e4a;
+  color: white;
+  width: 100px;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 6px 8px rgba(50, 50, 93, 0.11), 0 20px 60px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  animation: flash 1.5s infinite;
+}
+
+.controls__btn button:hover {
+  background-color: #142f86;
+  transform: scale(1.05);
+}
+
+.controls__btn button:active {
+  transform: scale(0.95);
+}
+
+.controls__btn input[type="file"] {
+  cursor: pointer;
+  padding: 5px 10px;
+  background-color: white;
+  width: 150px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 6px 8px rgba(50, 50, 93, 0.11), 0 20px 60px rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(20, 19, 19, 0.2);
+  color: rgba(128, 116, 116, 0.8);
+  font-weight: 600;
+  font-size: 12px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  animation: flash 1.5s infinite;
+}
+
+.controls__btn input[type="file"]:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+.controls__btn input[type="file"]:active {
+  transform: scale(0.95);
+}
+
+/* Color Buttons */
+.controls__colors {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px; /* Add this line for more space between the color circles */
+}
+
+.controls__colors .controls__colors {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  box-shadow: 0 6px 8px rgba(50, 50, 93, 0.11), 0 20px 60px rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.controls__colors .controls__colors:hover {
+  transform: scale(1.2);
+}
+
+.controls__colors .controls__colors:active,
+.controls__colors .controls__colors.selected {
+  transform: scale(1.5);
+  border: 2px solid #142f86;
+}
+
+.controls__colors .controls__colors.active {
+  transform: scale(1.5);
+  border: 2px solid #142f86;
+  animation: none;
+}
+
+.draw-threshold {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.draw-Image-threshold {
+  width: 200px;
+  height: 30px;
+  appearance: none;
+  background: #ddd;
+  border-radius: 10px;
+  outline: none;
+  padding: 0;
+  margin: 10px 0;
+  transition: background 0.3s ease-in-out;
+  animation: blink 1.5s infinite;
 }
 
 .draw-Image-threshold::-webkit-slider-thumb {
@@ -72,15 +203,15 @@
   border-radius: 50%;
   border: 2px solid #333;
   appearance: none;
+  transition: transform 0.3s ease-in-out;
 }
 
-.draw-Image-threshold::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: #4a4e4a;
-  cursor: pointer;
-  border-radius: 50%;
-  border: 2px solid #333;
+.draw-Image-threshold:hover {
+  background: #ccc;
+}
+
+.draw-Image-threshold::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
 }
 
 .draw-Button-threshold {
@@ -92,12 +223,75 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  animation: blink 1.5s infinite;
 }
 
 .draw-Button-threshold:hover {
-  background: #4a4e4a;
+  background: #255227;
+  transform: scale(1.05);
 }
 
 .draw-Button-threshold:active {
-  background: #255227;
+  transform: scale(0.95);
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #2794af, 0 0 10px #2794af, 0 0 20px #2794af,
+      0 0 40px #2794af;
+  }
+  50% {
+    text-shadow: 0 0 10px #2794af, 0 0 20px #2794af, 0 0 40px #2794af,
+      0 0 80px #2794af;
+  }
+  100% {
+    text-shadow: 0 0 5px #2794af, 0 0 10px #2794af, 0 0 20px #2794af,
+      0 0 40px #2794af;
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes blink {
+  0% {
+    box-shadow: 0 0 5px #4a4e4a;
+  }
+  50% {
+    box-shadow: 0 0 20px #4a4e4a;
+  }
+  100% {
+    box-shadow: 0 0 5px #4a4e4a;
+  }
+}
+
+.draw-threshold-text {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  margin-top: 20px;
+  text-align: center;
 }

@@ -1,0 +1,12 @@
+/* ipad */
+@media only screen and (min-width: 413px) and (max-width: 768px) {
+  .culinary-title {
+    font-size: 3rem;
+    text-align: center;
+
+    margin-left: 1rem;
+  }
+  .culinary-sub-container {
+    max-width: 100%;
+  }
+}

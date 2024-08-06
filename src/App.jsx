@@ -33,6 +33,7 @@ import TicTacToe from "./Components/TicTacToe/TicTacToe";
 import CulinaryKids from "./Pages/CulinaryKids/CulinaryKids";
 import Puzzle from "./Pages/Puzzle/Puzzle";
 import { useTranslation } from "react-i18next";
+import VideoCall from "./Pages/videoCall/VideoCall";
 
 const PrivateRoute = ({ element }) => {
   const isAuthenticated = localStorage.getItem("token");
@@ -130,6 +131,10 @@ const router = createBrowserRouter([
       {
         path: "account",
         element: <PrivateRoute element={<Account />} />,
+      },
+      {
+        path: "videoCall",
+        element: <VideoCall />,
       },
     ],
   },

@@ -1,0 +1,43 @@
+/* laptop */
+@media only screen and (min-width: 769px) and (max-width: 1498px) {
+  .TicTacToe-main-container {
+    overflow: hidden;
+    max-width: 100vw;
+    height: 100vh;
+  }
+
+  .TicTacToe-board {
+    height: 450px;
+    width: 464px;
+    display: flex;
+    margin: auto;
+  }
+
+  .TicTacToe-reset {
+    width: 9vw;
+    height: 5vh;
+
+    font-size: 1.5rem;
+  }
+  .TicTacToe-title {
+    margin-bottom: 1.1rem;
+    top: -2rem;
+  }
+
+  .TicTacToe-boxes {
+    display: flex;
+    height: 120px;
+    width: 120px;
+    background: rgba(83, 96, 167, 0.418);
+
+    border: 4px solid #023047;
+    border-radius: 12 solid;
+    cursor: pointer;
+  }
+  .bubble-class-for-tic-tac-toe-horse-sea {
+    margin-inline-start: 80.2%;
+  }
+  div.row1 div.row2 div.row3 {
+    height: 80;
+  }
+}

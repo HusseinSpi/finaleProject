@@ -1,5 +1,6 @@
 export const menuContent = `
 <div class="tetris">
+<div class="game-menu-wrapper">
 <div class="game-menu">
     <span>CHOOSE LEVEL</span>
     <button class="sketch-button easy">EASY</button>
@@ -7,12 +8,14 @@ export const menuContent = `
     <button class="sketch-button hard">HARD</button>
 </div>
 </div>
+</div>
 `;
 
 export const tetrisContent = `
 <div class="tetris-game">
-<h1 class="title">TETRIS</h1>
+
 <div class="game-content__inner">
+
     <div class="canvas-bg">
         <canvas width="320" height="640" id="game"></canvas>
     </div>

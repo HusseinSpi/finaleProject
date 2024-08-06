@@ -24,9 +24,12 @@ const Carousel = ({ songs }) => {
           style={{ transform: `translateX(-${currentIndex * 20}%)` }}
         >
           {songs.map((song) => (
-            <div key={song._id} className="flex-none w-full max-w-xs p-4">
+            <div
+              key={song._id}
+              className="flex-none w-full max-w-xs p-4 bg-blue-950 rounded-lg hover:bg-blue-900 transform transition-transform duration-200 hover:scale-105 "
+            >
               <SongYTWrapper videoId={song.code} />
-              <p className="text-center text-lg font-semibold text-blue-950 mt-2">
+              <p className="text-center text-lg font-semibold text-white mt-2">
                 {song.name}
               </p>
             </div>
@@ -34,16 +37,16 @@ const Carousel = ({ songs }) => {
         </div>
       </div>
       <button
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-sky-800 text-white p-2 rounded-full"
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white text-white p-2 rounded-full hover:bg-orange-600"
         onClick={prevSlide}
       >
-        <FaChevronLeft color="#FFFFF" />
+        <FaChevronLeft color="#003366" />
       </button>
       <button
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-sky-800 text-white p-2 rounded-full"
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white text-white p-2 rounded-full hover:bg-orange-600"
         onClick={nextSlide}
       >
-        <FaChevronRight color="#FFFF" />
+        <FaChevronRight color="#003366" />
       </button>
     </div>
   );

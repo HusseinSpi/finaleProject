@@ -42,14 +42,17 @@
   "GeneralSongs": "שירים כלליים",
   "Tetris": "טטריס",
   "Forming Words": " הרכבת מילים ",
-  " Drawing and Coloring": " ציור וצבע  ",
+  "Drawing and Coloring": " ציור וצבע  ",
   "Matching Pairs": " התאמת זוגות ",
   "Tic Tac Toe": "איקס עיגול ",
-  "Puzzel": "פאזל",
+  "Puzzle": "פאזל",
   "OtherSongsYouMightLike": "שירים אחרים שאולי תאהבו",
   "ChatLogIn": "עליך להיכנס תחילה כדי להמשיך בצ'אט.",
   "SongView": "נצפה בשיר",
   "Parenting": "הורות",
   "Meals": "ארוחות",
-  "Buy Now!": "קנה עכשיו!"
+  "Buy Now!": "קנה עכשיו!",
+  "Enhance your parenting knowledge with us!": "שפר את הידע שלך בגידול ילדים איתנו!",
+  "parentingIntro": "חקור אוסף של סרטונים, מאמרים וספרים על גידול ילדים כדי לעזור לך במסע שלך.",
+  " Read Full Article!" : "קרא את המאמר המלא!"
 }

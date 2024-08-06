@@ -5,6 +5,7 @@
   height: 100vh;
   display: flex;
   width: 100vw;
+  background-image: url(../../../public/bbbg.jpg);
 }
 
 .words-container {
@@ -67,4 +68,22 @@
   .cards-grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+.restart-button {
+  background-color: #077bad;
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 4px #207398;
+}
+
+.restart-button:hover {
+  background-color: #58b3da;
 }

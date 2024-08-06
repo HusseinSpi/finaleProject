@@ -1,66 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 .puzzle-container {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   text-align: center;
   background-color: #f0f0f0;
   color: #333;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-image: url(../../../public/bbg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .puzzle-controls {
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.puzzle-controls input[type="file"],
-.puzzle-controls input[type="number"],
-.puzzle-controls button {
-  padding: 10px;
+.puzzle-controls input[type="file"] {
+  padding: 12px;
   margin: 5px;
   font-size: 16px;
-  border: none;
-  border-radius: 5px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  background-color: #ffffff;
+  color: #333;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
-.puzzle-controls button {
-  background-color: #4caf50;
+.puzzle-controls input[type="file"]::before {
+  content: "Choose File";
+  display: inline-block;
+  background-color: #007bff;
   color: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
   cursor: pointer;
 }
 
+.puzzle-controls input[type="file"]:hover::before {
+  background-color: #0056b3;
+}
+
+.puzzle-controls input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.puzzle-controls input[type="number"],
+.puzzle-controls button {
+  padding: 12px 18px;
+  margin: 5px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.puzzle-controls input[type="number"]:hover {
+  border-color: #888;
+  background-color: #f7f7f7;
+}
+
+.puzzle-controls button {
+  background-color: #007acc;
+  color: white;
+  cursor: pointer;
+  border-color: #007acc;
+}
+
 .puzzle-controls button:hover {
-  background-color: #45a049;
+  background-color: #0f4b86;
+  border-color: #0f4b86;
+  transform: scale(1.05);
 }
 
 .puzzle-board {
-  border: 2px solid blue;
+  border: 3px solid #007acc;
   margin: 20px auto;
   display: grid;
   background-color: white;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   height: 500px;
   gap: 2px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .puzzle-board .puzzle-empty-tile,
 .puzzle-board img {
-  border: 1px solid blue;
+  border: 2px solid #007acc;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+.puzzle-board img:hover {
+  transform: scale(1.05);
+  border-color: #005fa3;
 }
 
 .puzzle-pieces {
-  border: 2px solid purple;
+  border: 3px solid #6a1b9a;
   margin: 20px auto;
   display: grid;
-  grid-gap: 5px;
+  grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   max-width: 800px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 
 .puzzle-pieces img {
-  border: 0.5px solid lightblue;
+  border: 2px solid lightblue;
   width: 100%;
   height: auto;
   cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.puzzle-pieces img:hover {
+  transform: scale(1.05);
+  border-color: #1e88e5;
 }
 
 /* Modal styles */
@@ -73,9 +155,9 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
   padding-top: 60px;
+  transition: all 0.5s ease-in-out;
 }
 
 .puzzle-modal-content {
@@ -86,6 +168,20 @@
   width: 80%;
   max-width: 500px;
   text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: modalFadeIn 0.5s;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .puzzle-modal-close {
@@ -93,11 +189,87 @@
   float: right;
   font-size: 28px;
   font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
 }
 
 .puzzle-modal-close:hover,
 .puzzle-modal-close:focus {
   color: black;
   text-decoration: none;
+}
+
+.puzzle-modal button {
+  background-color: #007acc;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.puzzle-modal button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* Media queries for responsive design */
+@media (max-width: 1024px) {
+  .puzzle-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .puzzle-controls input[type="file"],
+  .puzzle-controls input[type="number"],
+  .puzzle-controls button {
+    width: 80%;
+  }
+
+  .puzzle-board {
+    width: 80%;
+    height: auto;
+  }
+
+  .puzzle-pieces {
+    width: 90%;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .puzzle-controls input[type="file"],
+  .puzzle-controls input[type="number"],
+  .puzzle-controls button {
+    width: 90%;
+  }
+
+  .puzzle-board {
+    width: 90%;
+    height: auto;
+  }
+
+  .puzzle-pieces {
+    width: 95%;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .puzzle-controls input[type="file"],
+  .puzzle-controls input[type="number"],
+  .puzzle-controls button {
+    width: 95%;
+  }
+
+  .puzzle-board {
+    width: 95%;
+    height: auto;
+  }
+
+  .puzzle-pieces {
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  }
 }
