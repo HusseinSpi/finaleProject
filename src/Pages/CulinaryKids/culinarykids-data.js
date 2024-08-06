@@ -1,7 +1,7 @@
 const culinaryKidsData = [
   {
     id: 1,
-    imgEn: '/public/recepies/pizza-en.JPG',
+    imgEn: '../../../public/recepies/pizza-en.JPG',
     imgHe: '/public/recepies/pizza-he.JPG',
     imgAr: '/public/recepies/pizza-ar.JPG',
     imgStyle: {
