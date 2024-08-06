@@ -76,16 +76,8 @@ const VideoCall = () => {
       <ScheduleCall onSchedule={handleSchedule} />
       {loading ? (
         <p className="loading">Loading...</p>
-      ) : roomUrl ? (
-        <SettingsVideoCall roomUrl={roomUrl} />
-      ) : isCallTime ? (
-        <button className="start-video-call-button" onClick={handleJoinCall}>
-          Start Video Call
-        </button>
       ) : (
-        <button className="no-scheduled-time-button">
-          No scheduled call time yet.
-        </button>
+        <SettingsVideoCall roomUrl={roomUrl} />
       )}
     </div>
   );
