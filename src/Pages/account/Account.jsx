@@ -48,8 +48,12 @@ const Account = () => {
               <div>
                 {gameHistory.length > 0
                   ? gameHistory.map((game, index) => (
-                      <div key={index} className="mb-4">
-                        {game.description}
+                      <div
+                        key={index}
+                        className="mb-4 flex items-center justify-center gap-2 text-sm"
+                      >
+                        {t("GameView")}
+                        <span className="font-bold">{game.description}</span>
                       </div>
                     ))
                   : t("No game history")}
@@ -72,8 +76,16 @@ const Account = () => {
               <div>
                 {storyHistory.length > 0
                   ? storyHistory.map((story, index) => (
-                      <div key={index} className="mb-4">
-                        {t("SongView")} {story.description}
+                      <div
+                        key={index}
+                        className="mb-4 flex items-center justify-center gap-2 text-sm"
+                      >
+                        {t("StoryView")}
+                        <span className="font-bold">
+
+                          {story.description}
+                          </span> 
+                          
                       </div>
                     ))
                   : t("No story history")}
@@ -94,7 +106,7 @@ const Account = () => {
                       key={index}
                       className="mb-4 shadow-xl"
                       onClick={() => handleImageClick(draw)}
-                    >
+                    > 
                       <img
                         src={`https://finaleprojectbe.onrender.com/uploads/${draw.name}`}
                         alt="draw"

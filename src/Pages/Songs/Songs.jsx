@@ -53,7 +53,7 @@ const Songs = () => {
         height: "100%",
       }}
     >
-      <h1 className="text-3xl font-bold ml-[36rem] mt-16 text-blue-950 ">
+      <h1 className="text-3xl font-bold text-center mt-16 text-blue-950 ">
         {t("learnWithUs")}
       </h1>
 

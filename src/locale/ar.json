@@ -19,6 +19,9 @@
   "ParentsSection": "قسم الأهل",
   "MealRecipes": "وصفات طعام",
   "Account": "الحساب",
+  "Story": "القصص المقروءة",
+  "Song": "الأغاني المشاهدة",
+  "Game": "الألعاب الملعوبة",
   "ParentingTips": "نصائح للتربية",
   "SignInTitle": "تسجيل الدخول بحسابك",
   "Email": "أدخل الإيميل",
@@ -49,11 +52,15 @@
   "Puzzle": "بازل",
   "OtherSongsYouMightLike": "أغاني أخرى قد تعجبك",
   "ChatLogIn": "يجب عليك تسجيل الدخول أولا لمواصلة الدردشة.",
-  "SongView": "تم مشاهدة أغنية",
+  "SongView": "تمت مشاهدة أغنية",
+  "StoryView": "تمت قراءة قصة",
+  "GameView": "تم لعب لعبة",
   "Parenting": "التربية",
   "Meals": "وجبات",
+  "History": "السجل",
+  "Image Analysis": "تحليل الرسومات",
   "Buy Now!": "اشتري الآن!",
   "Enhance your parenting knowledge with us!": "عزز معرفتك في تربية الأطفال معنا!",
   "parentingIntro": "استكشف مجموعة من الفيديوهات والمقالات والكتب حول تربية الأطفال لمساعدتك في رحلتك.",
-  " Read Full Article!" : " إقرأ المقالة كاملة!"
+  " Read Full Article!": " إقرأ المقالة كاملة!"
 }
