@@ -43,14 +43,17 @@
   "GeneralSongs": "أغاني عامة",
   "Tetris": "تتريس",
   "Forming Words": "تشكيل كلمات",
-  " Drawing and Coloring": "الرسم والتلوين",
+  "Drawing and Coloring": "الرسم والتلوين",
   "Matching Pairs": "مطابقة الأزواج",
   "Tic Tac Toe": "إكس أو",
-  "Puzzel": "بازل",
+  "Puzzle": "بازل",
   "OtherSongsYouMightLike": "أغاني أخرى قد تعجبك",
   "ChatLogIn": "يجب عليك تسجيل الدخول أولا لمواصلة الدردشة.",
   "SongView": "تم مشاهدة أغنية",
   "Parenting": "التربية",
   "Meals": "وجبات",
-  "Buy Now!" : "اشتري الآن!"
+  "Buy Now!": "اشتري الآن!",
+  "Enhance your parenting knowledge with us!": "عزز معرفتك في تربية الأطفال معنا!",
+  "parentingIntro": "استكشف مجموعة من الفيديوهات والمقالات والكتب حول تربية الأطفال لمساعدتك في رحلتك.",
+  " Read Full Article!" : " إقرأ المقالة كاملة!"
 }

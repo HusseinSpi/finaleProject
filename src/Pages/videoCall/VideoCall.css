@@ -1,0 +1,85 @@
+.App-videocall {
+  background-image: url("./bbg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 110%;
+  position: relative;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+.description2 {
+  border-radius: 10px;
+  padding: 40px;
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+}
+.h1-video {
+  font-size: 2.5em;
+  color: #0a1f0f;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.description2 .description {
+  font-size: 1.1em;
+  color: #0a1f0f;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media (max-width: 768px) {
+  .description2 {
+    padding: 20px;
+  }
+  .description2 .h1-video {
+    font-size: 2em;
+  }
+  .description2 .description {
+    font-size: 1em;
+  }
+}
+start-video-call-button {
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: #52c0db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+start-video-call-button:hover {
+  background-color: #4169e1;
+  transform: scale(1.05);
+}
+.loading {
+  margin: 20px 0;
+  font-size: 1.2em;
+}
+.error {
+  color: red;
+}
+.video-call-container {
+  margin-top: 20px;
+}
+iframe {
+  border: none;
+  width: 100%;
+  height: 600px;
+  border-radius: 8px;
+}
+.no-scheduled-time-button {
+  background-color: #6c757d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 27px;
+  font-size: 16px;
+  margin-left: 30px;
+  cursor: not-allowed;
+}

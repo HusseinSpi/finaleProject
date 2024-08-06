@@ -1,28 +1,41 @@
 import { useTranslation } from "react-i18next";
+import { PiBookFill } from "react-icons/pi";
 
 const Books = ({ books }) => {
   const { t } = useTranslation();
 
+  if (!books || books.length === 0) {
+    return <div>No book available</div>;
+  }
+
+  const book = books[0];
+
+  const handleButtonClicked = () => {
+    window.location.href = book.link;
+  };
+
   return (
-    <div className="flex flex-wrap gap-7">
-      {books.map((book) => (
-        <div
-          key={book._id}
-          className="w-[30rem] bg-sky-700 flex flex-col items-center p-5 mt-10 gap-5 text-white text-center"
-        >
+    <div className="p-2">
+      <div key={book._id} className="flex gap-5 text-black">
+        <div>
           <img
             src={book.image}
             alt={book.title}
-            className="w-[16rem] h-[18rem]"
+            className="w-[150rem] h-[20.4rem] flex items-center"
           />
-          <h1 className="font-bold">{book.title}</h1>
-          <h2 className="font-semibold">{book.author}</h2>
-          <p>{book.desc}</p>
-          <button className="bg-white text-blue-900 rounded-xl p-3">
+        </div>
+        <div className="flex flex-col gap-4">
+          <h1 className="font-bold text-sm">{book.title}</h1>
+          <h2 className="font-semibold text-sm">{book.author}</h2>
+          <p className="text-sm text-justify">{book.desc}</p>
+          <button
+            onClick={handleButtonClicked}
+            className="bg-orange-600 text-white rounded-xl p-2 text-sm hover:bg-orange-700 w-2/5"
+          >
             {t("Buy Now!")}
           </button>
         </div>
-      ))}
+      </div>
     </div>
   );
 };

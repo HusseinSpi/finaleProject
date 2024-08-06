@@ -1,0 +1,15 @@
+/* laptop */
+@media only screen and (min-width: 769px) and (max-width: 1498px) {
+  .culinary-sub-container {
+    padding: 20px;
+    width: 90%;
+    margin-left: -5.5rem;
+  }
+  .flip-card {
+    width: 200px;
+    height: 300px;
+  }
+  .card-grid {
+    margin-right: 0.5rem;
+  }
+}

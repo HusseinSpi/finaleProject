@@ -1,25 +1,29 @@
 /*phone*/
 @media only screen and (max-width: 412px) {
+  .FormingWordGame {
+    width: 80vw;
+  }
+
   .h1-title {
     font-size: 2.3rem;
     text-align: center;
     color: #414288;
-    margin-left: -7.5rem;
+    margin-left: -6rem;
   }
   .picture img {
     width: 22rem;
     height: 28vh;
     border-radius: 50px;
     margin-top: 3rem;
-    margin-left: -3.8rem;
+    margin-left: -3rem;
   }
   .letters {
     margin-left: -6rem;
     margin-top: 5rem;
   }
   .draggable-letter {
-    font-size: 1.5rem;
-    margin: 0 10px;
+    font-size: 1.4rem;
+    margin-left: 0;
   }
   .drop-zone-father-container {
     width: 105px;

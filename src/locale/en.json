@@ -43,14 +43,17 @@
   "GeneralSongs": "General songs",
   "Tetris": "Tetris",
   "Forming Words": "Forming Words ",
-  " Drawing and Coloring": " Drawing and Coloring ",
+  "Drawing and Coloring": "Drawing and Coloring",
   "Matching Pairs": "Matching Pairs ",
   "Tic Tac Toe": "Tic Tac Toe ",
-  "Puzzel": "Puzzel",
+  "Puzzle": "Puzzel",
   "OtherSongsYouMightLike": "Other Songs You Might Like",
   "ChatLogIn": "You must log in first to continue the chat.",
   "SongView": "Watched the song",
   "Parenting": "Parenting",
   "Meals": "Meals",
-  "Buy Now!": "Buy Now!"
+  "Buy Now!": "Buy Now!",
+  "Enhance your parenting knowledge with us!" : "Enhance your parenting knowledge with us!",
+  "parentingIntro":"Explore a set of videos, articles, and books about parenting to help you in your journey.",
+  " Read Full Article!" : " Read Full Article!"
 }
