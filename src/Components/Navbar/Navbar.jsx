@@ -5,6 +5,8 @@ import { NavLink } from "react-router-dom";
 import logo from "../../../public/logo6.png";
 import bubble from "../../../public/bubble.png";
 import { useTranslation } from "react-i18next";
+import { LuMenu } from "react-icons/lu";
+import { IoCloseSharp } from "react-icons/io5";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -28,9 +30,7 @@ const Navbar = () => {
 
   const navLinkClasses = ({ isActive }) =>
     `flex items-center justify-center gap-2 rounded-lg px-6 py-2 text-lg font-semibold bg-cover transition-transform duration-300 ease-in-out hover:scale-105 ${
-      isActive
-        ? "scale-110 text-blue-950"
-        : "text-blue-950 animate-float"
+      isActive ? "scale-110 text-blue-950" : "text-blue-950 animate-float"
     } pt-5`;
 
   const navLinkStyles = {
@@ -38,22 +38,32 @@ const Navbar = () => {
     backgroundSize: "contain",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
-    padding: "2rem",
+    padding: "2.5rem",
   };
 
   return (
-    <nav className="relative p-2 bg-cover bg-[#32BAF1]">
-      <div className="flex justify-between mt-5 items-center md:hidden">
+    <nav className="relative p-2 bg-cover bg-[#32BAF1] w-full">
+     
+      <div className="flex justify-between items-center lg:hidden">
         <NavLink to="/">
-          <img src={logo} alt="Logo" />
+          <img src={logo} alt="Logo" className="w-30 h-10" />
         </NavLink>
+        <button onClick={toggleMenu} className="text-blue-950">
+          {isOpen ? (
+            <IoCloseSharp size={40} color="#fff" />
+          ) : (
+            <LuMenu size={35} color="#fff" />
+          )}
+        </button>
       </div>
+
+     
       <div
-        className={`md:flex md:items-center md:w-auto text-xl mt-2 ${
+        className={`${
           isOpen ? "block" : "hidden"
-        }`}
+        } lg:flex lg:items-center lg:w-auto text-xl mt-2`}
       >
-        <ul className="flex flex-col md:flex-row md:space-x-4 w-full md:justify-center items-center">
+        <ul className="flex flex-col gap-4 lg:flex-row lg:space-x-4 w-full lg:justify-center items-center">
           <li>
             <NavLink
               to="games"
@@ -81,9 +91,10 @@ const Navbar = () => {
               {t("Stories")}
             </NavLink>
           </li>
-          <li className="hidden md:flex justify-center">
+          
+          <li className="hidden lg:flex justify-center">
             <NavLink to="/">
-              <img src={logo} alt="Logo" className="w-40 h-10" />
+              <img src={logo} alt="Logo" className="w-56 h-14" />
             </NavLink>
           </li>
           <li>
@@ -97,7 +108,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
-              to="meals"
+              to="culinary-kids"
               className={navLinkClasses}
               style={navLinkStyles}
             >
@@ -126,8 +137,7 @@ const Navbar = () => {
               </NavLink>
             </li>
           )}
-        </ul>
-        <div className="relative top-12 right-4 md:static md:ml-auto md:mr-4 mt-4 md:mt-0">
+        <div className="relative top-12 right-4 lg:static lg:ml-auto lg:mr-4  lg:mt-0">
           <select
             onChange={handleLanguageChange}
             className="p-2 text-lg font-semibold bg-transparent rounded-md text-blue-950"
@@ -137,6 +147,9 @@ const Navbar = () => {
             <option value="he">He</option>
           </select>
         </div>
+        </ul>
+
+        
       </div>
     </nav>
   );

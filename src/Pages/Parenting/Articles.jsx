@@ -1,69 +1,39 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { getAllArticles } from "../../redux/thunk/articlesThunk";
+import { MdArticle } from "react-icons/md";
 import { useTranslation } from "react-i18next";
-import { createRecentActivity } from "../../redux/thunk/recentActivityThunks";
 
-const Articles = () => {
- const dispatch = useDispatch();
- const articles = useSelector((state) => state.articles.data[0] || []);
- const [isLoading, setIsLoading] = useState(true);
- const { t, i18n } = useTranslation();
- const currentUser = useSelector(
-   (state) => state.currentUser?.data?.data?.user
- );
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      await dispatch(getAllArticles());
-      setIsLoading(false);
-    };
 
-    if (articles.length === 0) {
-      fetchData();
-    } else {
-      setIsLoading(false);
-    }
-  }, [dispatch, articles]);
 
-  const filteredArticles = articles[i18n.language] || articles["en"] || [];
+const Articles = ({ articles }) => {
+    const { t } = useTranslation();
+  if (!articles || articles.length === 0) {
+    return <div>No article available</div>;
+  }
 
-  const handleButtonClicked = (article) => {
-    if (currentUser) {
-      dispatch(
-        createRecentActivity({
-          type: "article",
-          description: article.title,
-          user: currentUser._id,
-        })
-      );
-    }
+  const article = articles[0]; 
+  const handleButtonClicked = () => {
     window.location.href = article.link;
   };
 
-  if (isLoading) {
-    return <div className="text-center">Loading...</div>;
-  }
-
   return (
-    <div className="flex flex-wrap gap-7">
-      {filteredArticles.map((article) => (
-        <div
-          key={article.title}
-          className="w-[30rem] bg-sky-700 flex flex-col items-center p-5 mt-10 gap-5 text-white text-center"
-        >
-       
-          <h1 className="font-bold">{article.title}</h1>
-          <h2 className="font-semibold">{article.author}</h2>
+    <div className="p-2">
+      <div className="flex flex-col gap-3 md:flex-row items-center">
+        <div className="mb-10">
+
+        <MdArticle size={50} />
+        </div>
+        <div className="flex flex-col w-full gap-1 ">
+          <h1 className="font-bold text-lg">{article.title}</h1>
+          <h1 className="font-pretty text-sm">{article.author}</h1>
           <button
-            onClick={() => handleButtonClicked(article)}
-            className="bg-white text-blue-900 rounded-xl p-3"
+            onClick={handleButtonClicked}
+            className="bg-orange-600 text-white rounded-xl px-4 py-2 text-sm hover:bg-orange-700 mx-auto"
           >
-            {t("Buy Now!")}
+            {t(" Read Full Article!")}
           </button>
         </div>
-      ))}
+      </div>
     </div>
   );
 };
+
 export default Articles;

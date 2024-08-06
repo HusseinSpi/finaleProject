@@ -5,6 +5,10 @@ import click_sound from '../../../public/click-sound.mp3'
 import win_sound from '../../../public/win-sound-sea.mp3'
 
 import './TicTacToe.css'
+import './TicTacToe.Laptop.css'
+
+import './TicTacToe.Ipad.css'
+import './TicTacToe.Phone.css'
 
 let data = ['', '', '', '', '', '', '', '', '']
 
@@ -203,6 +207,31 @@ const TicTacToe = () => {
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-seven"
+          alt="bubble-img-five"
+          src="/public/bubble.png"
+        ></img>
+        <img
+          className="bubble-class-for-tic-tac-toe-eight"
+          alt="bubble-img-five"
+          src="/public/bubble.png"
+        ></img>
+        <img
+          className="bubble-class-for-tic-tac-toe-nine"
+          alt="bubble-img-five"
+          src="/public/bubble.png"
+        ></img>
+        <img
+          className="bubble-class-for-tic-tac-toe-ten"
+          alt="bubble-img-five"
+          src="/public/bubble.png"
+        ></img>
+        <img
+          className="bubble-class-for-tic-tac-toe-eleven"
+          alt="bubble-img-five"
+          src="/public/bubble.png"
+        ></img>
+        <img
+          className="bubble-class-for-tic-tac-toe-twelve"
           alt="bubble-img-five"
           src="/public/bubble.png"
         ></img>

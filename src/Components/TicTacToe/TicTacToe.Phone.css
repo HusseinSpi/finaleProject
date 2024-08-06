@@ -1,0 +1,173 @@
+/*samsung galaxy S20 ultra*/
+@media only screen and (max-width: 412px) {
+  .TicTacToe-main-container {
+    width: 100vw;
+    height: 88vh;
+  }
+
+  .TicTacToe-container {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .TicTacToe-title {
+    font-size: 2.5rem;
+    margin-left: 4rem;
+    margin-top: 1rem;
+  }
+  .TicTacToe-board {
+    max-height: 100%;
+    min-height: 50vh;
+    width: 90vw;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    margin-top: -2.5rem;
+  }
+
+  .TicTacToe-boxes {
+    margin-left: 0;
+
+    height: 7rem;
+    width: 7rem;
+  }
+
+  .TicTacToe-reset {
+    margin-top: -1vh;
+    height: 5vh;
+    width: 27vw;
+    font-size: 1.2rem;
+    margin-left: 5.6rem;
+  }
+  .bubble-class-for-tic-tac-toe-horse-sea {
+    height: 10vh;
+    width: 8vw;
+    top: 95%;
+    right: 6%;
+  }
+
+  .bubble-class-for-tic-tac-toe-red-star {
+    left: 10%;
+    top: 92%;
+    height: 5.5vh;
+    width: 7.3vw;
+  }
+  .bubble-class-for-tic-tac-toe-lighter-star {
+    left: 0.0001rem;
+    top: 102%;
+    height: 5.5vh;
+    width: 7.3vw;
+  }
+  .bubble-class-for-tic-tac-toe-green-1 {
+    height: 20.5vh;
+    width: 15.3vw;
+    left: 12%;
+    top: 97%;
+  }
+  .bubble-class-for-tic-tac-toe-green-3 {
+    height: 13.5vh;
+    width: 22.3vw;
+    left: 0%;
+    top: 100%;
+  }
+  .bubble-class-for-tic-tac-toe-purple {
+    height: 13.5vh;
+    width: 22.3vw;
+    right: 10%;
+    top: 100%;
+  }
+  .bubble-class-for-tic-tac-toe-pink {
+    position: absolute;
+    z-index: 8;
+    height: 10.5vh;
+    width: 22.3vw;
+    right: -3%;
+    top: 100%;
+  }
+  .bubble-class-for-tic-tac-toe-yellow {
+    height: 10.5vh;
+    width: 15.3vw;
+    left: 9%;
+    top: 100%;
+  }
+  .bubble-class-for-tic-tac-toe-red-fish {
+    position: absolute;
+    z-index: 3;
+    height: 4vh;
+    width: 6.3vw;
+    margin-left: 1%;
+    animation: swim 200s linear infinite;
+    top: 83%;
+  }
+  .bubble-class-for-tic-tac-toe-blue-fish {
+    position: absolute;
+    z-index: 3;
+    height: 2vh;
+    width: 7.3vw;
+    margin-left: 1%;
+    animation: swim 200s linear infinite;
+    animation-delay: 100s;
+  }
+  .bubble-class-for-tic-tac-toe-blue-trigon {
+    height: 6.5vh;
+    width: 6.3vw;
+  }
+  .bubble-class-for-tic-tac-toe {
+    height: 1vh;
+    width: 0.5vw;
+    margin-inline-start: -25rem;
+  }
+
+  .bubble-class-for-tic-tac-toe-two {
+    height: 2.5vh;
+    width: 1.3vw;
+    margin-inline-start: -15rem;
+  }
+
+  .bubble-class-for-tic-tac-toe-three {
+    height: 2vh;
+    width: 1vw;
+  }
+  .bubble-class-for-tic-tac-toe-four {
+    height: 2.5vh;
+    width: 1.3vw;
+    margin-inline-start: -20rem;
+  }
+
+  .bubble-class-for-tic-tac-toe-five {
+    height: 2vh;
+    width: 1vw;
+  }
+  .bubble-class-for-tic-tac-toe-six {
+    height: 2.5vh;
+    width: 1.3vw;
+  }
+  .bubble-class-for-tic-tac-toe-seven {
+    height: 2.5vh;
+    width: 1.3vw;
+    margin-inline-start: -18rem;
+  }
+  .bubble-class-for-tic-tac-toe-eight {
+    height: 2.5vh;
+    width: 1.3vw;
+  }
+  .bubble-class-for-tic-tac-toe-nine {
+    height: 2vh;
+    width: 1vw;
+    margin-inline-start: -16rem;
+  }
+  .bubble-class-for-tic-tac-toe-ten {
+    height: 2vh;
+    width: 1vw;
+  }
+  .bubble-class-for-tic-tac-toe-eleven {
+    height: 2.5vh;
+    width: 1.3vw;
+  }
+  .bubble-class-for-tic-tac-toe-twelve {
+    height: 2vh;
+    width: 1vw;
+  }
+}

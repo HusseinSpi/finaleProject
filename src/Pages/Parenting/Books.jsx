@@ -1,75 +1,44 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { getAllBooks } from "../../redux/thunk/booksThunk";
 import { useTranslation } from "react-i18next";
-import { createRecentActivity } from "../../redux/thunk/recentActivityThunks";
+import { PiBookFill } from "react-icons/pi";
 
-const Books = () => {
-   const dispatch = useDispatch();
-   const books = useSelector((state) => state.books.data[0] || []);
-   const [isLoading, setIsLoading] = useState(true);
-   const { t, i18n } = useTranslation();
-   const currentUser = useSelector(
-     (state) => state.currentUser?.data?.data?.user
-   );
+const Books = ({ books }) => {
+  const { t } = useTranslation();
 
-   useEffect(() => {
-     const fetchData = async () => {
-       setIsLoading(true);
-       await dispatch(getAllBooks());
-       setIsLoading(false);
-     };
+  if (!books || books.length === 0) {
+    return <div>No book available</div>;
+  }
 
-     if (books.length === 0) {
-       fetchData();
-     } else {
-       setIsLoading(false);
-     }
-   }, [dispatch, books]);
+  const book = books[0]; 
 
-   const filteredBooks = books[i18n.language] || books["en"] || [];
+    const handleButtonClicked = () => {
+      window.location.href = book.link; 
+    };
 
-   const handleButtonClicked = (book) => {
-     if (currentUser) {
-       dispatch(
-         createRecentActivity({
-           type: "book",
-           description: book.title,
-           user: currentUser._id,
-         })
-       );
-     }
-     window.location.href = book.link;
-   };
-
-   if (isLoading) {
-     return <div className="text-center">Loading...</div>;
-   }
-
-   return (
-     <div className="flex flex-wrap gap-7">
-       {filteredBooks.map((book) => (
-         <div
-           key={book.title}
-           className="w-[30rem] bg-sky-700 flex flex-col items-center p-5 mt-10 gap-5 text-white text-center"
-         >
-           <img
-             src={book.image}
-             alt={book.title}
-             className="w-[16rem] h-[18rem]"
-           />
-           <h1 className="font-bold">{book.title}</h1>
-           <h2 className="font-semibold">{book.author}</h2>
-           <p>{book.desc}</p>
-           <button
-             onClick={() => handleButtonClicked(book)}
-             className="bg-white text-blue-900 rounded-xl p-3"
-           >
-             {t("Buy Now!")}
-           </button>
-         </div>
-       ))}
-     </div>
-   );
+  return (
+    <div className="p-2">
+      <div key={book._id} className="flex gap-5 text-black">
+        <div>
+        
+          <img
+            src={book.image}
+            alt={book.title}
+            className="w-[150rem] h-[20.4rem] flex items-center"
+          />
+        </div>
+        <div className="flex flex-col gap-4">
+          <h1 className="font-bold text-sm">{book.title}</h1>
+          <h2 className="font-semibold text-sm">{book.author}</h2>
+          <p className="text-sm text-justify">{book.desc}</p>
+          <button
+            onClick={handleButtonClicked}
+            className="bg-orange-600 text-white rounded-xl p-2 text-sm hover:bg-orange-700 w-2/5"
+          >
+            {t("Buy Now!")}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 };
+
 export default Books;

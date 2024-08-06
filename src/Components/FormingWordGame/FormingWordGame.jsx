@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import '../FormingWordGame/FormingWordGame.css'
 import Picture from '../FormingWordGame/Picture'
 import DropZone from '../FormingWordGame/DropZone'
 import DraggableLetter from '../FormingWordGame/DraggableLetter'
@@ -7,6 +6,10 @@ import { Howl, Howler } from 'howler'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllAnimalsGame } from '../../redux/thunk/animalsGameThunk'
 
+import '../FormingWordGame/FormingWordGame.css'
+import '../FormingWordGame/FormingWordGameLaptop.css'
+import '../FormingWordGame/FormingWordGameIpad.css'
+import '../FormingWordGame/FormingWordGamePhone.css'
 Howler.volume(0.1)
 
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
@@ -62,7 +65,7 @@ const FormingWordGame = () => {
   return (
     <div className="FormingWordGame-background">
       <div className="FormingWordGame">
-        <h1 className="h1">Animals' Forming Word Game</h1>
+        <h1 className="h1-title">Animals' Forming Word Game</h1>
         {currentAnimal && <Picture url={currentAnimal.imgUrl} />}
         {currentAnimal && (
           <DropZone

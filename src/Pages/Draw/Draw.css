@@ -1,5 +1,5 @@
 .draw-body {
-  background-color: aliceblue;
+  background-image: url(../../../public/bbbg.jpg);
   display: flex;
   flex-direction: row;
   align-items: center;

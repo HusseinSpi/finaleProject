@@ -1,6 +1,6 @@
 import  { useEffect, useRef } from "react";
 
-const SongYT = ({ videoId }) => {
+const SongYT = ({ videoId, height= "480", width="854" }) => {
    const playerRef = useRef(null);
 
    useEffect(() => {
@@ -10,8 +10,8 @@ const SongYT = ({ videoId }) => {
            playerRef.current.destroy(); 
          }
          playerRef.current = new window.YT.Player(`youtube-player-${videoId}`, {
-           height: "480",
-           width: "854",
+           height: height,
+           width: width,
            videoId: videoId,
            playerVars: {
              autoplay: 0,

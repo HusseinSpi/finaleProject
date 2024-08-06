@@ -1,52 +1,74 @@
 .culinary-main-container {
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: center;
   padding: 20px;
+  background: rgb(237, 240, 250);
+}
+
+.culinary-sub-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  height: calc(100vh- 8rem);
+  border-radius: 5rem;
+  background: #d0e5fa;
+
+  box-shadow: 20px 20px 60px #b5c5ff, -20px -20px 60px #ffffff;
 }
 
 .culinary-title {
-  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   font-family: 'TherenRegular';
-  font-size: 5rem;
-  margin-left: 40rem;
+  margin-bottom: 20px;
+  font-size: 4.5rem;
+  background: linear-gradient(
+    to right,
+
+    rgb(140, 140, 247),
+    indigo,
+    violet,
+    red,
+    rgb(255, 166, 0),
+    green
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+select {
+  margin-bottom: 20px;
+  padding: 5px;
+  font-size: 1rem;
 }
 
 .card-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  /* gap: 10px; */
-  max-width: 10px;
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 .flip-card {
   background-color: transparent;
-  width: 150px;
-  height: 250px;
-  margin-top: 20px;
-  margin-right: 0.5rem;
-  margin-left: 7.5rem;
+  width: 250px;
+  height: 350px;
   perspective: 1000px;
-  font-family: sans-serif;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.8s, z-index 0.8s;
-}
-
-.flip-card:hover {
-  z-index: 10; /* Bring the card to the front when hovered */
-  transform: scale(3); /* Scale up the card */
 }
 
 .flip-card-inner {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  z-index: 10; /* Bring the card to the front when hovered */
 }
 
 .flip-card:hover .flip-card-inner {
@@ -55,102 +77,53 @@
 
 .flip-card-front,
 .flip-card-back {
-  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
-
-  border-radius: 1rem;
+  border-radius: 10px;
 }
 
 .flip-card-front {
-  background-image: url('../../../public/recepies/Pizza/pizza-en.JPG');
+  background-size: cover;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
 }
 
 .flip-card-back {
-  background-image: url('../../../public/recepies/pizza-\ back.JPG');
-
+  background-color: #e0f5f8;
+  color: black;
   transform: rotateY(180deg);
+
+  padding: 10px;
+  overflow-y: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
 }
 
-/* Positioning the cards according to the pattern */
-.card-grid .flip-card:nth-child(1) {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
+.h2-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 800;
 }
 
-.card-grid .flip-card:nth-child(2) {
-  grid-column: 4 / 5;
-  grid-row: 1 / 2;
+.h3-title {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  font-weight: 600;
 }
 
-.card-grid .flip-card:nth-child(3) {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
+.ul-class-meal-page,
+.ol-class-meal-page {
+  text-align: center;
+  padding-left: 20px;
 }
 
-.card-grid .flip-card:nth-child(4) {
-  grid-column: 3 / 4;
-  grid-row: 2 / 3;
-}
-
-.card-grid .flip-card:nth-child(5) {
-  grid-column: 5 / 6;
-  grid-row: 2 / 3;
-}
-
-.card-grid .flip-card:nth-child(6) {
-  grid-column: 2 / 3;
-  grid-row: 3 / 4;
-}
-
-.card-grid .flip-card:nth-child(7) {
-  grid-column: 4 / 5;
-  grid-row: 3 / 4;
-}
-
-.card-grid .flip-card:nth-child(8) {
-  grid-column: 7 / 7;
-  grid-row: 2/ 5;
-}
-
-.card-grid .flip-card:nth-child(9) {
-  grid-column: 8 / 8;
-  grid-row: 3 / 5;
-}
-
-.card-grid .flip-card:nth-child(10) {
-  grid-column: 8/ 8;
-  grid-row: 1 / 5;
-}
-
-.card-grid .flip-card:nth-child(11) {
-  grid-column: 6 / 6;
-  grid-row: 1 / 6;
-}
-
-.card-grid .flip-card:nth-child(12) {
-  grid-column: 6 / 6;
-  grid-row: 3 / 6;
-}
-.card-grid .flip-card:nth-child(13) {
-  grid-column: 5 / 6;
-  grid-row: 4 / 6;
-}
-.card-grid .flip-card:nth-child(14) {
-  grid-column: 3 / 6;
-  grid-row: 4 / 6;
-}
-.card-grid .flip-card:nth-child(15) {
-  grid-column: 1 / 6;
-  grid-row: 4 / 6;
-}
-.card-grid .flip-card:nth-child(16) {
-  grid-column: 7 / 7;
-  grid-row: 4 / 6;
+.ul-class-meal-page .li-class-meal-page,
+.ol-class-meal-page .li-class-meal-page {
+  margin-bottom: 5px;
 }

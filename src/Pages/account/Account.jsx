@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getRecentActivity } from "../../redux/thunk/recentActivityThunks";
+import { getAllDraws } from "../../redux/thunk/drawThunk";
 import { useTranslation } from "react-i18next";
+import ReactMarkdown from "react-markdown";
 
 const Account = () => {
   const { t } = useTranslation();
@@ -12,10 +14,13 @@ const Account = () => {
   const currentUser = useSelector(
     (state) => state.currentUser?.data?.data?.user || {}
   );
+  const draws = useSelector((state) => state.draws.data || []);
   const [selectedTab, setSelectedTab] = useState("history");
+  const [selectedDraw, setSelectedDraw] = useState(null);
 
   useEffect(() => {
     dispatch(getRecentActivity());
+    dispatch(getAllDraws());
   }, [dispatch]);
 
   const gameHistory = recentActivity.filter(
@@ -27,6 +32,11 @@ const Account = () => {
   const storyHistory = recentActivity.filter(
     (activity) => activity.type === "story" && activity.user === currentUser._id
   );
+  const drawHistory = draws.filter((draw) => draw.user === currentUser._id);
+
+  const handleImageClick = (draw) => {
+    setSelectedDraw(draw);
+  };
 
   const renderContent = () => {
     switch (selectedTab) {
@@ -72,7 +82,30 @@ const Account = () => {
           </div>
         );
       case "imageAnalysis":
-        return <p>{t("Image analysis content goes here")}</p>;
+        return (
+          <div>
+            <h1 className="text-xl font-semibold mb-4">
+              {t("Image Analysis")}
+            </h1>
+            <div className="grid grid-cols-3 gap-4">
+              {drawHistory.length > 0
+                ? drawHistory.map((draw, index) => (
+                    <div
+                      key={index}
+                      className="mb-4 shadow-xl"
+                      onClick={() => handleImageClick(draw)}
+                    >
+                      <img
+                        src={`https://finaleprojectbe.onrender.com/uploads/${draw.name}`}
+                        alt="draw"
+                        className="w-full h-auto cursor-pointer"
+                      />
+                    </div>
+                  ))
+                : t("No draw history")}
+            </div>
+          </div>
+        );
       default:
         return null;
     }
@@ -105,7 +138,31 @@ const Account = () => {
           </button>
         </div>
       </div>
-      <div className="w-3/4 p-4">{renderContent()}</div>
+      <div className="w-3/4 p-4">
+        {renderContent()}
+        {selectedDraw && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 transition-opacity duration-300 ease-in-out">
+            <div className="bg-white p-6 rounded-lg max-w-4xl w-full relative shadow-lg overflow-y-auto max-h-full">
+              <button
+                className="absolute top-4 right-4 text-black hover:text-red-500 transition-colors duration-200"
+                onClick={() => setSelectedDraw(null)}
+              >
+                &times;
+              </button>
+              <img
+                src={`https://finaleprojectbe.onrender.com/uploads/${selectedDraw.name}`}
+                alt="Selected draw"
+                className="w-full h-image mb-4 rounded-lg"
+              />
+              <div className="p-4 bg-gray-100 rounded-lg">
+                <ReactMarkdown className="prose">
+                  {selectedDraw.analysis}
+                </ReactMarkdown>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

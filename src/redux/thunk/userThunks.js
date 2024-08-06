@@ -68,7 +68,7 @@ export const loginUser = createAsyncThunk(
       return response.data;
     } catch (error) {
       toast.error("Login failed");
-      return rejectWithValue(error.response?.data || error.message);
+      return false;
     }
   }
 );

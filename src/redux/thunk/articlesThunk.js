@@ -6,10 +6,8 @@ export const getAllArticles = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(`articles`);
-      console.log("API Response:", response.data.data);
       return response.data.data;
     } catch (err) {
-      console.error(`Error fetching articles:`, err);
       return rejectWithValue(err.response?.data);
     }
   }
