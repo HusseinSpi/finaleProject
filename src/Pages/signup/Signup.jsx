@@ -1,5 +1,5 @@
 import SignUpForm from "../../Components/sign/SignUpForm";
-import background from "../../../public/bbg.jpg"
+import background from "../../../public/bbg.jpg";
 
 const SignUpPage = () => {
   return (
@@ -11,7 +11,7 @@ const SignUpPage = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         width: "100%",
-        height: "100%",
+        height: "100vh",
       }}
     >
       <div className="mx-auto max-w-lg bg-white p-5 rounded-lg">

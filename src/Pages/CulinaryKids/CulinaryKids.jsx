@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import culinaryKidsData from "./culinarykids-data";
+import { useTranslation } from "react-i18next";
 
 import "./CulinaryKids.css";
 import "./CulinaryKidsLaptop.css"; //  1498 w
@@ -7,14 +8,14 @@ import "./CulinaryKidsIpad.css"; //    768 w
 import "./CulinaryKidsPhone.css"; //   412 w
 
 const CulinaryKids = () => {
-  const [language, setLanguage] = useState("en");
+  const { i18n } = useTranslation();
 
   const handleLanguageChange = (e) => {
-    setLanguage(e.target.value);
+    i18n.changeLanguage(e.target.value);
   };
 
   const getRecipeData = (recipe) => {
-    switch (language) {
+    switch (i18n.language) {
       case "he":
         return {
           img: recipe.imgHe,
@@ -42,12 +43,7 @@ const CulinaryKids = () => {
   return (
     <div className="culinary-main-container">
       <div className="culinary-sub-container">
-        <h1 className="culinary-title">Culinary Kids Recipes</h1>
-        <select onChange={handleLanguageChange} value={language}>
-          <option value="en">English</option>
-          <option value="he">Hebrew</option>
-          <option value="ar">Arabic</option>
-        </select>
+        <h1 className="culinary-title text-center">Culinary Kids Recipes</h1>
         <div className="card-grid">
           {culinaryKidsData.map((recipe) => {
             const { img, title, ingredients, preparationMethod } =
@@ -66,12 +62,12 @@ const CulinaryKids = () => {
                   </div>
                   <div className="flip-card-back">
                     <h2 className="h2-title">
-                      {recipe[`recipeTitle${language.toUpperCase()}`]}
+                      {recipe[`recipeTitle${i18n.language.toUpperCase()}`]}
                     </h2>
                     <h3 className="h3-title">
-                      {language === "en"
+                      {i18n.language === "en"
                         ? "Ingredients"
-                        : language === "he"
+                        : i18n.language === "he"
                         ? "מרכיבים"
                         : "المكونات"}
                     </h3>
@@ -83,9 +79,9 @@ const CulinaryKids = () => {
                       ))}
                     </ul>
                     <h3 className="h3-title">
-                      {language === "en"
+                      {i18n.language === "en"
                         ? "Preparation Method"
-                        : language === "he"
+                        : i18n.language === "he"
                         ? "אופן הכנה"
                         : "طريقة التحضير"}
                     </h3>

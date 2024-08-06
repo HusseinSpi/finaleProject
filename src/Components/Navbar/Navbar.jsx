@@ -135,17 +135,17 @@ const Navbar = () => {
               </NavLink>
             </li>
           )}
-          <div className="relative top-12 right-4 lg:static lg:ml-auto lg:mr-4  lg:mt-0">
-            <select
-              onChange={handleLanguageChange}
-              className="p-2 text-lg font-semibold bg-transparent rounded-md text-blue-950"
-            >
-              <option value="en">En</option>
-              <option value="ar">Ar</option>
-              <option value="he">He</option>
-            </select>
-          </div>
         </ul>
+        <div className="absolute top-12 right-4 lg:top-12 lg:right-5">
+          <select
+            onChange={handleLanguageChange}
+            className="p-2 text-lg font-semibold bg-transparent rounded-md text-blue-950"
+          >
+            <option value="en">En</option>
+            <option value="ar">Ar</option>
+            <option value="he">He</option>
+          </select>
+        </div>
       </div>
     </nav>
   );

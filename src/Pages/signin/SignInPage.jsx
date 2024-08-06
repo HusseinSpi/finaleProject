@@ -1,23 +1,23 @@
-import SignInForm from '../../Components/sign/SignInForm'
-import background from '../../../public/bbg.jpg'
+import SignInForm from "../../Components/sign/SignInForm";
+import background from "../../../public/bbg.jpg";
 
-import './SignInPage.css'
+import "./SignInPage.css";
 
 const SignInPage = () => {
   return (
     <div
-      className=" .bg-cover mx-auto max-w-screen-xxl px-4 py-16 sm:px-6 lg:px-8 h-screen "
+      className=" mx-auto max-w-screen-xxl px-4 py-16 sm:px-6 lg:px-8 "
       // className="w-screen h-screen p-5 relative"
       style={{
         background: `url(${background})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        width: '100%',
-        height: 'calc(100vh - 7.29rem)',
-        overflow: 'hidden',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        width: "100%",
+        height: "100vh",
+        overflow: "hidden",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <div className="mx-auto max-w-lg bg-white rounded-lg p-5  ">
@@ -30,7 +30,7 @@ const SignInPage = () => {
         <SignInForm />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SignInPage
+export default SignInPage;
