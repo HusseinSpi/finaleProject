@@ -1,43 +1,43 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../../redux/thunk/userThunks";
-import { Link } from "react-router-dom";
-import { MdOutlineAlternateEmail } from "react-icons/md";
-import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
-import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { loginUser } from '../../redux/thunk/userThunks'
+import { Link } from 'react-router-dom'
+import { MdOutlineAlternateEmail } from 'react-icons/md'
+import { IoEyeOutline, IoEyeOffOutline } from 'react-icons/io5'
+import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
 
 const SignInForm = () => {
-  const { t } = useTranslation();
-  const navigate = useNavigate();
-  const user = useSelector((state) => state.user.data);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
-  const dispatch = useDispatch();
+  const { t } = useTranslation()
+  const navigate = useNavigate()
+  const user = useSelector((state) => state.user.data)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
+  const dispatch = useDispatch()
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(loginUser({ email, password }));
-  };
+    e.preventDefault()
+    dispatch(loginUser({ email, password }))
+  }
 
   useEffect(() => {
     if (user) {
-      window.location.reload();
+      window.location.reload()
     }
-  }, [user]);
+  }, [user])
 
   const handleShowPassword = () => {
-    setShowPassword(!showPassword);
-  };
+    setShowPassword(!showPassword)
+  }
 
   return (
     <form
       onSubmit={handleSubmit}
       className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
     >
-      <p className="text-center text-lg font-medium text-blue-900">
-        {t("SignInTitle")}
+      <p className="text-center text-lg font-medium text-blue-900 mb-8">
+        {t('SignInTitle')}
       </p>
 
       <div>
@@ -51,7 +51,7 @@ const SignInForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-            placeholder={t("Email")}
+            placeholder={t('Email')}
             required
           />
 
@@ -67,12 +67,12 @@ const SignInForm = () => {
         </label>
         <div className="relative">
           <input
-            type={showPassword ? "text" : "password"}
+            type={showPassword ? 'text' : 'password'}
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-            placeholder={t("Password")}
+            placeholder={t('Password')}
             required
           />
 
@@ -89,26 +89,26 @@ const SignInForm = () => {
         type="submit"
         className="block w-full rounded-lg bg-blue-900 px-5 py-3 text-sm font-medium text-white hover:blue-800 "
       >
-        {t("SignIn")}
+        {t('SignIn')}
       </button>
 
       <p className="text-center text-sm text-gray-500">
         <Link className="underline" to="/forgot-password">
-          {t("ForgotPassword")}
+          {t('ForgotPassword')}
         </Link>
       </p>
 
       <p className="text-center text-sm text-gray-500">
-        {t("NoAccount")}
+        {t('NoAccount')}
         <Link
           className="underline text-blue-900 hover:text-blue-700"
           to="/sign-up"
         >
-          {t("SignUp")}
+          {t('SignUp')}
         </Link>
       </p>
     </form>
-  );
-};
+  )
+}
 
-export default SignInForm;
+export default SignInForm

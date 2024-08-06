@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import culinaryKidsData from './culinarykids-data'
 
 import './CulinaryKids.css'
+import './CulinaryKidsLaptop.css' //  1498 w
+import './CulinaryKidsIpad.css' //    768 w
+import './CulinaryKidsPhone.css' //   412 w
 
 const CulinaryKids = () => {
   const [language, setLanguage] = useState('en')
