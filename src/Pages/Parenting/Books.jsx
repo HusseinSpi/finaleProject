@@ -1,18 +1,18 @@
-import { useTranslation } from "react-i18next";
-import { PiBookFill } from "react-icons/pi";
+import { useTranslation } from 'react-i18next'
+import { PiBookFill } from 'react-icons/pi'
 
 const Books = ({ books }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   if (!books || books.length === 0) {
-    return <div>No book available</div>;
+    return <div>No book available</div>
   }
 
-  const book = books[0];
+  const book = books[0]
 
   const handleButtonClicked = () => {
-    window.location.href = book.link;
-  };
+    window.location.href = book.link
+  }
 
   return (
     <div className="p-2">
@@ -30,14 +30,14 @@ const Books = ({ books }) => {
           <p className="text-sm text-justify">{book.desc}</p>
           <button
             onClick={handleButtonClicked}
-            className="bg-orange-600 text-white rounded-xl p-2 text-sm hover:bg-orange-700 w-2/5"
+            className="bg-purple-900 text-white rounded-xl p-2 text-sm hover:bg-purple-700 w-2/5"
           >
-            {t("Buy Now!")}
+            {t('Buy Now!')}
           </button>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Books;
+export default Books

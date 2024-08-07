@@ -29,6 +29,7 @@
   width: 100%;
   height: 100%;
   box-shadow: 0 0 8px #fff;
+  border-radius: 20px;
   box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
 }
 .carousel-a {
@@ -47,7 +48,9 @@
 }
 
 .carousel-text {
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 3rem;
+  font-weight: 700;
   position: absolute;
   top: 100%;
   left: 50%;
