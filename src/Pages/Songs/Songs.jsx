@@ -54,26 +54,26 @@ const Songs = () => {
         height: "100%",
       }}
     >
-      <h1 className=" flex items-center  justify-center text-3xl font-bold text-center mt-16 text-blue-950 ">
+      <h1 className=" flex items-center   justify-center text-3xl font-extrabold text-center mt-16 text-blue-950 ">
         <PiMusicNotesSimpleBold /> {t("learnWithUs")} <PiMusicNotesSimpleBold />
       </h1>
 
-      <div className="mb-8 bg- p-3 rounded-lg text-blue-950 bg-white">
-        <h2 className="text-4xl font-semibold text-blue-950 bg-white mb-4 font-theren">
+      <div className="mb-8  rounded-lg text-blue-950 bg-white">
+        <h2 className="text-4xl mb-10 font-semibold text-blue-950 bg-white  font-theren">
           {t("NumbersSongs")}
         </h2>
         <Carousel songs={numbersSongs} />
       </div>
 
       <div className="mb-8 text-blue-950 bg-white ">
-        <h2 className="text-4xl font-semibold text-blue-950 mb-4 font-theren">
+        <h2 className="text-4xl mb-10 font-semibold text-blue-950  font-theren">
           {t("AlphabetSongs")}
         </h2>
         <Carousel songs={alphabetSongs} />
       </div>
 
       <div className="mb-8 text-blue-950 bg-white ">
-        <h2 className="text-4xl font-semibold text-blue-950 mb-4 font-theren">
+        <h2 className="text-4xl mb-10 font-semibold text-blue-950  font-theren">
           {t("GeneralSongs")}
         </h2>
         <Carousel songs={generalSongs} />

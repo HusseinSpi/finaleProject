@@ -17,7 +17,7 @@ const Carousel = ({ songs }) => {
   if (totalSongs === 0) return null;
 
   return (
-    <div className="relative carousel-container">
+    <div className="relative ">
       <div className="flex overflow-hidden">
         <div
           className="flex gap-16 transition-transform duration-500 ease-in-out"
@@ -26,7 +26,7 @@ const Carousel = ({ songs }) => {
           {songs.map((song) => (
             <div
               key={song._id}
-              className="flex-none w-full max-w-xs p-4 bg-blue-950 rounded-lg hover:bg-blue-900 transform transition-transform duration-200 hover:scale-105 "
+              className="flex-none w-full max-w-xs p-4 bg-blue-900 rounded-lg hover:bg-orange-700 transform transition-transform duration-200 hover:scale-105 "
             >
               <SongYTWrapper videoId={song.code} />
               <p className="text-center text-lg font-semibold text-white mt-2">
