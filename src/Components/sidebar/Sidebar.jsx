@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentUser } from "../../redux/thunk/currentUserThunks";
 import { NavLink } from "react-router-dom";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaVideo } from "react-icons/fa";
 import { RiAdminLine } from "react-icons/ri";
 import { IoMailOutline } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
@@ -80,6 +80,26 @@ const Sidebar = ({ children }) => {
                   >
                     <IoMailOutline className="text-xl" />
                     {t("MessageRequests")}
+                  </NavLink>
+                </li>
+              </>
+            )}
+            {(currentUser?.role === "admin" ||
+              currentUser?.role === "Specialist") && (
+              <>
+                <li>
+                  <NavLink
+                    to="/videoCallSpecialist"
+                    className={({ isActive }) =>
+                      `flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium ml-4 h-11 ${
+                        isActive
+                          ? "text-red-600 mr-0 rounded-r-none"
+                          : "text-secondaryColor"
+                      }`
+                    }
+                  >
+                    <FaVideo className="text-xl" />
+                    {t("videoCall")}
                   </NavLink>
                 </li>
               </>

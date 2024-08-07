@@ -1,8 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { appointmentBooking } from "../thunk/appointmentThunk";
+import {
+  appointmentsBooking,
+  getAllAppointments,
+} from "../thunk/appointmentThunk";
 
-const appointmentSlice = createSlice({
-  name: "appointmentSlice",
+const appointmentsSlice = createSlice({
+  name: "appointmentsSlice",
   initialState: {
     data: null,
     status: "idle",
@@ -11,18 +14,29 @@ const appointmentSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(appointmentBooking.pending, (state) => {
+      .addCase(appointmentsBooking.pending, (state) => {
         state.status = "loading";
       })
-      .addCase(appointmentBooking.fulfilled, (state, action) => {
+      .addCase(appointmentsBooking.fulfilled, (state, action) => {
         state.data = action.payload;
         state.status = "succeeded";
       })
-      .addCase(appointmentBooking.rejected, (state, action) => {
+      .addCase(appointmentsBooking.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
+      .addCase(getAllAppointments.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(getAllAppointments.fulfilled, (state, action) => {
+        state.data = action.payload;
+        state.status = "succeeded";
+      })
+      .addCase(getAllAppointments.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
       });
   },
 });
 
-export default appointmentSlice.reducer;
+export default appointmentsSlice.reducer;

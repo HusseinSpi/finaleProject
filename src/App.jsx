@@ -34,6 +34,7 @@ import CulinaryKids from "./Pages/CulinaryKids/CulinaryKids";
 import Puzzle from "./Pages/Puzzle/Puzzle";
 import { useTranslation } from "react-i18next";
 import VideoCall from "./Pages/videoCall/VideoCall";
+import VideoCallSpecialist from "./Pages/videoCall/VideoCallSpecialist";
 
 const PrivateRoute = ({ element }) => {
   const isAuthenticated = localStorage.getItem("token");
@@ -151,6 +152,14 @@ const router = createBrowserRouter([
     element: (
       <Sidebar>
         <Messages />
+      </Sidebar>
+    ),
+  },
+  {
+    path: "videoCallSpecialist",
+    element: (
+      <Sidebar>
+        <VideoCallSpecialist />
       </Sidebar>
     ),
   },

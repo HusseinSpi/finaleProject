@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import ScheduleCall from "../../Components/VideoCall/ScheduleCall";
 import SettingsVideoCall from "../../Components/VideoCall/SettingsVideoCall";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentUser } from "../../redux/thunk/currentUserThunks";
-import { appointmentBooking } from "../../redux/thunk/appointmentThunk";
+import { appointmentsBooking } from "../../redux/thunk/appointmentThunk";
 import "./VideoCall.css";
 
 const VideoCall = () => {
@@ -17,7 +17,7 @@ const VideoCall = () => {
   }, [dispatch]);
 
   const handleSchedule = (date) => {
-    dispatch(appointmentBooking({ date, user: currentUser }));
+    dispatch(appointmentsBooking({ date, user: currentUser }));
   };
 
   return (

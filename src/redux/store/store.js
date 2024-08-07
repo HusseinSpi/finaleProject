@@ -29,7 +29,7 @@ const store = configureStore({
     videos: videosReducer,
     articles: articlesReducer,
     draws: drawReducer,
-    appointment: appointmentReducer,
+    appointments: appointmentReducer,
   },
 });
 

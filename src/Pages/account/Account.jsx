@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import moment from "moment";
 import { getRecentActivity } from "../../redux/thunk/recentActivityThunks";
 import { getAllDraws } from "../../redux/thunk/drawThunk";
+import { getAllAppointments } from "../../redux/thunk/appointmentThunk";
 import { useTranslation } from "react-i18next";
 import ReactMarkdown from "react-markdown";
+import { useNavigate } from "react-router-dom";
 
 const Account = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const recentActivity = useSelector(
     (state) => state.recentActivity.data?.data || []
   );
@@ -15,13 +19,19 @@ const Account = () => {
     (state) => state.currentUser?.data?.data?.user || {}
   );
   const draws = useSelector((state) => state.draws.data || []);
+  const appointments = useSelector((state) => state.appointments.data || []);
   const [selectedTab, setSelectedTab] = useState("history");
   const [selectedDraw, setSelectedDraw] = useState(null);
 
   useEffect(() => {
     dispatch(getRecentActivity());
     dispatch(getAllDraws());
+    dispatch(getAllAppointments());
   }, [dispatch]);
+
+  const formatDateTime = (dateTime) => {
+    return moment(dateTime).format("YYYY-MM-DD HH:mm:ss");
+  };
 
   const gameHistory = recentActivity.filter(
     (activity) => activity.type === "game" && activity.user === currentUser._id
@@ -34,8 +44,32 @@ const Account = () => {
   );
   const drawHistory = draws.filter((draw) => draw.user === currentUser._id);
 
+  const appointmentsM = appointments.filter(
+    (appointment) => appointment.user === currentUser._id
+  );
+
+  const STATIC_ROOM_URL =
+    "https://psychologyvideocall.whereby.com/8aad5053-4a01-4649-83cf-144ca62ef6db";
+
   const handleImageClick = (draw) => {
     setSelectedDraw(draw);
+  };
+
+  const handleAppointmentDetails = (date) => {
+    const d = new Date();
+    const appointmentDate = new Date(date);
+
+    console.log(d);
+    console.log(appointmentDate);
+
+    if (d > appointmentDate) {
+      window.open(STATIC_ROOM_URL, "_blank");
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
   };
 
   const renderContent = () => {
@@ -52,11 +86,10 @@ const Account = () => {
                         key={index}
                         className="mb-4 text-center flex flex-col bg-sky-50 shadow-md text-md"
                       >
-                        {/* {t("GameView")} */}
                         <span className="font-bold ml-2">
                           {game.description}
                         </span>
-                        {game.date.split("T")[0]}
+                        {formatDateTime(game.date)}
                       </div>
                     ))
                   : t("No game history")}
@@ -69,13 +102,12 @@ const Account = () => {
                   ? songHistory.map((song, index) => (
                       <div
                         key={index}
-                        className="mb-4 text-center flex flex-col bg-sky-50 shadow-md   text-md"
+                        className="mb-4 text-center flex flex-col bg-sky-50 shadow-md text-md"
                       >
-                        {/* {t("SongView")}  */}
                         <span className="font-bold ml-2 ">
                           {song.description}
                         </span>
-                        {song.date.split("T")[0]}
+                        {formatDateTime(song.date)}
                       </div>
                     ))
                   : t("No song history")}
@@ -90,11 +122,8 @@ const Account = () => {
                         key={index}
                         className="mb-4 flex flex-col bg-sky-50 shadow-md items-center text-md"
                       >
-                        {/* {t("StoryView")} */}
-                        <span className="font-bold">
-                          {story.description}
-                        </span>{" "}
-                        {story.date.split("T")[0]}
+                        <span className="font-bold">{story.description}</span>{" "}
+                        {formatDateTime(story.date)}
                       </div>
                     ))
                   : t("No story history")}
@@ -115,7 +144,7 @@ const Account = () => {
                       key={index}
                       className="mb-4 shadow-xl"
                       onClick={() => handleImageClick(draw)}
-                    > 
+                    >
                       <img
                         src={`https://finaleprojectbe.onrender.com/uploads/${draw.name}`}
                         alt="draw"
@@ -127,6 +156,39 @@ const Account = () => {
             </div>
           </div>
         );
+      case "appointments":
+        return (
+          <div>
+            <h1 className="text-xl font-semibold mb-4">{t("appointments")}</h1>
+            <div>
+              {appointmentsM.length > 0
+                ? appointmentsM.map((appointment, index) => (
+                    <div
+                      key={index}
+                      className="mb-4 p-4 bg-white shadow-md rounded-lg flex justify-between items-center"
+                    >
+                      <div>
+                        <h2 className="text-lg font-bold">
+                          You have an appointment with a psychiatrist on
+                        </h2>
+                        <p>{formatDateTime(appointment.date)}</p>
+                      </div>
+                      <button
+                        className="px-4 py-2 bg-blue-500 text-white rounded shadow"
+                        onClick={() =>
+                          handleAppointmentDetails(
+                            formatDateTime(appointment.date)
+                          )
+                        }
+                      >
+                        {t("Enter")}
+                      </button>
+                    </div>
+                  ))
+                : t("No appointments")}
+            </div>
+          </div>
+        );
       default:
         return null;
     }
@@ -134,40 +196,50 @@ const Account = () => {
 
   return (
     <div className="flex bg-sky-50 ">
-      <div className="w-1/4 h-screen bg-white p-4 shadow-lg ">
-        <h1 className="text-2xl text-center font-bold mb-4">{t("Account")}</h1>
-        <div className="flex flex-col space-y-4">
-          <button
-            onClick={() => setSelectedTab("history")}
-            className={`px-4 py-2 ${
-              selectedTab === "history"
-                ? "bg-[#32BAF1] text-white"
-                : "bg-blue-100 text-[#32BAF1] hover:bg-[#32BAF1] hover:text-white"
-            } rounded shadow`}
-          >
-            {t("History")}
-          </button>
-          <button
-            onClick={() => setSelectedTab("imageAnalysis")}
-            className={`px-4 py-2 ${
-              selectedTab === "imageAnalysis"
-                ? "bg-[#32BAF1] text-white"
-                : "bg-blue-100 text-[#1b81aa] hover:bg-[#32BAF1] hover:text-white"
-            } rounded shadow`}
-          >
-            {t("Image Analysis")}
-          </button>
-          <button
-            onClick={() => setSelectedTab("appointment")}
-            className={`px-4 py-2 ${
-              selectedTab === "appointment"
-                ? "bg-blue-500 text-white"
-                : "bg-blue-100 text-blue-700"
-            } rounded shadow`}
-          >
-            {t("appointment")}
-          </button>
+      <div className="w-1/4 h-screen bg-white p-4 shadow-lg flex flex-col justify-between">
+        <div>
+          <h1 className="text-2xl text-center font-bold mb-4">
+            {t("Account")}
+          </h1>
+          <div className="flex flex-col space-y-4">
+            <button
+              onClick={() => setSelectedTab("history")}
+              className={`px-4 py-2 ${
+                selectedTab === "history"
+                  ? "bg-[#32BAF1] text-white"
+                  : "bg-blue-100 text-[#1b81aa] hover:bg-[#32BAF1] hover:text-white"
+              } rounded shadow`}
+            >
+              {t("History")}
+            </button>
+            <button
+              onClick={() => setSelectedTab("imageAnalysis")}
+              className={`px-4 py-2 ${
+                selectedTab === "imageAnalysis"
+                  ? "bg-[#32BAF1] text-white"
+                  : "bg-blue-100 text-[#1b81aa] hover:bg-[#32BAF1] hover:text-white"
+              } rounded shadow`}
+            >
+              {t("Image Analysis")}
+            </button>
+            <button
+              onClick={() => setSelectedTab("appointments")}
+              className={`px-4 py-2 ${
+                selectedTab === "appointments"
+                  ? "bg-[#32BAF1] text-white"
+                  : "bg-blue-100 text-[#1b81aa] hover:bg-[#32BAF1] hover:text-white"
+              } rounded shadow`}
+            >
+              {t("Appointments")}
+            </button>
+          </div>
         </div>
+        <button
+          onClick={handleLogout}
+          className="px-4 py-2 bg-red-500 text-white rounded shadow"
+        >
+          {t("Log Out")}
+        </button>
       </div>
       <div className="w-3/4 p-4 bg-sky-50">
         {renderContent()}
