@@ -162,7 +162,22 @@ const Account = () => {
       case "appointments":
         return (
           <div>
-            <h1 className="text-xl font-semibold mb-4">{t("appointments")}</h1>
+            <div className="flex justify-between items-center">
+              <h1 className="text-xl font-semibold mb-4">
+                {t("appointments")}
+              </h1>
+              <div className="my-4 flex justify-end">
+                <button
+                  className="px-4 py-2 bg-green-500 text-white rounded shadow"
+                  onClick={() =>
+                    (window.location.href =
+                      "https://kiddofun.netlify.app/videoCall")
+                  }
+                >
+                  {t("Book Appointment")}
+                </button>
+              </div>
+            </div>
             <div>
               {appointmentsM.length > 0
                 ? appointmentsM.map((appointment, index) => (
