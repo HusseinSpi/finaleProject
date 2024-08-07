@@ -1,12 +1,24 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import circle_icon from "../../assets/circle.png";
 import cross_icon from "../../assets/cross.png";
 import click_sound from "../../../public/click-sound.mp3";
 import win_sound from "../../../public/win-sound-sea.mp3";
+import bubbleImgOne from "../../../public/bubble.png";
+import green_squid from "../../../public/green-squid.png";
+import horse_sea from "../../../public/horse-sea.png";
+import blue_trigon from "../../../public/blue-trigon.png";
+import blue_fish from "../../../public/blue-fish.png";
+import lighter_star from "../../../public/lighter-star.png";
+import red_fish from "../../../public/red-fish.png";
+import red_star from "../../../public/red-star.png";
+import pink_algaes from "../../../public/pink.png";
+import purple_algaes from "../../../public/purple.png";
+import yellow from "../../../public/yellow.png";
+import green_3 from "../../../public/green-3.png";
+import green_1 from "../../../public/green-1.png";
 
 import "./TicTacToe.css";
 import "./TicTacToe.Laptop.css";
-
 import "./TicTacToe.Ipad.css";
 import "./TicTacToe.Phone.css";
 
@@ -176,124 +188,124 @@ const TicTacToe = () => {
         <img
           className="bubble-class-for-tic-tac-toe"
           alt="bubble-img-one"
-          src="/public/bubble.png"
+          src={bubbleImgOne}
         ></img>
 
         <img
           className="bubble-class-for-tic-tac-toe-two"
           alt="bubble-img-two"
-          src="/public/bubble.png"
+          src={bubbleImgOne}
         ></img>
 
         <img
           className="bubble-class-for-tic-tac-toe-three"
           alt="bubble-img-three"
-          src="/public/bubble.png"
+          src={bubbleImgOne}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-four"
           alt="bubble-img-four"
-          src="/public/bubble.png"
+          src={bubbleImgOne}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-five"
           alt="bubble-img-five"
-          src="/public/bubble.png"
+          src={bubbleImgOne}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-six"
-          alt="bubble-img-five"
-          src="/public/bubble.png"
+          alt="bubble-img-six"
+          src={bubbleImgOne}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-seven"
-          alt="bubble-img-five"
-          src="/public/bubble.png"
+          alt="bubble-img-seven"
+          src={bubbleImgOne}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-eight"
-          alt="bubble-img-five"
-          src="/public/bubble.png"
+          alt="bubble-img-eight"
+          src={bubbleImgOne}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-nine"
-          alt="bubble-img-five"
-          src="/public/bubble.png"
+          alt="bubble-img-nine"
+          src={bubbleImgOne}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-ten"
-          alt="bubble-img-five"
-          src="/public/bubble.png"
+          alt="bubble-img-ten"
+          src={bubbleImgOne}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-eleven"
-          alt="bubble-img-five"
-          src="/public/bubble.png"
+          alt="bubble-img-eleven"
+          src={bubbleImgOne}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-twelve"
-          alt="bubble-img-five"
-          src="/public/bubble.png"
+          alt="bubble-img-twelve"
+          src={bubbleImgOne}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-green-squid"
           alt="green-squid"
-          src="/public/green-squid.png"
+          src={green_squid}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-horse-sea"
           alt="horse-sea"
-          src="/public/horse-sea.png"
+          src={horse_sea}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-blue-trigon"
           alt="blue-trigon"
-          src="/public/blue-trigon.png"
+          src={blue_trigon}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-blue-fish"
           alt="blue-fish"
-          src="/public/blue-fish.png"
+          src={blue_fish}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-lighter-star"
           alt="lighter-star"
-          src="/public/lighter-star.png"
+          src={lighter_star}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-red-fish"
           alt="red-fish"
-          src="/public/red-fish.png"
+          src={red_fish}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-red-star"
           alt="red-star"
-          src="/public/red-star.png"
+          src={red_star}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-pink"
           alt="pink-algaes"
-          src="/public/pink.png"
+          src={pink_algaes}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-purple"
           alt="purple-algaes"
-          src="/public/purple.png"
+          src={purple_algaes}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-yellow"
           alt="yellow"
-          src="/public/yellow.png"
+          src={yellow}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-green-3"
           alt="green-3"
-          src="/public/green-3.png"
+          src={green_3}
         ></img>
         <img
           className="bubble-class-for-tic-tac-toe-green-1"
           alt="green-1"
-          src="/public/green-1.png"
+          src={green_1}
         ></img>
 
         <button
