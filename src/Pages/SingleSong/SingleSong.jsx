@@ -39,16 +39,14 @@ const SingleSong = () => {
 
   return (
     <div
-      className="w-screen h-full p-5 relative bg-cover bg-no-repeat"
-      style={{
-        background: `url(${background})`,
-      }}
+      className="p-5 relative bg-cover bg-no-repeat min-h-screen w-full"
+      style={{ backgroundImage: `url(${background})`, backgroundSize: "cover" }}
     >
       <h1 className="text-2xl sm:text-3xl font-bold text-center text-blue-950 flex items-center justify-center mb-6">
         <PiMusicNotesSimpleBold /> {song.name} <PiMusicNotesSimpleBold />
       </h1>
 
-      <div className="flex justify-center mb-6 px-4 mx-48 sm:px-7">
+      <div className="flex justify-center mb-6 px-4 mx-64 sm:px-7">
         <Song videoId={song.code} />
       </div>
 
