@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import Books from "./Books";
 import Videos from "./Videos";
 import Articles from "./Articles";
-import bg from "../../../dist/parentingBG.webp";
+import bg from "../../../public/parentingBG.webp";
 
 const Parenting = () => {
   const dispatch = useDispatch();

@@ -1,6 +1,6 @@
 @font-face {
   font-family: "TherenRegular";
-  src: url("/dist/TherenRegular/TherenRegular-vmrnE.ttf") format("truetype");
+  src: url("/public/TherenRegular/TherenRegular-vmrnE.ttf") format("truetype");
 }
 
 .font-theren {

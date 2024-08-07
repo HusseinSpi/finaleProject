@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./puzzle.css";
-import { initGame, refreshPage } from "../../../dist/Puzzle/Puzzle.js";
+import { initGame, refreshPage } from "../../../public/Puzzle/Puzzle.js";
 
 const Puzzle = () => {
   const [turns, setTurns] = useState(0);

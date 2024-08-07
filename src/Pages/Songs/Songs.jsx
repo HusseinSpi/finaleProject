@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getAllMusic } from "../../redux/thunk/musicsThunk";
 import { useTranslation } from "react-i18next";
-import background from "../../../dist/bbg.jpg";
-// import seacreatures from "../../../dist/seacreatures.jpg"
-import seacreatures from "../../../dist/waves4.png";
+import background from "../../../public/bbg.jpg";
+// import seacreatures from "../../../public/seacreatures.jpg"
+import seacreatures from "../../../public/waves4.png";
 import { PiMusicNotesSimpleBold } from "react-icons/pi";
 
 const Songs = () => {

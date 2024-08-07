@@ -1,5 +1,5 @@
 import SignUpForm from "../../Components/sign/SignUpForm";
-import background from "../../../dist/bbg.jpg";
+import background from "../../../public/bbg.jpg";
 
 const SignUpPage = () => {
   return (

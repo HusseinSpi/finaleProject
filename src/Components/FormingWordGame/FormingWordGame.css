@@ -1,6 +1,6 @@
 @font-face {
   font-family: "TherenRegular";
-  src: url("/dist/TherenRegular/TherenRegular-vmrnE.ttf") format("truetype");
+  src: url("/public/TherenRegular/TherenRegular-vmrnE.ttf") format("truetype");
 }
 
 .FormingWordGame-background {
@@ -11,7 +11,7 @@
   height: 89.9vh;
   overflow: hidden;
 
-  background-image: url("../../../dist/waves4.png");
+  background-image: url("../../../public/waves4.png");
 
   background-size: 100% 100%;
   background-position: center;

@@ -1,9 +1,9 @@
 const culinaryKidsData = [
   {
     id: 1,
-    imgEn: "../../../dist/recepies/pizza-en.JPG",
-    imgHe: "/dist/recepies/pizza-he.JPG",
-    imgAr: "/dist/recepies/pizza-ar.JPG",
+    imgEn: "../../../public/recepies/pizza-en.JPG",
+    imgHe: "/public/recepies/pizza-he.JPG",
+    imgAr: "/public/recepies/pizza-ar.JPG",
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
@@ -66,9 +66,9 @@ const culinaryKidsData = [
   },
   {
     id: 2,
-    imgEn: "/dist/recepies/sushi-en.jpg",
-    imgHe: "/dist/recepies/sushi-he.jpg",
-    imgAr: "/dist/recepies/sushi-ar.jpg",
+    imgEn: "/public/recepies/sushi-en.jpg",
+    imgHe: "/public/recepies/sushi-he.jpg",
+    imgAr: "/public/recepies/sushi-ar.jpg",
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
@@ -141,9 +141,9 @@ const culinaryKidsData = [
 
   {
     id: 3,
-    imgEn: "/dist/recepies/pad-thai-en.jpg",
-    imgHe: "/dist/recepies/pad-thai-he.jpg",
-    imgAr: "/dist/recepies/pad-thai-ar.jpg",
+    imgEn: "/public/recepies/pad-thai-en.jpg",
+    imgHe: "/public/recepies/pad-thai-he.jpg",
+    imgAr: "/public/recepies/pad-thai-ar.jpg",
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
@@ -218,9 +218,9 @@ const culinaryKidsData = [
   },
   {
     id: 4,
-    imgEn: "/dist/recepies/shakshoka-en.JPG",
-    imgHe: "/dist/recepies/shakshoka-he.JPG",
-    imgAr: "/dist/recepies/shakshoka-ar.JPG",
+    imgEn: "/public/recepies/shakshoka-en.JPG",
+    imgHe: "/public/recepies/shakshoka-he.JPG",
+    imgAr: "/public/recepies/shakshoka-ar.JPG",
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
@@ -292,9 +292,9 @@ const culinaryKidsData = [
   },
   {
     id: 5,
-    imgEn: "/dist/recepies/spaghetti-bolognese-en.jpg",
-    imgHe: "/dist/recepies/spaghetti-bolognese-he.jpg",
-    imgAr: "/dist/recepies/spaghetti-bolognese-ar.jpg",
+    imgEn: "/public/recepies/spaghetti-bolognese-en.jpg",
+    imgHe: "/public/recepies/spaghetti-bolognese-he.jpg",
+    imgAr: "/public/recepies/spaghetti-bolognese-ar.jpg",
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
@@ -369,9 +369,9 @@ const culinaryKidsData = [
   },
   {
     id: 6,
-    imgEn: "/dist/recepies/hummus-en.JPG",
-    imgHe: "/dist/recepies/hummus-he.JPG",
-    imgAr: "/dist/recepies/hummus-ar.JPG",
+    imgEn: "/public/recepies/hummus-en.JPG",
+    imgHe: "/public/recepies/hummus-he.JPG",
+    imgAr: "/public/recepies/hummus-ar.JPG",
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
@@ -428,9 +428,9 @@ const culinaryKidsData = [
   },
   {
     id: 7,
-    imgEn: "/dist/recepies/schnitzel-en.JPG",
-    imgHe: "/dist/recepies/schnitzel-he.JPG",
-    imgAr: "/dist/recepies/schnitzel-ar.JPG",
+    imgEn: "/public/recepies/schnitzel-en.JPG",
+    imgHe: "/public/recepies/schnitzel-he.JPG",
+    imgAr: "/public/recepies/schnitzel-ar.JPG",
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
@@ -490,9 +490,9 @@ const culinaryKidsData = [
   },
   {
     id: 8,
-    imgEn: "/dist/recepies/lasagna-en.JPG",
-    imgHe: "/dist/recepies/lasagna-he.JPG",
-    imgAr: "/dist/recepies/lasagna-ar.JPG",
+    imgEn: "/public/recepies/lasagna-en.JPG",
+    imgHe: "/public/recepies/lasagna-he.JPG",
+    imgAr: "/public/recepies/lasagna-ar.JPG",
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
@@ -561,9 +561,9 @@ const culinaryKidsData = [
   },
   {
     id: 9,
-    imgEn: "/dist/recepies/hamburger-en.JPG",
-    imgHe: "/dist/recepies/hamburger-he.JPG",
-    imgAr: "/dist/recepies/hamburger-ar.JPG",
+    imgEn: "/public/recepies/hamburger-en.JPG",
+    imgHe: "/public/recepies/hamburger-he.JPG",
+    imgAr: "/public/recepies/hamburger-ar.JPG",
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
@@ -618,9 +618,9 @@ const culinaryKidsData = [
 
   {
     id: 10,
-    imgEn: "/dist/recepies/vegtable-en.jpg",
-    imgHe: "/dist/recepies/vegtable-he.jpg",
-    imgAr: "/dist/recepies/vegtable-ar.jpg",
+    imgEn: "/public/recepies/vegtable-en.jpg",
+    imgHe: "/public/recepies/vegtable-he.jpg",
+    imgAr: "/public/recepies/vegtable-ar.jpg",
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
@@ -674,9 +674,9 @@ const culinaryKidsData = [
   },
   {
     id: 11,
-    imgEn: "/dist/recepies/salad-en.JPG",
-    imgHe: "/dist/recepies/salad-he.JPG",
-    imgAr: "/dist/recepies/salad-ar.JPG",
+    imgEn: "/public/recepies/salad-en.JPG",
+    imgHe: "/public/recepies/salad-he.JPG",
+    imgAr: "/public/recepies/salad-ar.JPG",
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
@@ -733,9 +733,9 @@ const culinaryKidsData = [
   },
   {
     id: 12,
-    imgEn: "/dist/recepies/peppers-en.jpg",
-    imgHe: "/dist/recepies/peppers-he.jpg",
-    imgAr: "/dist/recepies/peppers-ar.jpg",
+    imgEn: "/public/recepies/peppers-en.jpg",
+    imgHe: "/public/recepies/peppers-he.jpg",
+    imgAr: "/public/recepies/peppers-ar.jpg",
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
@@ -795,9 +795,9 @@ const culinaryKidsData = [
   },
   {
     id: 13,
-    imgEn: "/dist/recepies/churros-en.JPG",
-    imgHe: "/dist/recepies/churros-he.JPG",
-    imgAr: "/dist/recepies/churros-ar.JPG",
+    imgEn: "/public/recepies/churros-en.JPG",
+    imgHe: "/public/recepies/churros-he.JPG",
+    imgAr: "/public/recepies/churros-ar.JPG",
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
@@ -866,9 +866,9 @@ const culinaryKidsData = [
   },
   {
     id: 14,
-    imgEn: "/dist/recepies/cinnabon-en.JPG",
-    imgHe: "/dist/recepies/cinnabon-he.JPG",
-    imgAr: "/dist/recepies/cinnabon-ar.JPG",
+    imgEn: "/public/recepies/cinnabon-en.JPG",
+    imgHe: "/public/recepies/cinnabon-he.JPG",
+    imgAr: "/public/recepies/cinnabon-ar.JPG",
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
@@ -949,9 +949,9 @@ const culinaryKidsData = [
   },
   {
     id: 15,
-    imgEn: "/dist/recepies/amsterdam-cookies-en.JPG",
-    imgHe: "/dist/recepies/amsterdam-cookies-he.JPG",
-    imgAr: "/dist/recepies/amsterdam-cookies-ar.JPG",
+    imgEn: "/public/recepies/amsterdam-cookies-en.JPG",
+    imgHe: "/public/recepies/amsterdam-cookies-he.JPG",
+    imgAr: "/public/recepies/amsterdam-cookies-ar.JPG",
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
@@ -1008,9 +1008,9 @@ const culinaryKidsData = [
   },
   {
     id: 16,
-    imgEn: "/dist/recepies/blinches-en.jpg",
-    imgHe: "/dist/recepies/blinches-he.jpg",
-    imgAr: "/dist/recepies/blinches-ar.jpg",
+    imgEn: "/public/recepies/blinches-en.jpg",
+    imgHe: "/public/recepies/blinches-he.jpg",
+    imgAr: "/public/recepies/blinches-ar.jpg",
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
@@ -1061,9 +1061,9 @@ const culinaryKidsData = [
   },
   {
     id: 17,
-    imgEn: "/dist/recepies/Maamul-en.jpg",
-    imgHe: "/dist/recepies/Maamul-he.jpg",
-    imgAr: "/dist/recepies/Maamul-ar.jpg",
+    imgEn: "/public/recepies/Maamul-en.jpg",
+    imgHe: "/public/recepies/Maamul-he.jpg",
+    imgAr: "/public/recepies/Maamul-ar.jpg",
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
@@ -1130,9 +1130,9 @@ const culinaryKidsData = [
   },
   {
     id: 18,
-    imgEn: "/dist/recepies/Baklava-en.jpg",
-    imgHe: "/dist/recepies/Baklava-he.jpg",
-    imgAr: "/dist/recepies/Baklava-ar.jpg",
+    imgEn: "/public/recepies/Baklava-en.jpg",
+    imgHe: "/public/recepies/Baklava-he.jpg",
+    imgAr: "/public/recepies/Baklava-ar.jpg",
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
