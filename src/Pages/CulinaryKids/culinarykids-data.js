@@ -1,14 +1,70 @@
+// Import all images
+import miniPitaPizzasEn from "../../../public/recepies/pizza-en.jpg";
+import miniPitaPizzasHe from "../../../public/recepies/pizza-he.jpg";
+import miniPitaPizzasAr from "../../../public/recepies/pizza-ar.jpg";
+import sushiEn from "../../../public/recepies/sushi-en.jpg";
+import sushiHe from "../../../public/recepies/sushi-he.jpg";
+import sushiAr from "../../../public/recepies/sushi-ar.jpg";
+import padThaiEn from "../../../public/recepies/pad-thai-en.jpg";
+import padThaiHe from "../../../public/recepies/pad-thai-he.jpg";
+import padThaiAr from "../../../public/recepies/pad-thai-ar.jpg";
+import shakshukaEn from "../../../public/recepies/shakshoka-en.jpg";
+import shakshukaHe from "../../../public/recepies/shakshoka-he.jpg";
+import shakshukaAr from "../../../public/recepies/shakshoka-ar.jpg";
+import spaghettiBologneseEn from "../../../public/recepies/spaghetti-bolognese-en.jpg";
+import spaghettiBologneseHe from "../../../public/recepies/spaghetti-bolognese-he.jpg";
+import spaghettiBologneseAr from "../../../public/recepies/spaghetti-bolognese-ar.jpg";
+import hummusEn from "../../../public/recepies/hummus-en.jpg";
+import hummusHe from "../../../public/recepies/hummus-he.jpg";
+import hummusAr from "../../../public/recepies/hummus-ar.jpg";
+import schnitzelEn from "../../../public/recepies/schnitzel-en.jpg";
+import schnitzelHe from "../../../public/recepies/schnitzel-he.jpg";
+import schnitzelAr from "../../../public/recepies/schnitzel-ar.jpg";
+import lasagnaEn from "../../../public/recepies/lasagna-en.jpg";
+import lasagnaHe from "../../../public/recepies/lasagna-he.jpg";
+import lasagnaAr from "../../../public/recepies/lasagna-ar.jpg";
+import hamburgerEn from "../../../public/recepies/hamburger-en.jpg";
+import hamburgerHe from "../../../public/recepies/hamburger-he.jpg";
+import hamburgerAr from "../../../public/recepies/hamburger-ar.jpg";
+import vegetableEn from "../../../public/recepies/vegtable-en.jpg";
+import vegetableHe from "../../../public/recepies/vegtable-he.jpg";
+import vegetableAr from "../../../public/recepies/vegtable-ar.jpg";
+import saladEn from "../../../public/recepies/salad-en.jpg";
+import saladHe from "../../../public/recepies/salad-he.jpg";
+import saladAr from "../../../public/recepies/salad-ar.jpg";
+import peppersEn from "../../../public/recepies/peppers-en.jpg";
+import peppersHe from "../../../public/recepies/peppers-he.jpg";
+import peppersAr from "../../../public/recepies/peppers-ar.jpg";
+import churrosEn from "../../../public/recepies/churros-en.jpg";
+import churrosHe from "../../../public/recepies/churros-he.jpg";
+import churrosAr from "../../../public/recepies/churros-ar.jpg";
+import cinnabonEn from "../../../public/recepies/cinnabon-en.jpg";
+import cinnabonHe from "../../../public/recepies/cinnabon-he.jpg";
+import cinnabonAr from "../../../public/recepies/cinnabon-ar.jpg";
+import amsterdamCookiesEn from "../../../public/recepies/amsterdam-cookies-en.jpg";
+import amsterdamCookiesHe from "../../../public/recepies/amsterdam-cookies-he.jpg";
+import amsterdamCookiesAr from "../../../public/recepies/amsterdam-cookies-ar.jpg";
+import blinchesEn from "../../../public/recepies/blinches-en.jpg";
+import blinchesHe from "../../../public/recepies/blinches-he.jpg";
+import blinchesAr from "../../../public/recepies/blinches-ar.jpg";
+import maamulEn from "../../../public/recepies/Maamul-en.jpg";
+import maamulHe from "../../../public/recepies/Maamul-he.jpg";
+import maamulAr from "../../../public/recepies/Maamul-ar.jpg";
+import baklavaEn from "../../../public/recepies/Baklava-en.jpg";
+import baklavaHe from "../../../public/recepies/Baklava-he.jpg";
+import baklavaAr from "../../../public/recepies/Baklava-ar.jpg";
+
 const culinaryKidsData = [
   {
     id: 1,
-    imgEn: "../../../public/recepies/pizza-en.JPG",
-    imgHe: "/public/recepies/pizza-he.JPG",
-    imgAr: "/public/recepies/pizza-ar.JPG",
+    imgEn: miniPitaPizzasEn,
+    imgHe: miniPitaPizzasHe,
+    imgAr: miniPitaPizzasAr,
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
-    }, // Example style for image positioning
+    },
     recipeTitleEn: "Mini Pita Pizzas",
     recipeTitleHe: "מיני פיצה",
     recipeTitleAr: "ميني بيتزا",
@@ -66,14 +122,14 @@ const culinaryKidsData = [
   },
   {
     id: 2,
-    imgEn: "/public/recepies/sushi-en.jpg",
-    imgHe: "/public/recepies/sushi-he.jpg",
-    imgAr: "/public/recepies/sushi-ar.jpg",
+    imgEn: sushiEn,
+    imgHe: sushiHe,
+    imgAr: sushiAr,
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
-    }, // Example style for image positioning
+    },
     recipeTitleEn: "Kids Sushi",
     recipeTitleHe: "סושי לילדים",
     recipeTitleAr: "سوشي للأطفال",
@@ -138,17 +194,16 @@ const culinaryKidsData = [
       "قدم مع صلصة الصويا والوسابي.",
     ],
   },
-
   {
     id: 3,
-    imgEn: "/public/recepies/pad-thai-en.jpg",
-    imgHe: "/public/recepies/pad-thai-he.jpg",
-    imgAr: "/public/recepies/pad-thai-ar.jpg",
+    imgEn: padThaiEn,
+    imgHe: padThaiHe,
+    imgAr: padThaiAr,
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
-    }, // Example style for image positioning
+    },
     recipeTitleEn: "Kids Pad Thai",
     recipeTitleHe: "פאד תאי לילדים",
     recipeTitleAr: "باد تاي للأطفال",
@@ -218,14 +273,14 @@ const culinaryKidsData = [
   },
   {
     id: 4,
-    imgEn: "/public/recepies/shakshoka-en.JPG",
-    imgHe: "/public/recepies/shakshoka-he.JPG",
-    imgAr: "/public/recepies/shakshoka-ar.JPG",
+    imgEn: shakshukaEn,
+    imgHe: shakshukaHe,
+    imgAr: shakshukaAr,
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
-    }, // Example style for image positioning
+    },
     recipeTitleEn: "Kids Shakshouka",
     recipeTitleHe: "שקשוקה לילדים",
     recipeTitleAr: "شكشوكة للأطفال",
@@ -292,14 +347,14 @@ const culinaryKidsData = [
   },
   {
     id: 5,
-    imgEn: "/public/recepies/spaghetti-bolognese-en.jpg",
-    imgHe: "/public/recepies/spaghetti-bolognese-he.jpg",
-    imgAr: "/public/recepies/spaghetti-bolognese-ar.jpg",
+    imgEn: spaghettiBologneseEn,
+    imgHe: spaghettiBologneseHe,
+    imgAr: spaghettiBologneseAr,
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
-    }, // Example style for image positioning
+    },
     recipeTitleEn: "Kids Spaghetti Bolognese",
     recipeTitleHe: "ספרגטי בולונז לילדים",
     recipeTitleAr: "سباغيتي بولونيز للأطفال",
@@ -369,14 +424,14 @@ const culinaryKidsData = [
   },
   {
     id: 6,
-    imgEn: "/public/recepies/hummus-en.JPG",
-    imgHe: "/public/recepies/hummus-he.JPG",
-    imgAr: "/public/recepies/hummus-ar.JPG",
+    imgEn: hummusEn,
+    imgHe: hummusHe,
+    imgAr: hummusAr,
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
-    }, // Example style for image positioning
+    },
     recipeTitleEn: "Kids Hummus",
     recipeTitleHe: "חומוס לילדים",
     recipeTitleAr: "حمص للأطفال",
@@ -428,14 +483,14 @@ const culinaryKidsData = [
   },
   {
     id: 7,
-    imgEn: "/public/recepies/schnitzel-en.JPG",
-    imgHe: "/public/recepies/schnitzel-he.JPG",
-    imgAr: "/public/recepies/schnitzel-ar.JPG",
+    imgEn: schnitzelEn,
+    imgHe: schnitzelHe,
+    imgAr: schnitzelAr,
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
-    }, // Example style for image positioning
+    },
     recipeTitleEn: "Kids Schnitzel",
     recipeTitleHe: "שניצל לילדים",
     recipeTitleAr: "شنيتزل للأطفال",
@@ -490,14 +545,14 @@ const culinaryKidsData = [
   },
   {
     id: 8,
-    imgEn: "/public/recepies/lasagna-en.JPG",
-    imgHe: "/public/recepies/lasagna-he.JPG",
-    imgAr: "/public/recepies/lasagna-ar.JPG",
+    imgEn: lasagnaEn,
+    imgHe: lasagnaHe,
+    imgAr: lasagnaAr,
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
-    }, // Example style for image positioning
+    },
     recipeTitleEn: "Lasagna with Kids",
     recipeTitleHe: "לזניה עם ילדים",
     recipeTitleAr: "لازانيا مع الأطفال",
@@ -561,14 +616,14 @@ const culinaryKidsData = [
   },
   {
     id: 9,
-    imgEn: "/public/recepies/hamburger-en.JPG",
-    imgHe: "/public/recepies/hamburger-he.JPG",
-    imgAr: "/public/recepies/hamburger-ar.JPG",
+    imgEn: hamburgerEn,
+    imgHe: hamburgerHe,
+    imgAr: hamburgerAr,
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
-    }, // Example style for image positioning
+    },
     recipeTitleEn: "Hamburger with Kids",
     recipeTitleHe: "המבורגר עם ילדים",
     recipeTitleAr: "همبرغر مع الأطفال",
@@ -615,17 +670,16 @@ const culinaryKidsData = [
       "التقديم: استمتع بالهمبرغر المنزلي الخاص بك!",
     ],
   },
-
   {
     id: 10,
-    imgEn: "/public/recepies/vegtable-en.jpg",
-    imgHe: "/public/recepies/vegtable-he.jpg",
-    imgAr: "/public/recepies/vegtable-ar.jpg",
+    imgEn: vegetableEn,
+    imgHe: vegetableHe,
+    imgAr: vegetableAr,
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
-    }, // Example style for image positioning
+    },
     recipeTitleEn: "Vegetable Stir-Fry with Kids",
     recipeTitleHe: "מוקפץ ירקות",
     recipeTitleAr: "خضروات مقليّة مع الأطفال",
@@ -674,14 +728,14 @@ const culinaryKidsData = [
   },
   {
     id: 11,
-    imgEn: "/public/recepies/salad-en.JPG",
-    imgHe: "/public/recepies/salad-he.JPG",
-    imgAr: "/public/recepies/salad-ar.JPG",
+    imgEn: saladEn,
+    imgHe: saladHe,
+    imgAr: saladAr,
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
-    }, // Example style for image positioning
+    },
     recipeTitleEn: "Kid-Friendly Salad",
     recipeTitleHe: "סלט אהוב",
     recipeTitleAr: "سلطة محببة للأطفال",
@@ -733,14 +787,14 @@ const culinaryKidsData = [
   },
   {
     id: 12,
-    imgEn: "/public/recepies/peppers-en.jpg",
-    imgHe: "/public/recepies/peppers-he.jpg",
-    imgAr: "/public/recepies/peppers-ar.jpg",
+    imgEn: peppersEn,
+    imgHe: peppersHe,
+    imgAr: peppersAr,
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
-    }, // Example style for image positioning
+    },
     recipeTitleEn: "Stuffed Bell Peppers",
     recipeTitleHe: "פלפלים ממולאים",
     recipeTitleAr: "فلفل محشي",
@@ -795,14 +849,14 @@ const culinaryKidsData = [
   },
   {
     id: 13,
-    imgEn: "/public/recepies/churros-en.JPG",
-    imgHe: "/public/recepies/churros-he.JPG",
-    imgAr: "/public/recepies/churros-ar.JPG",
+    imgEn: churrosEn,
+    imgHe: churrosHe,
+    imgAr: churrosAr,
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
-    }, // Example style for image positioning
+    },
     recipeTitleEn: "Churros",
     recipeTitleHe: "צ'ורוס",
     recipeTitleAr: "تشوروس",
@@ -866,14 +920,14 @@ const culinaryKidsData = [
   },
   {
     id: 14,
-    imgEn: "/public/recepies/cinnabon-en.JPG",
-    imgHe: "/public/recepies/cinnabon-he.JPG",
-    imgAr: "/public/recepies/cinnabon-ar.JPG",
+    imgEn: cinnabonEn,
+    imgHe: cinnabonHe,
+    imgAr: cinnabonAr,
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
-    }, // Example style for image positioning
+    },
     recipeTitleEn: "Cinnabon",
     recipeTitleHe: "סינבון",
     recipeTitleAr: "سينابون",
@@ -949,14 +1003,14 @@ const culinaryKidsData = [
   },
   {
     id: 15,
-    imgEn: "/public/recepies/amsterdam-cookies-en.JPG",
-    imgHe: "/public/recepies/amsterdam-cookies-he.JPG",
-    imgAr: "/public/recepies/amsterdam-cookies-ar.JPG",
+    imgEn: amsterdamCookiesEn,
+    imgHe: amsterdamCookiesHe,
+    imgAr: amsterdamCookiesAr,
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
-    }, // Example style for image positioning
+    },
     recipeTitleEn: "Amsterdam Cookies",
     recipeTitleHe: "עוגיות אמסטרדם",
     recipeTitleAr: "كوكيز أمستردام",
@@ -1008,14 +1062,14 @@ const culinaryKidsData = [
   },
   {
     id: 16,
-    imgEn: "/public/recepies/blinches-en.jpg",
-    imgHe: "/public/recepies/blinches-he.jpg",
-    imgAr: "/public/recepies/blinches-ar.jpg",
+    imgEn: blinchesEn,
+    imgHe: blinchesHe,
+    imgAr: blinchesAr,
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
-    }, // Example style for image positioning
+    },
     recipeTitleEn: "Blinches",
     recipeTitleHe: "בלינצ'ס",
     recipeTitleAr: "بلينشس",
@@ -1061,14 +1115,14 @@ const culinaryKidsData = [
   },
   {
     id: 17,
-    imgEn: "/public/recepies/Maamul-en.jpg",
-    imgHe: "/public/recepies/Maamul-he.jpg",
-    imgAr: "/public/recepies/Maamul-ar.jpg",
+    imgEn: maamulEn,
+    imgHe: maamulHe,
+    imgAr: maamulAr,
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
-    }, // Example style for image positioning
+    },
     recipeTitleEn: "Ma'amul Cookies",
     recipeTitleHe: "עוגיות מעמול",
     recipeTitleAr: "كوكيز معمول",
@@ -1130,14 +1184,14 @@ const culinaryKidsData = [
   },
   {
     id: 18,
-    imgEn: "/public/recepies/Baklava-en.jpg",
-    imgHe: "/public/recepies/Baklava-he.jpg",
-    imgAr: "/public/recepies/Baklava-ar.jpg",
+    imgEn: baklavaEn,
+    imgHe: baklavaHe,
+    imgAr: baklavaAr,
     imgStyle: {
       backgroundPosition: "center",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
-    }, // Example style for image positioning
+    },
     recipeTitleEn: "Baklava Dessert",
     recipeTitleHe: "בקלאווה",
     recipeTitleAr: "بقلاوة",

@@ -7,6 +7,7 @@ import { getAllAppointments } from "../../redux/thunk/appointmentThunk";
 import { useTranslation } from "react-i18next";
 import ReactMarkdown from "react-markdown";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Account = () => {
   const { t } = useTranslation();
@@ -64,12 +65,14 @@ const Account = () => {
 
     if (d > appointmentDate) {
       window.open(STATIC_ROOM_URL, "_blank");
+    } else {
+      toast.error("It's not time yet");
     }
   };
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    navigate("/login");
+    window.location.reload();
   };
 
   const renderContent = () => {

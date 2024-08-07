@@ -7,6 +7,7 @@ import bubble from "../../../public/bubble.png";
 import { useTranslation } from "react-i18next";
 import { LuMenu } from "react-icons/lu";
 import { IoCloseSharp } from "react-icons/io5";
+import { RiAdminFill } from "react-icons/ri";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -40,6 +41,8 @@ const Navbar = () => {
     backgroundPosition: "center",
     padding: "2.5rem",
   };
+
+  console.log(currentUser);
 
   return (
     <nav className="relative p-2 bg-cover bg-[#32BAF1] w-full">
@@ -136,7 +139,7 @@ const Navbar = () => {
             </li>
           )}
         </ul>
-        <div className="absolute top-12 right-4 lg:top-12 lg:right-5">
+        <div className=" fixed top-12 right-4 lg:top-12 lg:right-5">
           <select
             onChange={handleLanguageChange}
             className="p-2 text-lg font-semibold bg-transparent rounded-md text-blue-950"
@@ -146,6 +149,14 @@ const Navbar = () => {
             <option value="he">He</option>
           </select>
         </div>
+        {currentUser &&
+          (currentUser.role == "admin" || currentUser.role == "Specialist") && (
+            <div className="absolute top-12 left-4 lg:top-12 lg:left-5">
+              <NavLink to="/admin">
+                <RiAdminFill className="text-3xl" />
+              </NavLink>
+            </div>
+          )}
       </div>
     </nav>
   );

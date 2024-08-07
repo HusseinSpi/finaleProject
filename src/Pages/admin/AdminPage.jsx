@@ -23,7 +23,7 @@ const AdminPage = () => {
   }, [users, t]);
 
   return (
-    <div>
+    <div className="h-screen">
       <h1 className="text-3xl font-bold text-center mb-8">
         {t("AdminPageTitle")}
       </h1>
@@ -49,31 +49,6 @@ const AdminPage = () => {
               <p>{user.email}</p>
             </li>
           ))}
-        </ul>
-      </div>
-
-      <div className="bg-white shadow-lg rounded-lg p-6 mb-8">
-        <h2 className="text-xl font-semibold mb-4">{t("MessageRequests")}</h2>
-        <ul>
-          {/* Replace with actual message requests data */}
-          <li className="mb-2">
-            <p>Message Request 1</p>
-          </li>
-          <li className="mb-2">
-            <p>Message Request 2</p>
-          </li>
-        </ul>
-      </div>
-
-      <div className="bg-white shadow-lg rounded-lg p-6">
-        <h2 className="text-xl font-semibold mb-4">{t("Reviews")}</h2>
-        <ul>
-          <li className="mb-2">
-            <p>Review 1</p>
-          </li>
-          <li className="mb-2">
-            <p>Review 2</p>
-          </li>
         </ul>
       </div>
     </div>
