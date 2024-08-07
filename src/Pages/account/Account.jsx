@@ -169,10 +169,7 @@ const Account = () => {
               <div className="my-4 flex justify-end">
                 <button
                   className="px-4 py-2 bg-green-500 text-white rounded shadow"
-                  onClick={() =>
-                    (window.location.href =
-                      "https://kiddofun.netlify.app/videoCall")
-                  }
+                  onClick={() => navigate("/videoCall")}
                 >
                   {t("Book Appointment")}
                 </button>
