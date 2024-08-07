@@ -136,6 +136,16 @@ const Account = () => {
           >
             {t("Image Analysis")}
           </button>
+          <button
+            onClick={() => setSelectedTab("appointment")}
+            className={`px-4 py-2 ${
+              selectedTab === "appointment"
+                ? "bg-blue-500 text-white"
+                : "bg-blue-100 text-blue-700"
+            } rounded shadow`}
+          >
+            {t("appointment")}
+          </button>
         </div>
       </div>
       <div className="w-3/4 p-4">

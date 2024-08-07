@@ -1,65 +1,23 @@
+import React, { useEffect } from "react";
 import ScheduleCall from "../../Components/VideoCall/ScheduleCall";
 import SettingsVideoCall from "../../Components/VideoCall/SettingsVideoCall";
-import { useState, useEffect } from "react";
-import axios from "../../axiosConfig";
+import { useDispatch, useSelector } from "react-redux";
+import { getCurrentUser } from "../../redux/thunk/currentUserThunks";
+import { appointmentBooking } from "../../redux/thunk/appointmentThunk";
 import "./VideoCall.css";
 
 const VideoCall = () => {
-  const [roomUrl, setRoomUrl] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [scheduledTime, setScheduledTime] = useState(null);
-  const [isCallTime, setIsCallTime] = useState(false);
-
-  const STATIC_ROOM_URL =
-    "https://psychologyvideocall.whereby.com/8aad5053-4a01-4649-83cf-144ca62ef6db";
+  const dispatch = useDispatch();
+  const currentUser = useSelector(
+    (state) => state.currentUser?.data?.data?.user
+  );
 
   useEffect(() => {
-    const fetchScheduledTime = async () => {
-      try {
-        const response = await axios.get(
-          "http://localhost:3000/api/v1/video-call/scheduled-time"
-        );
-        setScheduledTime(new Date(response.data.scheduledTime));
-      } catch (error) {
-        console.error("Error fetching scheduled time:", error);
-      }
-    };
+    dispatch(getCurrentUser());
+  }, [dispatch]);
 
-    fetchScheduledTime();
-
-    const interval = setInterval(() => {
-      if (scheduledTime) {
-        const now = new Date();
-        const formattedScheduledTime = new Date(scheduledTime).getTime();
-        const isTimeToCall =
-          now.getTime() >= formattedScheduledTime &&
-          now.getTime() < formattedScheduledTime + 5 * 60 * 1000;
-        setIsCallTime(isTimeToCall);
-      }
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [scheduledTime]);
-
-  const handleJoinCall = () => {
-    setLoading(true);
-    window.open(STATIC_ROOM_URL, "_blank");
-    setLoading(false);
-  };
-
-  const handleSchedule = async (date) => {
-    try {
-      await axios.post(
-        "http://localhost:3000/api/v1/video-call/generate-room-url",
-        {
-          date,
-        }
-      );
-      setScheduledTime(date);
-      setIsCallTime(false);
-    } catch (error) {
-      console.error("Error scheduling the call:", error);
-    }
+  const handleSchedule = (date) => {
+    dispatch(appointmentBooking({ date, user: currentUser }));
   };
 
   return (
@@ -74,11 +32,7 @@ const VideoCall = () => {
         </p>
       </div>
       <ScheduleCall onSchedule={handleSchedule} />
-      {loading ? (
-        <p className="loading">Loading...</p>
-      ) : (
-        <SettingsVideoCall roomUrl={roomUrl} />
-      )}
+      <SettingsVideoCall />
     </div>
   );
 };

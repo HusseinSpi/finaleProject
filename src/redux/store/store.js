@@ -12,6 +12,7 @@ import booksReducer from "../features/booksSlice";
 import videosReducer from "../features/videosSlice";
 import articlesReducer from "../features/articlesSlice";
 import drawReducer from "../features/drawSlice";
+import appointmentReducer from "../features/appointmentSlice";
 
 const store = configureStore({
   reducer: {
@@ -28,6 +29,7 @@ const store = configureStore({
     videos: videosReducer,
     articles: articlesReducer,
     draws: drawReducer,
+    appointment: appointmentReducer,
   },
 });
 
