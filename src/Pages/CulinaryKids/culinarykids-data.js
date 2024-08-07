@@ -1,58 +1,74 @@
-// Import all images
-import miniPitaPizzasEn from "../../../public/recepies/pizza-en.jpg";
-import miniPitaPizzasHe from "../../../public/recepies/pizza-he.jpg";
-import miniPitaPizzasAr from "../../../public/recepies/pizza-ar.jpg";
-import sushiEn from "../../../public/recepies/sushi-en.jpg";
-import sushiHe from "../../../public/recepies/sushi-he.jpg";
-import sushiAr from "../../../public/recepies/sushi-ar.jpg";
-import padThaiEn from "../../../public/recepies/pad-thai-en.jpg";
-import padThaiHe from "../../../public/recepies/pad-thai-he.jpg";
-import padThaiAr from "../../../public/recepies/pad-thai-ar.jpg";
-import shakshukaEn from "../../../public/recepies/shakshoka-en.jpg";
-import shakshukaHe from "../../../public/recepies/shakshoka-he.jpg";
-import shakshukaAr from "../../../public/recepies/shakshoka-ar.jpg";
-import spaghettiBologneseEn from "../../../public/recepies/spaghetti-bolognese-en.jpg";
-import spaghettiBologneseHe from "../../../public/recepies/spaghetti-bolognese-he.jpg";
-import spaghettiBologneseAr from "../../../public/recepies/spaghetti-bolognese-ar.jpg";
-import hummusEn from "../../../public/recepies/hummus-en.jpg";
-import hummusHe from "../../../public/recepies/hummus-he.jpg";
-import hummusAr from "../../../public/recepies/hummus-ar.jpg";
-import schnitzelEn from "../../../public/recepies/schnitzel-en.jpg";
-import schnitzelHe from "../../../public/recepies/schnitzel-he.jpg";
-import schnitzelAr from "../../../public/recepies/schnitzel-ar.jpg";
-import lasagnaEn from "../../../public/recepies/lasagna-en.jpg";
-import lasagnaHe from "../../../public/recepies/lasagna-he.jpg";
-import lasagnaAr from "../../../public/recepies/lasagna-ar.jpg";
-import hamburgerEn from "../../../public/recepies/hamburger-en.jpg";
-import hamburgerHe from "../../../public/recepies/hamburger-he.jpg";
-import hamburgerAr from "../../../public/recepies/hamburger-ar.jpg";
-import vegetableEn from "../../../public/recepies/vegtable-en.jpg";
-import vegetableHe from "../../../public/recepies/vegtable-he.jpg";
-import vegetableAr from "../../../public/recepies/vegtable-ar.jpg";
-import saladEn from "../../../public/recepies/salad-en.jpg";
-import saladHe from "../../../public/recepies/salad-he.jpg";
-import saladAr from "../../../public/recepies/salad-ar.jpg";
-import peppersEn from "../../../public/recepies/peppers-en.jpg";
-import peppersHe from "../../../public/recepies/peppers-he.jpg";
-import peppersAr from "../../../public/recepies/peppers-ar.jpg";
-import churrosEn from "../../../public/recepies/churros-en.jpg";
-import churrosHe from "../../../public/recepies/churros-he.jpg";
-import churrosAr from "../../../public/recepies/churros-ar.jpg";
-import cinnabonEn from "../../../public/recepies/cinnabon-en.jpg";
-import cinnabonHe from "../../../public/recepies/cinnabon-he.jpg";
-import cinnabonAr from "../../../public/recepies/cinnabon-ar.jpg";
-import amsterdamCookiesEn from "../../../public/recepies/amsterdam-cookies-en.jpg";
-import amsterdamCookiesHe from "../../../public/recepies/amsterdam-cookies-he.jpg";
-import amsterdamCookiesAr from "../../../public/recepies/amsterdam-cookies-ar.jpg";
-import blinchesEn from "../../../public/recepies/blinches-en.jpg";
-import blinchesHe from "../../../public/recepies/blinches-he.jpg";
-import blinchesAr from "../../../public/recepies/blinches-ar.jpg";
-import maamulEn from "../../../public/recepies/Maamul-en.jpg";
-import maamulHe from "../../../public/recepies/Maamul-he.jpg";
-import maamulAr from "../../../public/recepies/Maamul-ar.jpg";
-import baklavaEn from "../../../public/recepies/Baklava-en.jpg";
-import baklavaHe from "../../../public/recepies/Baklava-he.jpg";
-import baklavaAr from "../../../public/recepies/Baklava-ar.jpg";
+import miniPitaPizzasEn from "../../../public/pizza-en.jpg";
+import miniPitaPizzasHe from "../../../public/pizza-he.jpg";
+import miniPitaPizzasAr from "../../../public/pizza-ar.jpg";
+
+import sushiEn from "../../../public/sushi-en.jpg";
+import sushiHe from "../../../public/sushi-he.jpg";
+import sushiAr from "../../../public/sushi-ar.jpg";
+
+import padThaiEn from "../../../public/pad-thai-en.jpg";
+import padThaiHe from "../../../public/pad-thai-he.jpg";
+import padThaiAr from "../../../public/pad-thai-ar.jpg";
+
+import shakshukaEn from "../../../public/shakshoka-en.jpg";
+import shakshukaHe from "../../../public/shakshoka-he.jpg";
+import shakshukaAr from "../../../public/shakshoka-ar.jpg";
+
+import spaghettiBologneseEn from "../../../public/spaghetti-bolognese-en.jpg";
+import spaghettiBologneseHe from "../../../public/spaghetti-bolognese-he.jpg";
+import spaghettiBologneseAr from "../../../public/spaghetti-bolognese-ar.jpg";
+
+import hummusEn from "../../../public/hummus-en.jpg";
+import hummusHe from "../../../public/hummus-he.jpg";
+import hummusAr from "../../../public/hummus-ar.jpg";
+
+import schnitzelEn from "../../../public/schnitzel-en.jpg";
+import schnitzelHe from "../../../public/schnitzel-he.jpg";
+import schnitzelAr from "../../../public/schnitzel-ar.jpg";
+
+import lasagnaEn from "../../../public/lasagna-en.jpg";
+import lasagnaHe from "../../../public/lasagna-he.jpg";
+import lasagnaAr from "../../../public/lasagna-ar.jpg";
+
+import hamburgerEn from "../../../public/hamburger-en.jpg";
+import hamburgerHe from "../../../public/hamburger-he.jpg";
+import hamburgerAr from "../../../public/hamburger-ar.jpg";
+
+import vegetableEn from "../../../public/vegtable-en.jpg";
+import vegetableHe from "../../../public/vegtable-he.jpg";
+import vegetableAr from "../../../public/vegtable-ar.jpg";
+
+import saladEn from "../../../public/salad-en.jpg";
+import saladHe from "../../../public/salad-he.jpg";
+import saladAr from "../../../public/salad-ar.jpg";
+
+import peppersEn from "../../../public/peppers-en.jpg";
+import peppersHe from "../../../public/peppers-he.jpg";
+import peppersAr from "../../../public/peppers-ar.jpg";
+
+import churrosEn from "../../../public/churros-en.jpg";
+import churrosHe from "../../../public/churros-he.jpg";
+import churrosAr from "../../../public/churros-ar.jpg";
+
+import cinnabonEn from "../../../public/cinnabon-en.jpg";
+import cinnabonHe from "../../../public/cinnabon-he.jpg";
+import cinnabonAr from "../../../public/cinnabon-ar.jpg";
+
+import amsterdamCookiesEn from "../../../public/amsterdam-cookies-en.jpg";
+import amsterdamCookiesHe from "../../../public/amsterdam-cookies-he.jpg";
+import amsterdamCookiesAr from "../../../public/amsterdam-cookies-ar.jpg";
+
+import blinchesEn from "../../../public/blinches-en.jpg";
+import blinchesHe from "../../../public/blinches-he.jpg";
+import blinchesAr from "../../../public/blinches-ar.jpg";
+
+import maamulEn from "../../../public/Maamul-en.jpg";
+import maamulHe from "../../../public/Maamul-he.jpg";
+import maamulAr from "../../../public/Maamul-ar.jpg";
+
+import baklavaEn from "../../../public/Baklava-en.jpg";
+import baklavaHe from "../../../public/Baklava-he.jpg";
+import baklavaAr from "../../../public/Baklava-ar.jpg";
 
 const culinaryKidsData = [
   {
@@ -72,7 +88,7 @@ const culinaryKidsData = [
       "Mini pita breads or English muffins",
       "Tomato sauce or pizza sauce",
       "Shredded mozzarella cheese",
-      "Pepperoni slices or other toppings (vegetables, ham, pineapple, etc.)",
+      // "Pepperoni slices or other toppings (vegetables, ham, pineapple, etc.)",
       "Olive oil",
       "Dried oregano or Italian seasoning",
     ],
@@ -501,7 +517,7 @@ const culinaryKidsData = [
       "1 cup breadcrumbs",
       "1/2 teaspoon paprika",
       "Salt and pepper to taste",
-      "1/4 cup vegetable oil",
+      // "1/4 cup vegetable oil",
     ],
     ingredientsHe: [
       "4 חזה עוף, מרודדים דק",
@@ -680,11 +696,11 @@ const culinaryKidsData = [
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
     },
-    recipeTitleEn: "Vegetable Stir-Fry with Kids",
+    // recipeTitleEn: "Vegetable Stir-Fry with Kids",
     recipeTitleHe: "מוקפץ ירקות",
     recipeTitleAr: "خضروات مقليّة مع الأطفال",
     ingredientsEn: [
-      "Mixed vegetables (carrots, bell peppers, broccoli, snap peas, etc.)",
+      // "Mixed vegetables (carrots, bell peppers, broccoli, snap peas, etc.)",
       "Olive oil",
       "Soy sauce",
       "Garlic (minced)",
@@ -705,9 +721,9 @@ const culinaryKidsData = [
       "أرز مطبوخ أو نودلز",
     ],
     preparationMethodEn: [
-      "Prep: Wash and chop vegetables into bite-sized pieces.",
+      // "Prep: Wash and chop vegetables into bite-sized pieces.",
       "Cook: Heat olive oil in a large pan or wok. Add garlic and stir-fry for 1 minute.",
-      "Stir-Fry: Add vegetables to the pan, stir-fry for 5-7 minutes until tender.",
+      // "Stir-Fry: Add vegetables to the pan, stir-fry for 5-7 minutes until tender.",
       "Season: Add soy sauce and stir well.",
       "Serve: Serve over cooked rice or noodles and enjoy your veggie meal!",
     ],
@@ -764,8 +780,8 @@ const culinaryKidsData = [
       "صلصة رانش أو الصلصة المفضلة",
     ],
     preparationMethodEn: [
-      "Prep: Wash and chop vegetables into bite-sized pieces.",
-      "Mix: Combine all vegetables and sweet corn in a bowl.",
+      // "Prep: Wash and chop vegetables into bite-sized pieces.",
+      // "Mix: Combine all vegetables and sweet corn in a bowl.",
       "Add Cheese: Sprinkle shredded cheese on top.",
       "Dress: Add ranch dressing or preferred dressing.",
       "Serve: Toss and serve. Enjoy your kid-friendly salad!",
@@ -1192,7 +1208,7 @@ const culinaryKidsData = [
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
     },
-    recipeTitleEn: "Baklava Dessert",
+    // recipeTitleEn: "Baklava Dessert",
     recipeTitleHe: "בקלאווה",
     recipeTitleAr: "بقلاوة",
 
@@ -1235,7 +1251,7 @@ const culinaryKidsData = [
       "Repeat until all nuts and phyllo dough are used, finishing with 8 layers of phyllo dough.",
       "Cut into squares or diamonds before baking.",
       "Bake for 45-50 minutes until golden brown.",
-      "Heat water and honey in a pan until combined, then pour over baked baklava.",
+      // "Heat water and honey in a pan until combined, then pour over baked baklava.",
       "Cool before serving. Enjoy!",
     ],
 
