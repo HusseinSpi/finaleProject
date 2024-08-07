@@ -1,5 +1,5 @@
 import SignInForm from "../../Components/sign/SignInForm";
-import background from "../../../public/bbg.jpg";
+import background from "../../../dist/bbg.jpg";
 
 import "./SignInPage.css";
 

@@ -2,13 +2,13 @@ import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createRecentActivity } from "../../redux/thunk/recentActivityThunks";
 import { useTranslation } from "react-i18next";
-import background from "../../../public/bbg.jpg";
-import tetris from "../../../public/tetrisBG.jpg";
-import animals from "../../../public/animalsBG.jpg";
-import drawing from "../../../public/drawingBG.jpg";
-import matching from "../../../public/matchingBG.png";
-import tictactoe from "../../../public/tictactoe.webp";
-import puzzel from "../../../public/puzzelBG.jpg";
+import background from "../../../dist/bbg.jpg";
+import tetris from "../../../dist/tetrisBG.jpg";
+import animals from "../../../dist/animalsBG.jpg";
+import drawing from "../../../dist/drawingBG.jpg";
+import matching from "../../../dist/matchingBG.png";
+import tictactoe from "../../../dist/tictactoe.webp";
+import puzzel from "../../../dist/puzzelBG.jpg";
 import "./carousel.css";
 
 const Games = () => {

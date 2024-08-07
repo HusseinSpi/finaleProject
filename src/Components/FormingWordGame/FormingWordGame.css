@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'TherenRegular';
-  src: url('/public/TherenRegular/TherenRegular-vmrnE.ttf') format('truetype');
+  font-family: "TherenRegular";
+  src: url("/dist/TherenRegular/TherenRegular-vmrnE.ttf") format("truetype");
 }
 
 .FormingWordGame-background {
@@ -11,7 +11,7 @@
   height: 89.9vh;
   overflow: hidden;
 
-  background-image: url('../../../public/waves4.png');
+  background-image: url("../../../dist/waves4.png");
 
   background-size: 100% 100%;
   background-position: center;
@@ -30,7 +30,7 @@
 }
 
 .h1-title {
-  font-family: 'TherenRegular';
+  font-family: "TherenRegular";
   font-size: 5rem;
   color: #414288;
   margin-left: 16.5rem;
@@ -50,7 +50,7 @@
   justify-content: center;
   margin-top: 1.6rem;
   margin-left: 13rem;
-  font-family: 'TherenRegular';
+  font-family: "TherenRegular";
   animation: move-up6 10s ease-in infinite alternate-reverse;
   color: #414288;
 }
@@ -99,7 +99,7 @@
 }
 
 button.skip {
-  font-family: 'TherenRegular';
+  font-family: "TherenRegular";
   position: absolute;
   margin-top: -4.3rem;
   margin-left: 36.5rem;
@@ -142,7 +142,7 @@ button.erase {
   z-index: 10;
   width: 50vw;
   height: 10vh;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #f5044c;
   font-weight: 800;
   outline-offset: 10px;
@@ -161,5 +161,5 @@ button.erase {
   height: 10vh;
   color: transparent;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
-  font-family: 'TherenRegular';
+  font-family: "TherenRegular";
 }

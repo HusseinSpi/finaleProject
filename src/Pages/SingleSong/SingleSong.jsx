@@ -5,7 +5,7 @@ import { getAllMusic } from "../../redux/thunk/musicsThunk";
 import { useNavigate } from "react-router-dom";
 import { shuffle } from "lodash";
 import { useTranslation } from "react-i18next";
-import background from "../../../public/bbg.jpg";
+import background from "../../../dist/bbg.jpg";
 import { PiMusicNotesSimpleBold } from "react-icons/pi";
 import { useEffect } from "react";
 
@@ -48,7 +48,7 @@ const SingleSong = () => {
         <PiMusicNotesSimpleBold /> {song.name} <PiMusicNotesSimpleBold />
       </h1>
 
-      <div className="flex justify-center mb-6 px-4 sm:px-7">
+      <div className="flex justify-center mb-6 px-4 mx-48 sm:px-7">
         <Song videoId={song.code} />
       </div>
 

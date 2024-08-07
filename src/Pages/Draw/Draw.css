@@ -1,5 +1,5 @@
 .draw-body {
-  background-image: url(../../../public/bbg.jpg);
+  background-image: url(../../../dist/bbg.jpg);
   display: flex;
   flex-direction: row;
   align-items: center;

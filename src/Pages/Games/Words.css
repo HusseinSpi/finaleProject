@@ -5,7 +5,7 @@
   height: 100vh;
   display: flex;
   width: 100vw;
-  background-image: url(../../../public/bbg.jpg);
+  background-image: url(../../../dist/bbg.jpg);
 }
 
 .words-container {

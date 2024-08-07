@@ -1,7 +1,7 @@
 import underwater from "./pictures/underwater.mp4";
-// import underwater from "../../../public/underwater1.mp4";
+// import underwater from "../../../dist/underwater1.mp4";
 import starfish from "./pictures/starfish.png";
-import background from "../../../public/bbg.jpg";
+import background from "../../../dist/bbg.jpg";
 import { GiMeal, GiCoral, GiSeaStar } from "react-icons/gi";
 import { MdOutlineMenuBook } from "react-icons/md";
 import { HiOutlineMusicNote } from "react-icons/hi";
@@ -9,12 +9,12 @@ import { RiParentLine } from "react-icons/ri";
 import { LuGamepad2 } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import "../../index.css";
-import bubble from "../../../public/bubble.png";
+import bubble from "../../../dist/bubble.png";
 import { useTranslation } from "react-i18next";
-import seashell from "../../../public/seashell2.png";
-import coral from "../../../public/coral.png";
-import seahorse from "../../../public/seahorse.png";
-import crab from "../../../public/crab.png";
+import seashell from "../../../dist/seashell2.png";
+import coral from "../../../dist/coral.png";
+import seahorse from "../../../dist/seahorse.png";
+import crab from "../../../dist/crab.png";
 
 const Home = () => {
   const { t, i18n } = useTranslation();
