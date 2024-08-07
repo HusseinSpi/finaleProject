@@ -40,10 +40,7 @@ const SingleSong = () => {
   return (
     <div
       className="p-5 relative bg-cover bg-no-repeat min-h-screen w-full"
-      style={{
-        background: `url(${background})`,
-        backgroundSize: "cover",
-      }}
+      style={{ backgroundImage: `url(${background})`, backgroundSize: "cover" }}
     >
       <h1 className="text-2xl sm:text-3xl font-bold text-center text-blue-950 flex items-center justify-center mb-6">
         <PiMusicNotesSimpleBold /> {song.name} <PiMusicNotesSimpleBold />
