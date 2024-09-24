@@ -4,7 +4,7 @@ let rows, columns, tileWidth, tileHeight;
 let boardTiles = [];
 let correctOrder = [];
 
-export function initGame(board, pieces, setTurns) {
+export function initGame(board, pieces, setTurns, imageData) {
   turns = 0;
   setTurns(turns);
 
@@ -31,21 +31,33 @@ export function initGame(board, pieces, setTurns) {
     }
   }
 
-  const uploadedFile = document.getElementById("upload").files[0];
-  if (uploadedFile) {
-    const reader = new FileReader();
-    reader.onload = function (event) {
-      const img = new Image();
-      img.onload = function () {
-        tileWidth = img.width / columns;
-        tileHeight = img.height / rows;
-        createPuzzle(img, pieces);
-      };
-      img.src = event.target.result;
+  // Use the uploaded image if available, otherwise use the selected image
+  if (imageData) {
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.onload = function () {
+      tileWidth = img.width / columns;
+      tileHeight = img.height / rows;
+      createPuzzle(img, pieces);
     };
-    reader.readAsDataURL(uploadedFile);
+    img.src = imageData;
   } else {
-    alert("Please upload an image to start the game.");
+    const uploadedFile = document.getElementById("upload").files[0];
+    if (uploadedFile) {
+      const reader = new FileReader();
+      reader.onload = function (event) {
+        const img = new Image();
+        img.onload = function () {
+          tileWidth = img.width / columns;
+          tileHeight = img.height / rows;
+          createPuzzle(img, pieces);
+        };
+        img.src = event.target.result;
+      };
+      reader.readAsDataURL(uploadedFile);
+    } else {
+      alert("Please upload an image or select one to start the game.");
+    }
   }
 }
 
@@ -76,8 +88,9 @@ function createPuzzle(img, pieces) {
         tileHeight
       );
 
-      let tile = document.createElement("img");
-      tile.src = pieceCanvas.toDataURL();
+      // Create image for the puzzle piece
+      let tile = new Image();
+      tile.src = pieceCanvas.toDataURL(); // This line causes the error if the image is tainted
       tile.width = tileWidth;
       tile.height = tileHeight;
       tile.dataset.position = `${r}-${c}`;

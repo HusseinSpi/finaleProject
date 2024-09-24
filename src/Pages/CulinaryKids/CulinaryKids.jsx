@@ -1,5 +1,5 @@
-import { useState } from "react";
 import culinaryKidsData from "./culinarykids-data";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import "./CulinaryKids.css";
@@ -9,10 +9,7 @@ import "./CulinaryKidsPhone.css"; //   412 w
 
 const CulinaryKids = () => {
   const { i18n } = useTranslation();
-
-  const handleLanguageChange = (e) => {
-    i18n.changeLanguage(e.target.value);
-  };
+  const [filterType, setFilterType] = useState("all");
 
   const getRecipeData = (recipe) => {
     switch (i18n.language) {
@@ -40,12 +37,61 @@ const CulinaryKids = () => {
     }
   };
 
+  const filteredRecipes = culinaryKidsData.filter((recipe) => {
+    if (filterType === "all") return true;
+    if (filterType === "arabic") return recipe.type === "Ar";
+    if (filterType === "hebrew") return recipe.type === "He";
+    
+    return false;
+  });
+
+  console.log(filteredRecipes)
   return (
     <div className="culinary-main-container">
       <div className="culinary-sub-container">
         <h1 className="culinary-title text-center">Culinary Kids Recipes</h1>
+
+        <div className="filter-container">
+          <label htmlFor="filter-type" className="filter-label">
+            {i18n.language === "en"
+              ? "Filter by type"
+              : i18n.language === "he"
+              ? "סינון לפי סוג"
+              : "تصفية حسب النوع"}
+            :
+          </label>
+          <select
+            id="filter-type"
+            className="filter-select"
+            value={filterType}
+            onChange={(e) => setFilterType(e.target.value)}
+          >
+            <option value="all">
+              {i18n.language === "en"
+                ? "All"
+                : i18n.language === "he"
+                ? "הכל"
+                : "الكل"}
+            </option>
+            <option value="arabic">
+              {i18n.language === "en"
+                ? "Arab"
+                : i18n.language === "he"
+                ? "ערבי"
+                : "عربي"}
+            </option>
+            <option value="hebrew">
+              {i18n.language === "en"
+                ? "Jewish"
+                : i18n.language === "he"
+                ? "יהודי"
+                : "يهودي"}
+            </option>
+          </select>
+        </div>
+
         <div className="card-grid">
-          {culinaryKidsData.map((recipe) => {
+          {filteredRecipes.map((recipe) => {
             const { img, title, ingredients, preparationMethod } =
               getRecipeData(recipe);
             return (
@@ -57,13 +103,9 @@ const CulinaryKids = () => {
                       backgroundImage: `url(${img})`,
                       ...recipe.imgStyle,
                     }}
-                  >
-                    {/* Recipe title is removed from the front */}
-                  </div>
+                  ></div>
                   <div className="flip-card-back">
-                    <h2 className="h2-title">
-                      {recipe[`recipeTitle${i18n.language.toUpperCase()}`]}
-                    </h2>
+                    <h2 className="h2-title">{title}</h2>
                     <h3 className="h3-title">
                       {i18n.language === "en"
                         ? "Ingredients"

@@ -73,6 +73,7 @@ import baklavaAr from "../../../public/Baklava-ar.jpg";
 const culinaryKidsData = [
   {
     id: 1,
+    type: "He",
     imgEn: miniPitaPizzasEn,
     imgHe: miniPitaPizzasHe,
     imgAr: miniPitaPizzasAr,
@@ -138,6 +139,7 @@ const culinaryKidsData = [
   },
   {
     id: 2,
+    type: "He",
     imgEn: sushiEn,
     imgHe: sushiHe,
     imgAr: sushiAr,
@@ -212,6 +214,7 @@ const culinaryKidsData = [
   },
   {
     id: 3,
+    type: "He",
     imgEn: padThaiEn,
     imgHe: padThaiHe,
     imgAr: padThaiAr,
@@ -289,6 +292,7 @@ const culinaryKidsData = [
   },
   {
     id: 4,
+    type: "He",
     imgEn: shakshukaEn,
     imgHe: shakshukaHe,
     imgAr: shakshukaAr,
@@ -363,6 +367,7 @@ const culinaryKidsData = [
   },
   {
     id: 5,
+    type: "He",
     imgEn: spaghettiBologneseEn,
     imgHe: spaghettiBologneseHe,
     imgAr: spaghettiBologneseAr,
@@ -440,6 +445,7 @@ const culinaryKidsData = [
   },
   {
     id: 6,
+    type: "He",
     imgEn: hummusEn,
     imgHe: hummusHe,
     imgAr: hummusAr,
@@ -499,6 +505,7 @@ const culinaryKidsData = [
   },
   {
     id: 7,
+    type: "He",
     imgEn: schnitzelEn,
     imgHe: schnitzelHe,
     imgAr: schnitzelAr,
@@ -561,6 +568,7 @@ const culinaryKidsData = [
   },
   {
     id: 8,
+    type: "Ar",
     imgEn: lasagnaEn,
     imgHe: lasagnaHe,
     imgAr: lasagnaAr,
@@ -632,6 +640,7 @@ const culinaryKidsData = [
   },
   {
     id: 9,
+    type: "Ar",
     imgEn: hamburgerEn,
     imgHe: hamburgerHe,
     imgAr: hamburgerAr,
@@ -688,6 +697,7 @@ const culinaryKidsData = [
   },
   {
     id: 10,
+    type: "Ar",
     imgEn: vegetableEn,
     imgHe: vegetableHe,
     imgAr: vegetableAr,
@@ -744,6 +754,7 @@ const culinaryKidsData = [
   },
   {
     id: 11,
+    type: "Ar",
     imgEn: saladEn,
     imgHe: saladHe,
     imgAr: saladAr,
@@ -803,6 +814,7 @@ const culinaryKidsData = [
   },
   {
     id: 12,
+    type: "Ar",
     imgEn: peppersEn,
     imgHe: peppersHe,
     imgAr: peppersAr,
@@ -865,6 +877,7 @@ const culinaryKidsData = [
   },
   {
     id: 13,
+    type: "Ar",
     imgEn: churrosEn,
     imgHe: churrosHe,
     imgAr: churrosAr,
@@ -936,6 +949,7 @@ const culinaryKidsData = [
   },
   {
     id: 14,
+    type: "Ar",
     imgEn: cinnabonEn,
     imgHe: cinnabonHe,
     imgAr: cinnabonAr,
@@ -1019,6 +1033,7 @@ const culinaryKidsData = [
   },
   {
     id: 15,
+    type: "Ar",
     imgEn: amsterdamCookiesEn,
     imgHe: amsterdamCookiesHe,
     imgAr: amsterdamCookiesAr,
@@ -1078,6 +1093,7 @@ const culinaryKidsData = [
   },
   {
     id: 16,
+    type: "Ar",
     imgEn: blinchesEn,
     imgHe: blinchesHe,
     imgAr: blinchesAr,
@@ -1131,6 +1147,7 @@ const culinaryKidsData = [
   },
   {
     id: 17,
+    type: "Ar",
     imgEn: maamulEn,
     imgHe: maamulHe,
     imgAr: maamulAr,
@@ -1200,6 +1217,7 @@ const culinaryKidsData = [
   },
   {
     id: 18,
+    type: "Ar",
     imgEn: baklavaEn,
     imgHe: baklavaHe,
     imgAr: baklavaAr,

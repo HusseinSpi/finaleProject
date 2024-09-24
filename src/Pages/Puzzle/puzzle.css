@@ -210,6 +210,25 @@
   transition: all 0.3s ease-in-out;
 }
 
+.image-container {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+  height: 100%;
+}
+
+.image-row {
+  display: flex;
+  border: 3px solid black;
+}
+
+img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  cursor: pointer;
+}
+
 .puzzle-modal button:hover {
   background-color: #45a049;
   transform: scale(1.05);

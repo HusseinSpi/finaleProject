@@ -1,6 +1,7 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import "./puzzle.css";
 import { initGame, refreshPage } from "../../../public/Puzzle/Puzzle.js";
+import ImageContainer from "../../Components/ImageContener.jsx";
 
 const Puzzle = () => {
   const [turns, setTurns] = useState(0);
@@ -15,8 +16,11 @@ const Puzzle = () => {
     } else if (audioContextRef.current.state === "suspended") {
       audioContextRef.current.resume();
     }
-
     initGame(boardRef.current, piecesRef.current, setTurns);
+  };
+
+  const handleImageSelect = (selectedImage) => {
+    initGame(boardRef.current, piecesRef.current, setTurns, selectedImage);
   };
 
   return (
@@ -29,8 +33,13 @@ const Puzzle = () => {
       <h2>
         Turns: <span>{turns}</span>
       </h2>
-      <div id="board" ref={boardRef} className="puzzle-board"></div>
-      <div id="pieces" ref={piecesRef} className="puzzle-pieces"></div>
+      <div className="flex">
+        <div className="puzzle-board-container">
+          <div id="board" ref={boardRef} className="puzzle-board"></div>
+          <div id="pieces" ref={piecesRef} className="puzzle-pieces"></div>
+        </div>
+        <ImageContainer onImageSelect={handleImageSelect} />
+      </div>
       <div id="modal" className="puzzle-modal">
         <div className="puzzle-modal-content">
           <span className="puzzle-modal-close" onClick={refreshPage}>
