@@ -1,9 +1,9 @@
 const ImageContainer = ({ onImageSelect }) => {
   const images = [
-    "https://cdn-icons-png.freepik.com/512/6055/6055946.png",
-    "https://cdn3.iconfinder.com/data/icons/letters-and-numbers-1/32/number_2_green-512.png",
-    "https://www.whitestone-gallery.com/cdn/shop/articles/Portrait_three_1200x1200.jpg?v=1679902121",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpiHJy-OiXF4E3Nc9Zw8Wor_kQXSSlF0goXA&s",
+    "https://static.dw.com/image/47968464_1006.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRasWrj-4MQvaXruTpc1z8XHMqnpwN5UufwxA&s",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/CZZSVg018348-07.jpg/260px-CZZSVg018348-07.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB1OmYCaQSVue9vgn35zXjIrsOhTpn6dgOKg&s",
   ];
 
   return (
